@@ -1,13 +1,8 @@
 var assert = require('assert');
-var DimeSchedulerClient = require('../lib/dimescheduler');
-var Category = require('../lib/import/category');
-var TimeMarker = require('../lib/import/timemarker');
-var Pin = require('../lib/import/pin');
-
-var FormsAuthenticator = require('../lib/auth/forms-authenticator');
+var dimescheduler = require('../index');
 var randomWords = require('random-words');
 
-var uri = 'http://ds-vnext-test.azurewebsites.net';
+var uri = 'https://ds-vnext-test.azurewebsites.net';
 var user = 'hendrik@dimescheduler.com';
 var pw = 'Admin!1';
 
@@ -15,7 +10,7 @@ describe('Import', function () {
     describe('#appendCategory()', function () {
         it('Should successfully append category', async () => {
 
-            var category = new Category();
+            var category = new dimescheduler.Import.Category();
             category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -26,8 +21,8 @@ describe('Import', function () {
 
             category.name = word;
 
-            var authn = new FormsAuthenticator(uri, user, pw);
-            var client = new DimeSchedulerClient(uri, authn);
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
 
             var results = await client.import.processAsync(category);
             assert.ok(results.data.Success == true);
@@ -37,7 +32,7 @@ describe('Import', function () {
     describe('#appendTimeMarker()', function () {
         it('Should successfully append time marker', async () => {
 
-            var timeMarker = new TimeMarker();
+            var timeMarker = new dimescheduler.Import.TimeMarker();
             timeMarker.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -48,8 +43,8 @@ describe('Import', function () {
 
             timeMarker.name = word;
 
-            var authn = new FormsAuthenticator(uri, user, pw);
-            var client = new DimeSchedulerClient(uri, authn);
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
 
             var results = await client.import.processAsync(timeMarker);
             assert.ok(results.data.Success == true);
@@ -59,7 +54,7 @@ describe('Import', function () {
     describe('#appendPin()', function () {
         it('Should successfully append pin', async () => {
 
-            var pin = new Pin();
+            var pin = new dimescheduler.Import.Pin();
             pin.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -70,8 +65,8 @@ describe('Import', function () {
 
             pin.name = word;
 
-            var authn = new FormsAuthenticator(uri, user, pw);
-            var client = new DimeSchedulerClient(uri, authn);
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
 
             var results = await client.import.processAsync(pin);
             assert.ok(results.data.Success == true);
