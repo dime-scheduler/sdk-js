@@ -12,21 +12,50 @@
   <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
 
-<div align="center">
-  <img src="https://dev.azure.com/dimesoftware/Dime.Scheduler%20V2/_apis/build/status/Application/Application%20-%20MAIN%20-%20Gated?repoName=dime-scheduler%2Fapp&branchName=master" />
-  <img src="https://dimesoftware.vsrm.visualstudio.com/_apis/public/Release/badge/34280a9b-2222-4bd0-876a-3a0374c20f54/6/6" />
-  <img src="https://badges.crowdin.net/dimescheduler/localized.svg" />
-
-</div>
-<h1 align="center"> Dime.Scheduler</h1>
+<h1 align="center"> Dime.Scheduler SDK for JavaScript</h1>
 
 Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in various industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
 
+🧑‍🏫 Want to see the SDK in action? Check out an example [here](https://stackblitz.com/edit/ds-category?file=index.js).
+
 ## Installation
 
-## Quick Start
+Use whichever package manager you prefer:
 
-## Examples
+```bash
+npm install dimescheduler
+yarn add dimescheduler
+```
+
+## Example
+
+🧑‍🏫 Want to see the SDK in action? Check out an example [here](https://stackblitz.com/edit/ds-category?file=index.js).
+
+```javascript
+import { DimeSchedulerClient, FormsAuthenticator, Import } from 'dimescheduler';
+
+var uri = 'https://my-dimescheduler.uri';
+var user = 'admin@my-dimescheduler.uri';
+var pw = "mypassword";
+
+var authn = new FormsAuthenticator(uri, user, pw);
+var client = new DimeSchedulerClient(uri, authn);
+
+var category = new Import.Category();
+category.name = "New category";
+category.color = '#000000';
+
+client.import
+  .processAsync(category)
+  .then((res) => {    
+    console.log(res.data.Success? 'Success!' : "Oh oh, something didn't quite go well.";);
+  })
+  .catch((err) => console.log('Something went wrong: ' + err.toString()));
+```
+
+## Read more
+
+Check out the [📚 docs »](https://sdk.dimescheduler.com) for more info.
 
 ## Contributing
 
@@ -35,6 +64,8 @@ Supercharge your business by powering up Microsoft Dynamics 365 Business Central
 Pull requests are welcome. Please check out the contribution and code of conduct guidelines.
 
 ## License
+
+![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)
 
 Copyright © Dime CVBA - All rights reserved.
 
