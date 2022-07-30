@@ -72,4 +72,33 @@ describe('Import', function () {
             assert.ok(results.data.Success == true);
         });
     });
+
+    describe('#appendAppointment()', function () {
+        it('Should successfully append appointment', async () => {
+            var appointment = new dimescheduler.Import.Appointment();
+            appointment.SourceApp = "POWERAPPS";
+            appointment.SourceType = "POWERAPPS";
+            appointment.Subject = "Hello from SDK";
+            appointment.Body = "...";
+            appointment.ResourceNo = "Hendrik (Mobile)";
+            appointment.JobNo = "POWERAPP_001";
+            appointment.TaskNo = "SDK_TEST_001";
+
+            appointment.Start = new Date().toISOString();
+            var end = new Date();
+            end.setHours(end.getHours() + 2);
+            appointment.End = end.toISOString();
+
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            try {
+                var results = await client.import.processAsync(appointment);
+                assert.ok(results.data.Success == true);
+            }
+            catch (err) {
+                console.log(err.response.data);
+                throw err;
+            }
+        });
+    });
 });
