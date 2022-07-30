@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "main": "index.js",
   "repository": "https://github.com/dime-scheduler/sdk-nodejs",
   "author": "Hendrik Bulens",
