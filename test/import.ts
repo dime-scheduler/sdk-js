@@ -83,7 +83,7 @@ describe('Import', function () {
             appointment.ResourceNo = "Hendrik (Mobile)";
             appointment.JobNo = "POWERAPP_001";
             appointment.TaskNo = "SDK_TEST_001";
-
+           
             appointment.Start = new Date().toISOString();
             var end = new Date();
             end.setHours(end.getHours() + 2);
@@ -92,6 +92,37 @@ describe('Import', function () {
             var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
             var client = new dimescheduler.DimeSchedulerClient(uri, authn);
             var results = await client.import.processAsync(appointment);
+            assert.ok(results.data.Success == true);
+        });
+    });
+
+    describe('#appendJob()', function () {
+        it('Should successfully append job', async () => {
+            var item = new dimescheduler.Import.Job();
+            item.SourceApp = "POWERAPPS";
+            item.SourceType = "POWERAPPS";
+            item.JobNo = "POWERAPPS_001";
+            item.ShortDescription = "Item from the JS SDK!";
+
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var results = await client.import.processAsync(item);
+            assert.ok(results.data.Success == true);
+        });
+    });
+
+    describe('#appendTask()', function () {
+        it('Should successfully append task', async () => {
+            var item = new dimescheduler.Import.Task();
+            item.SourceApp = "POWERAPPS";
+            item.SourceType = "POWERAPPS";
+            item.JobNo = "POWERAPPS_001";
+            item.TaskNo = "NEW_TASK_004";
+            item.ShortDescription = "Item from the JS SDK!";
+
+            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
+            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
         });
     });
