@@ -1,6 +1,6 @@
-var assert = require('assert');
-var dimescheduler = require('../index');
-var randomWords = require('random-words');
+import assert from 'assert';
+import * as dimescheduler from '../dist/index';
+import randomWords from 'random-words';
 
 var uri = 'https://ds-vnext-test.azurewebsites.net';
 var user = 'hendrik@dimescheduler.com';
@@ -91,14 +91,8 @@ describe('Import', function () {
 
             var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
             var client = new dimescheduler.DimeSchedulerClient(uri, authn);
-            try {
-                var results = await client.import.processAsync(appointment);
-                assert.ok(results.data.Success == true);
-            }
-            catch (err) {
-                console.log(err.response.data);
-                throw err;
-            }
+            var results = await client.import.processAsync(appointment);
+            assert.ok(results.data.Success == true);
         });
     });
 });

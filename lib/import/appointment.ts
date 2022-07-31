@@ -1,4 +1,29 @@
-class Pin {
+class Appointment {
+    Id: any;
+    AppointmentGuid: any;
+    SourceApp: any;
+    SourceType: any;
+    JobNo: any;
+    TaskNo: any;
+    ResourceNo: any;
+    Subject: any;
+    Body: any;
+    Start: any;
+    End: any;
+    TimeMarker: any;
+    Category: any;
+    Importance: any;
+    Locked: any;
+    ReplaceResource: any;
+    BackofficeID: any;
+    BackofficeParentID: any;
+    PlanningUOM: any;
+    PlanningUOMConversion: any;
+    PlanningQty: any;
+    UseFixPlanningQty: any;
+    RoundToUOM: any;
+    SentFromBackOffice: any;
+
     constructor() {
         this.Id;
         this.AppointmentGuid;
@@ -86,4 +111,4 @@ class Pin {
     }
 }
 
-module.exports = Pin;
+export default Appointment;

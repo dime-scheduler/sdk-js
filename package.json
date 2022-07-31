@@ -1,19 +1,27 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.0.1-alpha.5",
-  "main": "index.js",
+  "version": "0.0.1-alpha.10",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/dime-scheduler/sdk-nodejs",
   "author": "Hendrik Bulens",
   "license": "MIT",
   "scripts": {
-    "test": "mocha"
-  },  
+    "build": "tsc",
+    "clean": "tsc --build --clean",
+    "test": "ts-mocha test/*.ts"
+  },
   "dependencies": {
     "axios": "^0.27.2"
   },
   "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.6.3",
     "mocha": "^10.0.0",
-    "random-words": "^1.2.0"
+    "random-words": "^1.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   }
 }

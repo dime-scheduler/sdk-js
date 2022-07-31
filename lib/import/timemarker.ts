@@ -1,4 +1,7 @@
-class Pin {
+class TimeMarker {
+    name: string;
+    color: string;
+
     constructor() {
         this.name = "";
         this.color = "";
@@ -6,11 +9,11 @@ class Pin {
 
     toImportRequest(append = true) {
         return {
-            "StoredProcedureName": "mboc_upsertPin",
-            "ParameterNames": ["Name", "HexColor"],
+            "StoredProcedureName": "mboc_upsertTimeMarker",
+            "ParameterNames": ["TimeMarker", "HexColor"],
             "ParameterValues": [this.name, this.color]
         }
     }
 }
 
-module.exports = Pin;
+export default TimeMarker;

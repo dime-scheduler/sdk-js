@@ -1,12 +1,15 @@
-var axios = require('axios');
+import axios from 'axios';
 
 class EndPoint {
-    constructor(uri, authn) {
+    authn: any;
+    uri: string;
+
+    constructor(uri: any, authn: any) {
         this.uri = uri;
         this.authn = authn;
     }
 
-    async processAsync(data) {
+    protected async insert(data: string) {
         var authResult = await this.authn.authenticate();
         var token = authResult.data.access_token;
         var data = JSON.stringify(data);
@@ -21,4 +24,4 @@ class EndPoint {
     }
 }
 
-module.exports = EndPoint;
+export default EndPoint;
