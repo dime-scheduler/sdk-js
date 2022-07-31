@@ -26,7 +26,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "clean": "tsc --build --clean",
-    "test": "ts-mocha test/*.ts"
+    "test": "ts-mocha test/*.ts --timeout 10000"
   },
   "dependencies": {
     "axios": "^0.27.2"
