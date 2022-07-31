@@ -1,5 +1,5 @@
 import assert from 'assert';
-import * as dimescheduler from '../dist/index';
+import * as dimescheduler from '../dist/esm';
 import randomWords from 'random-words';
 
 var uri = 'https://ds-vnext-test.azurewebsites.net';
