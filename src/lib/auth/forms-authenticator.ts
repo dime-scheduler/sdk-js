@@ -1,7 +1,11 @@
-var axios = require('axios');
+import axios from 'axios';
 
 class FormsAuthenticator {
-    constructor(uri, user, pw) {
+    uri: any;
+    user: any;
+    pw: any;
+
+    constructor(uri: any, user: any, pw: any) {
         this.uri = uri;
         this.user = user;
         this.pw = pw;
@@ -24,4 +28,4 @@ class FormsAuthenticator {
     }
 }
 
-module.exports = FormsAuthenticator;
+export default FormsAuthenticator;

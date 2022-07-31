@@ -1,4 +1,7 @@
 class Category {
+    name: string;
+    color: string;
+
     constructor() {
         this.name = "";
         this.color = "";
@@ -13,4 +16,4 @@ class Category {
     }
 }
 
-module.exports = Category;
+export default Category;
