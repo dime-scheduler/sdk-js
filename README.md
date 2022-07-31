@@ -12,6 +12,13 @@
   <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
 
+<div align="center">
+  <img src="https://github.com/dime-scheduler/sdk-js/actions/workflows/ci.yml/badge.svg?branch=master" />
+  <img src="https://img.shields.io/npm/v/dimescheduler?style=flat-square" />
+  <img src="https://img.shields.io/npm/l/dimescheduler" />
+</div>
+
+
 <h1 align="center"> Dime.Scheduler SDK for JavaScript</h1>
 
 Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in various industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
