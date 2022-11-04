@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.0.1-alpha.15",
+  "version": "0.0.1-alpha.17",
   "main": "./dist/index.ts",
   "types": "./dist/index.d.ts",
   "module": "./dist/esm/index.js",
@@ -26,7 +26,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "clean": "tsc --build --clean",
-    "test": "ts-mocha test/*.ts --timeout 10000"
+    "test": "ts-mocha test/**/*.ts --timeout 10000"
   },
   "dependencies": {
     "axios": "^0.27.2"
