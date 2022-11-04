@@ -1,17 +1,18 @@
 import axios from 'axios';
+import IAuthenticator from './iauthenticator';
 
-class FormsAuthenticator {
-    uri: any;
-    user: any;
-    pw: any;
+class FormsAuthenticator implements IAuthenticator {
+    uri: string;
+    user: string;
+    pw: string;
 
-    constructor(uri: any, user: any, pw: any) {
+    constructor(uri: string, user: string, pw: string) {
         this.uri = uri;
         this.user = user;
         this.pw = pw;
     }
 
-    authenticate() {
+    authenticate(): any {
         var data = JSON.stringify({
             "UserName": this.user,
             "Password": this.pw
