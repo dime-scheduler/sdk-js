@@ -1,11 +1,11 @@
 import ImportEndPoint from './endpoints/import';
-import IAuthenticator from './auth/iauthenticator';
+import Environment from './environment';
 
 class DimeSchedulerClient {
     import: ImportEndPoint;
 
-    constructor(uri: any, authenticator: IAuthenticator) {
-        this.import = new ImportEndPoint(uri, authenticator);
+    constructor(env: Environment, apiKey: string) {
+        this.import = new ImportEndPoint(env, apiKey);
     }
 }
 

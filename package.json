@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.0.1-alpha.17",
+  "version": "0.0.1-alpha.18",
   "main": "./dist/index.ts",
   "types": "./dist/index.d.ts",
   "module": "./dist/esm/index.js",
@@ -11,7 +11,7 @@
     "LICENSE",
     "README.md"
   ],
-  "repository": "https://github.com/dime-scheduler/sdk-nodejs",
+  "repository": "https://github.com/dime-scheduler/sdk-js",
   "author": "Hendrik Bulens",
   "license": "MIT",
   "keywords": [

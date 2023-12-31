@@ -1,10 +1,9 @@
 import assert from 'assert';
 import * as dimescheduler from '../dist/esm';
 import randomWords from 'random-words';
+import Environment from '../dist/esm/lib/environment';
 
-var uri = 'https://ds-vnext-test.azurewebsites.net';
-var user = 'hendrik@dimescheduler.com';
-var pw = 'Admin!1';
+var apiKey = "DS-1W872SEI4-UPGTSXE8-R86E19ME-9B7URJ";
 
 describe('Import', function () {
     describe('#appendCategory()', function () {
@@ -21,8 +20,7 @@ describe('Import', function () {
 
             category.name = word;
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
 
             var results = await client.import.processAsync(category);
             assert.ok(results.data.Success == true);
@@ -43,8 +41,7 @@ describe('Import', function () {
 
             timeMarker.name = word;
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
 
             var results = await client.import.processAsync(timeMarker);
             assert.ok(results.data.Success == true);
@@ -63,10 +60,9 @@ describe('Import', function () {
                 }
             })[0];
 
-            pin.name = word;
+            pin.name = "WTF!!!";
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
 
             var results = await client.import.processAsync(pin);
             assert.ok(results.data.Success == true);
@@ -83,14 +79,13 @@ describe('Import', function () {
             appointment.ResourceNo = "Hendrik (Mobile)";
             appointment.JobNo = "POWERAPP_001";
             appointment.TaskNo = "SDK_TEST_001";
-           
+
             appointment.Start = new Date().toISOString();
             var end = new Date();
             end.setHours(end.getHours() + 2);
             appointment.End = end.toISOString();
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
             var results = await client.import.processAsync(appointment);
             assert.ok(results.data.Success == true);
         });
@@ -104,8 +99,7 @@ describe('Import', function () {
             item.JobNo = "POWERAPPS_001";
             item.ShortDescription = "Item from the JS SDK!";
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
             var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
         });
@@ -120,8 +114,7 @@ describe('Import', function () {
             item.TaskNo = "NEW_TASK_004";
             item.ShortDescription = "Item from the JS SDK!";
 
-            var authn = new dimescheduler.FormsAuthenticator(uri, user, pw);
-            var client = new dimescheduler.DimeSchedulerClient(uri, authn);
+            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
             var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
         });
