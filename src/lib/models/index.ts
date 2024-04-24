@@ -26,6 +26,8 @@ import TaskUri from './task/taskuri';
 import Category from './category';
 import Pin from './category';
 import Job from './job';
+import FilterGroup from './filtergroup';
+import FilterValue from './filtervalue';
 
 export {
     TimeMarker,
@@ -55,5 +57,7 @@ export {
     TaskFilterValue,
     TaskLocked,
     TaskUri,
-    Job
+    Job,
+    FilterGroup,
+    FilterValue
 };

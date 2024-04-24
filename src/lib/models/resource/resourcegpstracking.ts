@@ -1,7 +1,11 @@
 ﻿import IImportModel from "../base/iimportmodel";
 import ImportProperty from "../base/importproperty";
+import ImportModel from "../base/importmodel";
 
-export default class ResourceGpsTracking implements IImportModel {
+export default class ResourceGpsTracking extends ImportModel implements IImportModel {
+    constructor() {
+        super("mboc_upsertResourceGpsTracking");
+    }
 
     @ImportProperty("ResourceNo")
     resourceNo?: string;
@@ -16,30 +20,10 @@ export default class ResourceGpsTracking implements IImportModel {
     longitude?: number;
 
     speed?: number | null;
+
     date?: string | null;
+
     rowId?: string;
+
     power?: string;
-
-    toImportRequest(): Record<string, any> {
-        const json: Record<string, any> = {
-            "StoredProcedureName": "mboc_upsertResourceGpsTracking",
-            ParameterNames: [],
-            ParameterValues: []
-        };
-
-        const propertyNames = Object.getOwnPropertyNames(this);
-        for (const propertyName of propertyNames) {
-            const customName = Reflect.getMetadata("customPropertyName", this, propertyName);
-
-            if (customName) {
-                json.ParameterNames.push(customName);
-                json.ParameterValues.push((this[propertyName as keyof this] as any)?.toString());
-            } else {
-                json.ParameterNames.push(propertyName);
-                json.ParameterValues.push((this[propertyName as keyof this] as any)?.toString());
-            }
-        }
-
-        return json;
-    }
 }

@@ -22,7 +22,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(category);
-            assert.ok(results.Success == true);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -43,7 +43,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(timeMarker);
-            assert.ok(results.Success == true, results.Message);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -64,7 +64,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(pin);
-            assert.ok(results.Success == true);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -100,7 +100,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
-            assert.ok(results.Success == true);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -115,7 +115,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
-            assert.ok(results.Success == true);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -123,19 +123,38 @@ describe('Import', function () {
         it('Should successfully update actual location', async () => {
             var location = new Models.ResourceGpsTracking();
             location.resourceNo = "ARNOUD";
-
-            // Location 1
-            // location.latitude = 36.715181;
-            // location.longitude = -4.312529;
-
-            // Location 2
             location.latitude = 38.432649;
             location.longitude = -0.634456;
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var response = await client.import.processAsync(location);
-            assert.ok(response.Success == true);
+            var results = await client.import.processAsync(location);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
+        });
+    });
+
+    describe('#setFilterGroup()', function () {
+        it('Should successfully set filter group', async () => {
+            var filterGroup = new Models.FilterGroup();
+            filterGroup.name = "Department"
+
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            var results = await client.import.processAsync(filterGroup);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
+        });
+    });
+
+    describe('#setFilterValue()', function () {
+        it('Should successfully set filter value', async () => {
+            var filterValue = new Models.FilterValue();
+            filterValue.group = "Department";
+            filterValue.value = "IT";
+
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            var results = await client.import.processAsync(filterValue);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 });
