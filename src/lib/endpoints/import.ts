@@ -23,7 +23,6 @@ class ImportEndPoint extends Endpoint {
 
         const url = this.uri + '/import';
 
-        console.log(body);
         return axios.post(url, body, { headers: headers });
     }
 }

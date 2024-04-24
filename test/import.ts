@@ -3,7 +3,7 @@ import DimeSchedulerClient, { Models } from '../dist/esm';
 import randomWords from 'random-words';
 import Environment from '../dist/esm/lib/environment';
 
-var apiKey = "DS-1W872SEI4-UPGTSXE8-R86E19ME-9B7URJ";
+var apiKey = "DS-106WEYE40-TBQDOF4Z-V91MMVHT-NSHRRS";
 
 describe('Import', function () {
     describe('#appendCategory()', function () {
@@ -117,6 +117,29 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
+        });
+    });
+
+    describe('#updateLocation()', function () {
+        it.only('Should successfully update actual location', async () => {
+            var location = new Models.ResourceGpsTracking();
+            location.resourceNo = "ARNOUD";
+
+            // Location 1
+            // location.latitude = 36.715181;
+            // location.longitude = -4.312529;
+
+            // Location 2
+            location.latitude = 38.432649;
+            location.longitude = -0.634456;
+
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            var response = await client.import.processAsync(location);
+            console.log(response.data.content);
+            var results = JSON.parse(response.data.content);
+
+            assert.ok(results.Success == true);
         });
     });
 });
