@@ -23,7 +23,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(category);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true);
         });
     });
 
@@ -44,7 +44,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(timeMarker);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true, results.Message);
         });
     });
 
@@ -65,7 +65,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(pin);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true);
         });
     });
 
@@ -87,7 +87,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(appointment);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
 
@@ -101,7 +101,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true);
         });
     });
 
@@ -116,12 +116,12 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
-            assert.ok(results.data.Success == true);
+            assert.ok(results.Success == true);
         });
     });
 
     describe('#updateLocation()', function () {
-        it.only('Should successfully update actual location', async () => {
+        it('Should successfully update actual location', async () => {
             var location = new Models.ResourceGpsTracking();
             location.resourceNo = "ARNOUD";
 
@@ -136,10 +136,7 @@ describe('Import', function () {
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var response = await client.import.processAsync(location);
-            console.log(response.data.content);
-            var results = JSON.parse(response.data.content);
-
-            assert.ok(results.Success == true);
+            assert.ok(response.Success == true);
         });
     });
 });

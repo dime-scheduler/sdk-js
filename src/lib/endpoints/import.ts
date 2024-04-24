@@ -15,6 +15,8 @@ class ImportEndPoint extends Endpoint {
     protected async doImportRequest(endpoint: string, data: any) {
         const body = JSON.stringify(data);
 
+        console.log(body);
+        
         const headers = {
             'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',
@@ -23,7 +25,8 @@ class ImportEndPoint extends Endpoint {
 
         const url = this.uri + '/import';
 
-        return axios.post(url, body, { headers: headers });
+        const response = await axios.post(url, body, { headers: headers });
+        return JSON.parse(response.data.content);
     }
 }
 
