@@ -1,9 +1,11 @@
 <div align="center">
-<img src="https://cdn.dimescheduler.com/dime-scheduler/Dime.Scheduler-Black.svg" height="100px" />
+<img src="https://cdn.dimescheduler.com/dime-scheduler/v2/logo.svg" height="100px" />
 </div>
 
+<br />
+
 <div align="center">
-<img src="assets/app.webp" height="300px" />
+<img src="https://cdn.dimescheduler.com/dime-scheduler/screenshots/ds-screen-8.png" height="300px" />
 </div>
 
 <p align="center">
@@ -23,8 +25,6 @@
 
 Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in various industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
 
-🧑‍🏫 Want to see the SDK in action? Check out an example [here](https://stackblitz.com/edit/ds-category?file=index.js).
-
 ## Installation
 
 Use whichever package manager you prefer:
@@ -36,20 +36,15 @@ yarn add dimescheduler
 
 ## Example
 
-🧑‍🏫 Want to see the SDK in action? Check out an example [here](https://stackblitz.com/edit/ds-category?file=index.js).
-
 ```javascript
-import DimeSchedulerClient, { Import } from 'dimescheduler';
+import DimeSchedulerClient, { Models } from 'dimescheduler';
 
-const category = new Import.Category();
+const category = new Models.Category();
 category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 category.name = "My category";
 
 const dimeSchedulerClient = new DimeSchedulerClient(apiKey);
-var results = await dimeSchedulerClient.import
-  .processAsync(category)
-  .then((res) => console.log(res.data.Success? 'Success!' : "Oh oh, something didn't quite go well."))
-  .catch((err) => console.log('Something went wrong: ' + err.toString()));
+var response = await dimeSchedulerClient.import.processAsync(category);
 ```
 
 ## Read more
@@ -70,5 +65,5 @@ Copyright © Dime Software - All rights reserved.
 
 Unauthorized copying of this file, via any medium is strictly prohibited Proprietary and confidential.
 
-Written by Hendrik Bulens hendrik@dime-software.com, March 2022.
+Written by Hendrik Bulens hendrik@dime-software.com, April 2024.
 
