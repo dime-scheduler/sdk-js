@@ -1,7 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Models } from '../dist/esm';
+import DimeSchedulerClient, { Models, Environment } from '../dist/esm';
 import randomWords from 'random-words';
-import Environment from '../dist/esm/lib/environment';
 
 var apiKey = "DS-106WEYE40-TBQDOF4Z-V91MMVHT-NSHRRS";
 
