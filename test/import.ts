@@ -1,5 +1,5 @@
 import assert from 'assert';
-import * as dimescheduler from '../dist/esm';
+import DimeSchedulerClient, { Models } from '../dist/esm';
 import randomWords from 'random-words';
 import Environment from '../dist/esm/lib/environment';
 
@@ -9,7 +9,7 @@ describe('Import', function () {
     describe('#appendCategory()', function () {
         it('Should successfully append category', async () => {
 
-            var category = new dimescheduler.Import.Category();
+            var category = new Models.Category();
             category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -20,7 +20,7 @@ describe('Import', function () {
 
             category.name = word;
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(category);
             assert.ok(results.data.Success == true);
@@ -30,7 +30,7 @@ describe('Import', function () {
     describe('#appendTimeMarker()', function () {
         it('Should successfully append time marker', async () => {
 
-            var timeMarker = new dimescheduler.Import.TimeMarker();
+            var timeMarker = new Models.TimeMarker();
             timeMarker.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -41,7 +41,7 @@ describe('Import', function () {
 
             timeMarker.name = word;
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(timeMarker);
             assert.ok(results.data.Success == true);
@@ -51,7 +51,7 @@ describe('Import', function () {
     describe('#appendPin()', function () {
         it('Should successfully append pin', async () => {
 
-            var pin = new dimescheduler.Import.Pin();
+            var pin = new Models.Pin();
             pin.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -60,9 +60,9 @@ describe('Import', function () {
                 }
             })[0];
 
-            pin.name = "WTF!!!";
+            pin.name = word;
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             var results = await client.import.processAsync(pin);
             assert.ok(results.data.Success == true);
@@ -71,21 +71,21 @@ describe('Import', function () {
 
     describe('#appendAppointment()', function () {
         it('Should successfully append appointment', async () => {
-            var appointment = new dimescheduler.Import.Appointment();
-            appointment.SourceApp = "POWERAPPS";
-            appointment.SourceType = "POWERAPPS";
-            appointment.Subject = "Hello from SDK";
-            appointment.Body = "...";
-            appointment.ResourceNo = "Hendrik (Mobile)";
-            appointment.JobNo = "POWERAPP_001";
-            appointment.TaskNo = "SDK_TEST_001";
+            var appointment = new Models.Appointment();
+            appointment.sourceApp = "POWERAPPS";
+            appointment.sourceType = "POWERAPPS";
+            appointment.subject = "Hello from SDK";
+            appointment.body = "...";
+            appointment.resourceNo = "Hendrik (Mobile)";
+            appointment.jobNo = "POWERAPP_001";
+            appointment.taskNo = "SDK_TEST_001";
 
-            appointment.Start = new Date().toISOString();
+            appointment.start = new Date().toISOString();
             var end = new Date();
             end.setHours(end.getHours() + 2);
-            appointment.End = end.toISOString();
+            appointment.end = end.toISOString();
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(appointment);
             assert.ok(results.data.Success == true);
         });
@@ -93,13 +93,13 @@ describe('Import', function () {
 
     describe('#appendJob()', function () {
         it('Should successfully append job', async () => {
-            var item = new dimescheduler.Import.Job();
+            var item = new Models.Job();
             item.SourceApp = "POWERAPPS";
             item.SourceType = "POWERAPPS";
             item.JobNo = "POWERAPPS_001";
             item.ShortDescription = "Item from the JS SDK!";
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
         });
@@ -107,14 +107,14 @@ describe('Import', function () {
 
     describe('#appendTask()', function () {
         it('Should successfully append task', async () => {
-            var item = new dimescheduler.Import.Task();
-            item.SourceApp = "POWERAPPS";
-            item.SourceType = "POWERAPPS";
-            item.JobNo = "POWERAPPS_001";
-            item.TaskNo = "NEW_TASK_004";
-            item.ShortDescription = "Item from the JS SDK!";
+            var item = new Models.Task();
+            item.sourceApp = "POWERAPPS";
+            item.sourceType = "POWERAPPS";
+            item.jobNo = "POWERAPPS_001";
+            item.taskNo = "NEW_TASK_004";
+            item.shortDescription = "Item from the JS SDK!";
 
-            var client = new dimescheduler.DimeSchedulerClient(Environment.Test, apiKey);
+            var client = new DimeSchedulerClient(apiKey, Environment.Test);
             var results = await client.import.processAsync(item);
             assert.ok(results.data.Success == true);
         });

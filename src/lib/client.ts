@@ -4,7 +4,7 @@ import Environment from './environment';
 class DimeSchedulerClient {
     import: ImportEndPoint;
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(apiKey: string, env: Environment = Environment.Production) {
         this.import = new ImportEndPoint(env, apiKey);
     }
 }

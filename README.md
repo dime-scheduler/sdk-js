@@ -39,30 +39,22 @@ yarn add dimescheduler
 🧑‍🏫 Want to see the SDK in action? Check out an example [here](https://stackblitz.com/edit/ds-category?file=index.js).
 
 ```javascript
-import { DimeSchedulerClient, FormsAuthenticator, Import } from 'dimescheduler';
+import DimeSchedulerClient, { Import } from 'dimescheduler';
 
-var uri = 'https://my-dimescheduler.uri';
-var user = 'admin@my-dimescheduler.uri';
-var pw = "mypassword";
+const category = new Import.Category();
+category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+category.name = "My category";
 
-var authn = new FormsAuthenticator(uri, user, pw);
-var client = new DimeSchedulerClient(uri, authn);
-
-var category = new Import.Category();
-category.name = "New category";
-category.color = '#000000';
-
-client.import
+const dimeSchedulerClient = new DimeSchedulerClient(apiKey);
+var results = await dimeSchedulerClient.import
   .processAsync(category)
-  .then((res) => {    
-    console.log(res.data.Success? 'Success!' : "Oh oh, something didn't quite go well.";);
-  })
+  .then((res) => console.log(res.data.Success? 'Success!' : "Oh oh, something didn't quite go well."))
   .catch((err) => console.log('Something went wrong: ' + err.toString()));
 ```
 
 ## Read more
 
-Check out the [📚 docs »](https://sdk.dimescheduler.com) for more info.
+Check out the [📚 docs »](https://docs.dimescheduler.com) for more info.
 
 ## Contributing
 
@@ -74,7 +66,7 @@ Pull requests are welcome. Please check out the contribution and code of conduct
 
 ![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)
 
-Copyright © Dime CVBA - All rights reserved.
+Copyright © Dime Software - All rights reserved.
 
 Unauthorized copying of this file, via any medium is strictly prohibited Proprietary and confidential.
 

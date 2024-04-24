@@ -1,9 +1,9 @@
 'use strict';
 
-import * as Import from './lib/import';
+import * as Models from './lib/models';
 import DimeSchedulerClient from './lib/client';
 
 export {
-    DimeSchedulerClient,
-    Import
+    DimeSchedulerClient as default,
+    Models
 };
