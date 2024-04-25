@@ -1,5 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Models, Environment } from '../dist/esm';
+import DimeSchedulerClient, { Environment } from '../dist/esm';
+import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../dist/esm/lib/models';
 import randomWords from 'random-words';
 
 var apiKey = "DS-106WEYE40-TBQDOF4Z-V91MMVHT-NSHRRS";
@@ -8,7 +9,7 @@ describe('Import', function () {
     describe('#appendCategory()', function () {
         it('Should successfully append category', async () => {
 
-            var category = new Models.Category();
+            var category = new Category();
             category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -29,7 +30,7 @@ describe('Import', function () {
     describe('#appendTimeMarker()', function () {
         it('Should successfully append time marker', async () => {
 
-            var timeMarker = new Models.TimeMarker();
+            var timeMarker = new TimeMarker();
             timeMarker.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -50,7 +51,7 @@ describe('Import', function () {
     describe('#appendPin()', function () {
         it('Should successfully append pin', async () => {
 
-            var pin = new Models.Pin();
+            var pin = new Pin();
             pin.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
             var word = randomWords({
@@ -70,7 +71,7 @@ describe('Import', function () {
 
     describe('#appendAppointment()', function () {
         it('Should successfully append appointment', async () => {
-            var appointment = new Models.Appointment();
+            var appointment = new Appointment();
             appointment.sourceApp = "POWERAPPS";
             appointment.sourceType = "POWERAPPS";
             appointment.subject = "Hello from SDK";
@@ -92,7 +93,7 @@ describe('Import', function () {
 
     describe('#appendJob()', function () {
         it('Should successfully append job', async () => {
-            var item = new Models.Job();
+            var item = new Job();
             item.SourceApp = "POWERAPPS";
             item.SourceType = "POWERAPPS";
             item.JobNo = "POWERAPPS_001";
@@ -106,7 +107,7 @@ describe('Import', function () {
 
     describe('#appendTask()', function () {
         it('Should successfully append task', async () => {
-            var item = new Models.Task();
+            var item = new Task();
             item.sourceApp = "POWERAPPS";
             item.sourceType = "POWERAPPS";
             item.jobNo = "POWERAPPS_001";
@@ -121,7 +122,7 @@ describe('Import', function () {
 
     describe('#updateLocation()', function () {
         it('Should successfully update actual location', async () => {
-            var location = new Models.ResourceGpsTracking();
+            var location = new ResourceGpsTracking();
             location.resourceNo = "ARNOUD";
             location.latitude = 38.432649;
             location.longitude = -0.634456;
@@ -135,7 +136,7 @@ describe('Import', function () {
 
     describe('#setFilterGroup()', function () {
         it('Should successfully set filter group', async () => {
-            var filterGroup = new Models.FilterGroup();
+            var filterGroup = new FilterGroup();
             filterGroup.name = "Department"
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
@@ -147,7 +148,7 @@ describe('Import', function () {
 
     describe('#setFilterValue()', function () {
         it('Should successfully set filter value', async () => {
-            var filterValue = new Models.FilterValue();
+            var filterValue = new FilterValue();
             filterValue.group = "Department";
             filterValue.value = "IT";
 

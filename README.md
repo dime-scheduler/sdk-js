@@ -37,14 +37,15 @@ yarn add dimescheduler
 ## Example
 
 ```javascript
-import DimeSchedulerClient, { Models } from 'dimescheduler';
+import DimeSchedulerClient from 'dimescheduler';
+import { Category } from "dimescheduler/models";
 
-const category = new Models.Category();
+const category = new Category();
 category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 category.name = "My category";
 
 const dimeSchedulerClient = new DimeSchedulerClient(apiKey);
-var response = await dimeSchedulerClient.import.processAsync(category);
+const response = await dimeSchedulerClient.import.processAsync(category);
 ```
 
 ## Read more

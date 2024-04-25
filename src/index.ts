@@ -5,7 +5,6 @@ import DimeSchedulerClient from './lib/client';
 import Environment from './lib/environment';
 
 export {
-    DimeSchedulerClient as default,
-    Models,
+    DimeSchedulerClient as default,    
     Environment
 };

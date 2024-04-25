@@ -1,5 +1,7 @@
 import './App.css'
-import DimeSchedulerClient, { Models, Environment } from "dimescheduler";
+import DimeSchedulerClient, { Environment } from "dimescheduler";
+import { ResourceGpsTracking } from "dimescheduler/models";
+
 import { useForm, SubmitHandler } from "react-hook-form";
 
 function App() {
@@ -13,12 +15,12 @@ function App() {
 
 
   const updateLocation = async (resourceNo: string, latitude: number, longitude: number, apiKey: string) => {
-    const location = new Models.ResourceGpsTracking();
+    const location = new ResourceGpsTracking();
     location.resourceNo = resourceNo;
     location.latitude = latitude;
     location.longitude = longitude;
 
-    const client = new DimeSchedulerClient(apiKey);
+    const client = new DimeSchedulerClient(apiKey, Environment.Test);
     await client.import.processAsync(location);
   }
 
