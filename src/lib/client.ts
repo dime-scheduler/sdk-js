@@ -1,11 +1,16 @@
 import ImportEndPoint from './endpoints/import';
 import Environment from './environment';
+import IImportModel from './models/base/iimportmodel';
 
 class DimeSchedulerClient {
-    import: ImportEndPoint;
+    private importEndPoint: ImportEndPoint;
 
     constructor(apiKey: string, env: Environment = Environment.Production) {
-        this.import = new ImportEndPoint(env, apiKey);
+        this.importEndPoint = new ImportEndPoint(env, apiKey);
+    }
+
+    import(importable: IImportModel | Array<IImportModel>, append: boolean = true) {
+        return this.importEndPoint.processAsync(importable, append);
     }
 }
 

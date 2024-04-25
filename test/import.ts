@@ -22,7 +22,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(category);
+            var results = await client.import(category);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -43,7 +43,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(timeMarker);
+            var results = await client.import(timeMarker);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -64,7 +64,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(pin);
+            var results = await client.import(pin);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -86,7 +86,7 @@ describe('Import', function () {
             appointment.end = end.toISOString();
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
-            var results = await client.import.processAsync(appointment);
+            var results = await client.import(appointment);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -100,7 +100,7 @@ describe('Import', function () {
             item.ShortDescription = "Item from the JS SDK!";
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
-            var results = await client.import.processAsync(item);
+            var results = await client.import(item);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -115,7 +115,7 @@ describe('Import', function () {
             item.shortDescription = "Item from the JS SDK!";
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
-            var results = await client.import.processAsync(item);
+            var results = await client.import(item);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -129,7 +129,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(location);
+            var results = await client.import(location);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -141,7 +141,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(filterGroup);
+            var results = await client.import(filterGroup);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
@@ -154,7 +154,7 @@ describe('Import', function () {
 
             var client = new DimeSchedulerClient(apiKey, Environment.Test);
 
-            var results = await client.import.processAsync(filterValue);
+            var results = await client.import(filterValue);
             assert.ok(results.Success == true, !results.Success ? results.Description : results.Success);
         });
     });
