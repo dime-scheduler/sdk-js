@@ -1,19 +1,27 @@
-class Category {
-    name: string;
-    color: string;
+import CrudType from "./base/action";
+import IImportModel from "./base/iimportmodel";
+import ImportModel from "./base/importmodel";
+import ImportProperty from "./base/importproperty";
+import DeleteProperty from "./base/deleteproperty";
 
-    constructor() {
-        this.name = "";
-        this.color = "";
-    }
+export default class Category extends ImportModel implements IImportModel {
 
-    toImportRequest(append = true) {
-        return {
-            "StoredProcedureName": "mboc_upsertCategory",
-            "ParameterNames": ["CategoryName", "DisplayName", "CategoryHexColor"],
-            "ParameterValues": [this.name, this.name, this.color]
+    @ImportProperty("CategoryName")
+    @DeleteProperty()
+    name?: string;
+
+    @ImportProperty("DisplayName")
+    displayName?: string;
+
+    @ImportProperty("CategoryHexColor")
+    color?: string;
+
+    toImportRequest(action: CrudType) {
+        switch (action) {
+            case CrudType.Append:
+                return super.createAppendRequest("mboc_upsertCategory");
+            case CrudType.Delete:
+                return super.createAppendRequest("mboc_deleteCategory");
         }
     }
 }
-
-export default Category;

@@ -1,3 +1,6 @@
+import CrudType from "./action";
+
+
 export default interface IImportModel {
-    toImportRequest(): Record<string, any>;
+    toImportRequest(action: CrudType): Record<string, any>;
 }

@@ -1,22 +1,22 @@
 import axios from 'axios';
 import Endpoint from './endpoint';
 import Environment from '../environment';
+import IImportModel from '../models/base/iimportmodel';
+import CrudType from '../models/base/action';
 
 class ImportEndPoint extends Endpoint {
     constructor(env: Environment, apiKey: string) {
         super(env, apiKey);
     }
 
-    async processAsync(importable: { toImportRequest: () => any; } | Array<{ toImportRequest: () => any; }>) {
+    async processAsync(importable: IImportModel | Array<IImportModel>, append: boolean = true) {
         const params = (importable instanceof Array) ? importable : [importable];
-        return await this.doImportRequest("", params.map(x => x.toImportRequest()));
-    }
 
-    protected async doImportRequest(endpoint: string, data: any) {
+        const data = params.map(x => x.toImportRequest(append ? CrudType.Append : CrudType.Delete));
         const body = JSON.stringify(data);
 
         console.log(body);
-        
+
         const headers = {
             'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',

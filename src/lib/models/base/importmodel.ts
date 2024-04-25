@@ -1,13 +1,7 @@
 export default abstract class ImportModel {
-    procedureName: string;
-
-    constructor(procedureName: string) {
-        this.procedureName = procedureName;
-    }
-
-    toImportRequest(): Record<string, any> {
+    protected createAppendRequest(procedureName: string): Record<string, any> {
         const json: Record<string, any> = {
-            "StoredProcedureName": this.procedureName,
+            "StoredProcedureName": procedureName,
             ParameterNames: [],
             ParameterValues: []
         };
@@ -21,7 +15,25 @@ export default abstract class ImportModel {
             }
         }
 
-        console.log(json);
+        return json;
+    }
+
+    protected createDeleteRequest(procedureName: string): Record<string, any> {
+        const json: Record<string, any> = {
+            "StoredProcedureName": procedureName,
+            ParameterNames: [],
+            ParameterValues: []
+        };
+
+        const propertyNames = Object.getOwnPropertyNames(this);
+        for (const propertyName of propertyNames) {
+            const customName = Reflect.getMetadata("deleteProperty", this, propertyName);
+            if (customName) {
+                json.ParameterNames.push(customName);
+                json.ParameterValues.push((this[propertyName as keyof this] as any)?.toString() ?? propertyName);
+            }
+        }
+
         return json;
     }
 }

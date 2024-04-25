@@ -1,6 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist/esm';
-import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../dist/esm/lib/models';
+import DimeSchedulerClient, { Environment } from '../dist';
+import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../dist/lib/models';
 import randomWords from 'random-words';
 
 var apiKey = "DS-106WEYE40-TBQDOF4Z-V91MMVHT-NSHRRS";

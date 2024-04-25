@@ -1,12 +1,10 @@
+
+import CrudType from "./base/action";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
 
 class Job extends ImportModel implements IImportModel {
-
-    constructor() {
-        super("mboc_upsertJob");
-    }
 
     @ImportProperty()
     SourceApp?: string;
@@ -346,6 +344,15 @@ class Job extends ImportModel implements IImportModel {
 
     @ImportProperty()
     ReadOnly?: boolean;
+
+    toImportRequest(action: CrudType) {
+        switch (action) {
+            case CrudType.Append:
+                return super.createAppendRequest("mboc_upsertJob");
+            default:
+                return {};
+        }
+    }
 }
 
 export default Job;

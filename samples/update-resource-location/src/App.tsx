@@ -20,11 +20,10 @@ function App() {
     location.latitude = latitude;
     location.longitude = longitude;
 
-    const client = new DimeSchedulerClient(apiKey, Environment.Test);
+    const client = new DimeSchedulerClient(apiKey, Environment.Test);    
     await client.import.processAsync(location);
   }
 
-  // Sample locations: 36.715181, -4.312529
   const { register, handleSubmit, setValue, } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => updateLocation(data.resourceNo, data.latitude, data.longitude, data.apiKey)
 
