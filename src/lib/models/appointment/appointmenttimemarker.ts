@@ -5,27 +5,26 @@ import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class AppointmentTimeMarker extends ImportModel implements IImportModel {
-    
-    @ImportProperty("")
+
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentId")
     appointmentId?: number | null;
 
-    @ImportProperty("")
-    timeMarker?: string;
-
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
+
+    @ImportProperty("TimeMarker")
+    timeMarker?: string;
 
     toImportRequest(action: CrudType) {
         switch (action) {

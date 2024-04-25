@@ -4,25 +4,25 @@ import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class AppointmentUri extends ImportModel implements IImportModel {
-    @ImportProperty("")
+
+    @ImportProperty("pSourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("pSourceType")
     sourceType?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
-    appointmentId?: number;
+    @ImportProperty("pAppointmentId")
+    appointmentId?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("pAppointmentGuid")
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("pUrl")
     uri?: string;
 
-    @ImportProperty("")
+    @ImportProperty("pUrlDesc")
     description?: string;
 
     toImportRequest(action: CrudType) {

@@ -7,35 +7,35 @@ import DeleteProperty from "../base/deleteproperty";
 
 export default class TaskUri extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
     @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
     @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("url")
     @DeleteProperty()
     uri?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc")
     description?: string;
 
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertTaskUrl");
-            case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteTaskUrl");
+            default:
+                return {};
         }
     }
 }

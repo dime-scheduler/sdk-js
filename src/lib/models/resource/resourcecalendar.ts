@@ -6,19 +6,19 @@ import ImportProperty from "../base/importproperty";
 
 export default class ResourceCalendar extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("ResourceCalendarCode")
     code?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("CalendarCode")
     calendarCode?: string;
 
-    @ImportProperty("")
+    @ImportProperty("StartDate")
     startDate?: string;
 
-    @ImportProperty("")
+    @ImportProperty("EndDate")
     endDate?: string;
 
     toImportRequest(action: CrudType) {

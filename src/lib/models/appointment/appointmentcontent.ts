@@ -5,28 +5,27 @@ import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class AppointmentContent extends ImportModel implements IImportModel {
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentId")
     appointmentId?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("Subject")
     subject?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Body")
     body?: string;
 
     toImportRequest(action: CrudType) {

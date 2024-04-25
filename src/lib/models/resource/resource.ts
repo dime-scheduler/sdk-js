@@ -1,257 +1,257 @@
-﻿
-import CrudType from "../base/action";
+﻿import CrudType from "../base/action";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class Resource extends ImportModel implements IImportModel {
-    @ImportProperty("")
+
+    @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceType")
     resourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceTypeId")
     resourceTypeId?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceName")
     resourceName?: string;
 
-    @ImportProperty("")
+    @ImportProperty("DisplayName")
     displayName?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Department")
     department?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Email")
     email?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Phone")
     phone?: string;
 
-    @ImportProperty("")
+    @ImportProperty("MobilePhone")
     mobilePhone?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ReplacementResource")
     replacementResource?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FieldServiceEmail")
     fieldServiceEmail?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PersonalEmail")
     personalEmail?: string;
 
-    @ImportProperty("")
+    @ImportProperty("GpsTrackingResourceNo")
     gpsTrackingResourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeAddress")
     homeAddress?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeAddressGeoLong")
     homeAddressGeoLong?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("HomeAddressGeoLat")
     homeAddressGeoLat?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("HomePhone")
     homePhone?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeEmail")
     homeEmail?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeStreet")
     homeStreet?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeStreetNo")
     homeStreetNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomePostcode")
     homePostcode?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeCity")
     homeCity?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeCounty")
     homeCounty?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeState")
     homeState?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeCountry")
     homeCountry?: string;
 
-    @ImportProperty("")
+    @ImportProperty("HomeRegion")
     homeRegion?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TeamCode")
     teamCode?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TeamName")
     teamName?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TeamType")
     teamType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TeamSort")
     teamSort?: number;
 
-    @ImportProperty("")
+    @ImportProperty("TeamMemberType")
     teamMemberType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TeamMemberSort")
     teamMemberSort?: number;
 
-    @ImportProperty("")
+    @ImportProperty("DoNotShow")
     doNotShow?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("InServiceFrom")
     inServiceFrom?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("InServiceTill")
     inServiceTill?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ExchangeIntegrationEnabled")
     exchangeIntegrationEnabled?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("url1")
     url1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc1")
     urlDescription1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("url2")
     url2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc2")
     urlDescription2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("url3")
     url3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc3")
     urlDescription3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("BulkPlanning")
     bulkPlanning?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("BulkCapacity")
     bulkCapacity?: number;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceGpsTrackingEnabled")
     resourceGpsTrackingEnabled?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("Pin")
     pin?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText1")
     freeText1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText2")
     freeText2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText3")
     freeText3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText4")
     freeText4?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText5")
     freeText5?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText6")
     freeText6?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText7")
     freeText7?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText8")
     freeText8?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText9")
     freeText9?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText10")
     freeText10?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText11")
     freeText11?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText12")
     freeText12?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText13")
     freeText13?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText14")
     freeText14?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText15")
     freeText15?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText16")
     freeText16?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText17")
     freeText17?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText18")
     freeText18?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText19")
     freeText19?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText20")
     freeText20?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal1")
     freeDecimal1?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal2")
     freeDecimal2?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal3")
     freeDecimal3?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal4")
     freeDecimal4?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal5")
     freeDecimal5?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate1")
     freeDate1?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate2")
     freeDate2?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate3")
     freeDate3?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate4")
     freeDate4?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate5")
     freeDate5?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit1")
     freeBit1?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit2")
     freeBit2?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit3")
     freeBit3?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit4")
     freeBit4?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit5")
     freeBit5?: boolean;
 
     toImportRequest(action: CrudType) {

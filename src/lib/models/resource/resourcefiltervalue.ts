@@ -1,27 +1,26 @@
-﻿
-import CrudType from "../base/action";
+﻿import CrudType from "../base/action";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class ResourceFilterValue extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FilterGroup")
     filterGroup?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FilterValue")
     filterValue?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TransferToTemp")
     transferToTemp?: boolean;
 
     toImportRequest(action: CrudType) {

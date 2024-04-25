@@ -6,26 +6,25 @@ import ImportProperty from "../base/importproperty";
 
 export default class AppointmentImportance extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentId")
     appointmentId?: number | null;
 
-    @ImportProperty("")
-    importance?: number;
-
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
+
+    @ImportProperty("Importance")
+    importance?: number;
 
     toImportRequest(action: CrudType) {
         switch (action) {

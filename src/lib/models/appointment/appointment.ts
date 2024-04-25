@@ -1,93 +1,94 @@
 ﻿
 import CrudType from "../base/action";
+import DeleteProperty from "../base/deleteproperty";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class Appointment extends ImportModel implements IImportModel {
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentId")
+    @DeleteProperty()
     id?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
+    @DeleteProperty()
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
+    @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
+    @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
+    @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
+    @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ResourceNo")
+    @DeleteProperty()
     resourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Subject")
     subject?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Body")
     body?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Start")
     start?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("End")
     end?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("IsAllDayEvent")
     isAllDay?: boolean | null;
 
-    @ImportProperty("")
+    @ImportProperty("TimeMarker")
     timeMarker?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Category")
     category?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Importance")
     importance?: number;
 
-    @ImportProperty("")
+    @ImportProperty("Locked")
     locked?: boolean | null;
 
-    @ImportProperty("")
+    @ImportProperty("ReplcaceResource")
     replaceResource?: boolean | null;
 
-    @ImportProperty("")
+    @ImportProperty("BackofficeID")
     backOfficeId?: string;
 
-    @ImportProperty("")
+    @ImportProperty("BackofficeParentID")
     backOfficeParentId?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningUOM")
     unitOfMeasure?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningUOMConversion")
     unitOfMeasureConversion?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningQty")
     planningQuantity?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("UseFixPlanningQty")
     useFixedPlanningQuantity?: boolean | null;
 
-    @ImportProperty("")
+    @ImportProperty("RoundToUOM")
     roundToUnitOfMeasure?: boolean | null;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean | null;
-
-    @ImportProperty("")
-    planningUom?: string;
-
-    @ImportProperty("")
-    planningUomConversion?: string;
 
     toImportRequest(action: CrudType) {
         switch (action) {

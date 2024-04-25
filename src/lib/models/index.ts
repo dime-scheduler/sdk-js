@@ -14,7 +14,6 @@ import ExchangeAppointment from './exchange/exchangeappointment';
 import Resource from './resource/resource';
 import ResourceCalendar from './resource/resourcecalendar';
 import ResourceCapacity from './resource/resourcecapacity';
-import ResourceCertificate from './resource/resourcecertificate';
 import ResourceFilterValue from './resource/resourcefiltervalue';
 import ResourceGpsTracking from './resource/resourcegpstracking';
 import ResourceUri from './resource/resourceuri';
@@ -48,7 +47,6 @@ export {
     Resource,
     ResourceCalendar,
     ResourceCapacity,
-    ResourceCertificate,
     ResourceFilterValue,
     ResourceGpsTracking,
     ResourceUri,

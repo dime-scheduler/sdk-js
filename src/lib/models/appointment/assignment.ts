@@ -5,26 +5,26 @@ import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class Assignment extends ImportModel implements IImportModel {
-    @ImportProperty("")
+
+    @ImportProperty("SourceApp")
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     sourceType?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
-    appointmentId?: number;
+    @ImportProperty("AppointmentId")
+    appointmentId?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
-    resourceNo?: string;
-
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
+
+    @ImportProperty("ResourceNo")
+    resourceNo?: string;
 
     toImportRequest(action: CrudType) {
         switch (action) {

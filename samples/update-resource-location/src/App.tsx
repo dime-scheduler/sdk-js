@@ -20,7 +20,7 @@ function App() {
     location.latitude = latitude;
     location.longitude = longitude;
 
-    const client = new DimeSchedulerClient(apiKey, Environment.Test);    
+    const client = new DimeSchedulerClient(apiKey, Environment.Test);
     await client.import.processAsync(location);
   }
 
@@ -46,10 +46,10 @@ function App() {
 
               <p className="text-gray-500">Some sample locations:</p>
               <ul className="text-gray-500">
-                <li onClick={() => populateLocations("36.715181", "-4.312529")}>📋 Málaga, Spain </li>
-                <li onClick={() => populateLocations("37.388006", "-5.982023")}>📋 Sevilla, Spain</li>
-                <li onClick={() => populateLocations("36.715181", "-4.312529")}>📋 Rome, Italy</li>
-                <li onClick={() => populateLocations("36.715181", "-4.312529")}>📋 Napoli, Italy</li>
+                <li onClick={() => populateLocations("36.715181", "-4.312529")}>📋 Málaga </li>
+                <li onClick={() => populateLocations("37.388006", "-5.982023")}>📋 Sevilla</li>
+                <li onClick={() => populateLocations("41.403640", "2.175615")}>📋 Barcelona</li>
+                <li onClick={() => populateLocations("39.470946", "-0.374211")}>📋 Valencia</li>
               </ul>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>

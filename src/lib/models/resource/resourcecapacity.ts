@@ -6,22 +6,22 @@ import ImportProperty from "../base/importproperty";
 
 export default class ResourceCapacity extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty("")
-    date?: string;
+    @ImportProperty("CapacityDate")
+    date?: Date;
 
-    @ImportProperty("")
+    @ImportProperty("CapacityInSeconds")
     capacityInSeconds?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("CapacityQty")
     quantity?: number | null;
 
-    @ImportProperty("")
+    @ImportProperty("CapacityUOM")
     unitOfMeasure?: string;
 
-    @ImportProperty("")
+    @ImportProperty("CapacityUOMConversion")
     unitOfMeasureConversion?: number | null;
 
     toImportRequest(action: CrudType) {

@@ -6,26 +6,27 @@ import ImportProperty from "../base/importproperty";
 import DeleteProperty from "../base/deleteproperty";
 
 export default class TaskLocked extends ImportModel implements IImportModel {
-    @ImportProperty("")
+
+    @ImportProperty("SourceApp")
     @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
     @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
     @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Locked")
     locked?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
 
     toImportRequest(action: CrudType) {

@@ -5,13 +5,12 @@ import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
 
 export default class AppointmentContainer extends ImportModel implements IImportModel {
-    @ImportProperty("")
+    @ImportProperty("Container")
     container?: string;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Appointment")
     appointment?: string;
 
     toImportRequest(action: CrudType) {

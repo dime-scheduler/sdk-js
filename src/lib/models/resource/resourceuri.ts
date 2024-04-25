@@ -6,13 +6,13 @@ import ImportProperty from "../base/importproperty";
 
 export default class ResourceUri extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Url")
     uri?: string;
 
-    @ImportProperty("")
+    @ImportProperty("UrlDesc")
     description?: string;
 
 

@@ -349,8 +349,8 @@ class Job extends ImportModel implements IImportModel {
         switch (action) {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertJob");
-            default:
-                return {};
+            case CrudType.Delete:
+                return super.createAppendRequest("mboc_deleteJob");
         }
     }
 }

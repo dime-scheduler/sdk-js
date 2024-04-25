@@ -1,5 +1,4 @@
-﻿
-import CrudType from "../base/action";
+﻿import CrudType from "../base/action";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
@@ -7,27 +6,27 @@ import DeleteProperty from "../base/deleteproperty";
 
 export default class TaskContainer extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
     @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
     @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContainerName")
     @DeleteProperty()
     name?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Index")
     index?: number;
 
     toImportRequest(action: CrudType) {
