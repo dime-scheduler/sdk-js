@@ -7,410 +7,410 @@ import ImportProperty from "../base/importproperty";
 
 export default class Task extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
     @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
     @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
     @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
     @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskType")
     taskType?: number;
 
-    @ImportProperty("")
+    @ImportProperty("ShortDescription")
     shortDescription?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Description")
     description?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Name")
     name?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Type")
     type?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Category")
     category?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TimeMarker")
     timeMarker?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Pin")
     pin?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ServiceNo")
     serviceNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ServiceGroup")
     serviceGroup?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ServiceClass")
     serviceClass?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ServiceSerialNo")
     serviceSerialNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ServiceName")
     serviceName?: string;
 
-    @ImportProperty("")
+    @ImportProperty("IRISFault")
     irisFault?: string;
 
-    @ImportProperty("")
+    @ImportProperty("IRISSymptom")
     irisSymptom?: string;
 
-    @ImportProperty("")
+    @ImportProperty("IRISArea")
     irisArea?: string;
 
-    @ImportProperty("")
+    @ImportProperty("IRISReason")
     irisReason?: string;
 
-    @ImportProperty("")
+    @ImportProperty("IRISResolution")
     irisResolution?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Skill1")
     skill1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Skill2")
     skill2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Skill3")
     skill3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContractNo")
     contractNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContractType")
     contractType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContractDescription")
     contractDescription?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContractStartDate")
     contractStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ContractEndDate")
     contractEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("PartsWarrantyStartDate")
     partsWarrantyStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("PartsWarrantyEndDate")
     partsWarrantyEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("LaborWarrantyStartDate")
     laborWarrantyStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("LaborWarrantyEndDate")
     laborWarrantyEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("Importance")
     importance?: number;
 
-    @ImportProperty("")
+    @ImportProperty("Status")
     status?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ExpectedResponseDateTime")
     expectedResponseDateTime?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ActualResponseDateTime")
     actualResponseDateTime?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequestedStartDate")
     requestedStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequestedEndDate")
     requestedEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequestedStartTime")
     requestedStartTime?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequestedEndTime")
     requestedEndTime?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ConfirmedStartDate")
     confirmedStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ConfirmedEndDate")
     confirmedEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ActualStartDate")
     actualStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ActualEndDate")
     actualEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("LocationDescription")
     locationDescription?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Duration")
     duration?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("DurationInSeconds")
     durationInSeconds?: number;
 
-    @ImportProperty("")
+    @ImportProperty("Subject")
     subject?: string;
 
-    @ImportProperty("")
+    @ImportProperty("Body")
     body?: string;
 
-    @ImportProperty("")
+    @ImportProperty("InfiniteTask")
     infiniteTask?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("TaskOpenAsOf")
     taskOpenAsOf?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("TaskOpenTill")
     taskOpenTill?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequiredTotalDuration")
     requiredTotalDuration?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("RequiredNoResources")
     requiredNoResources?: number;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentEarliestAllowed")
     appointmentEarliestAllowed?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentLatestAllowed")
     appointmentLatestAllowed?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText1")
     freeText1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText2")
     freeText2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText3")
     freeText3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText4")
     freeText4?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText5")
     freeText5?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText6")
     freeText6?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText7")
     freeText7?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText8")
     freeText8?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText9")
     freeText9?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText10")
     freeText10?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText11")
     freeText11?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText12")
     freeText12?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText13")
     freeText13?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText14")
     freeText14?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText15")
     freeText15?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText16")
     freeText16?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText17")
     freeText17?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText18")
     freeText18?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText19")
     freeText19?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeText20")
     freeText20?: string;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal1")
     freeDecimal1?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal2")
     freeDecimal2?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal3")
     freeDecimal3?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal4")
     freeDecimal4?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDecimal5")
     freeDecimal5?: number;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate1")
     freeDate1?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate2")
     freeDate2?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate3")
     freeDate3?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate4")
     freeDate4?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeDate5")
     freeDate5?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit1")
     freeBit1?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit2")
     freeBit2?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit3")
     freeBit3?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit4")
     freeBit4?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("FreeBit5")
     freeBit5?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("url1")
     url1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc1")
     urlDescription1?: string;
 
-    @ImportProperty("")
+    @ImportProperty("url2")
     url2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc2")
     urlDescription2?: string;
 
-    @ImportProperty("")
+    @ImportProperty("url3")
     url3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("urldesc3")
     urlDescription3?: string;
 
-    @ImportProperty("")
+    @ImportProperty("CertificateNo")
     certificateNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("RequiredTotalDurationInSeconds")
     requiredTotalDurationInSeconds?: number;
 
-    @ImportProperty("")
+    @ImportProperty("DoNotCountAppointmentResource")
     doNotCountAppointmentResource?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("IsComplete")
     isComplete?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningUOM")
     planningUOM?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningUOMConversion")
     planningUOMConversion?: number;
 
-    @ImportProperty("")
+    @ImportProperty("PlanningQty")
     planningQty?: number;
 
-    @ImportProperty("")
+    @ImportProperty("UseFixPlanningQty")
     useFixPlanningQty?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("RoundToUOM")
     roundToUOM?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentTemplate")
     appointmentTemplate?: string;
 
-    @ImportProperty("")
+    @ImportProperty("BulkPlanningQty")
     bulkPlanningQty?: number;
 
-    @ImportProperty("")
+    @ImportProperty("StartDate")
     startDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("EndDate")
     endDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("PercentDone")
     percentDone?: number;
 
-    @ImportProperty("")
+    @ImportProperty("SchedulingMode")
     schedulingMode?: number;
 
-    @ImportProperty("")
+    @ImportProperty("BaseLineStartDate")
     baseLineStartDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("BaseLineEndDate")
     baseLineEndDate?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("BaseLinePercentDone")
     baseLinePercentDone?: number;
 
-    @ImportProperty("")
+    @ImportProperty("DeadLine")
     deadLine?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("Index")
     index?: number;
 
-    @ImportProperty("")
+    @ImportProperty("ConstraintType")
     constraintType?: number;
 
-    @ImportProperty("")
+    @ImportProperty("ConstraintDatetime")
     constraintDatetime?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("ParentTaskNo")
     parentTaskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("CalendarCode")
     calendarCode?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PredecessorTaskNo")
     predecessorTaskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("PredecessorLag")
     predecessorLag?: number;
 
-    @ImportProperty("")
+    @ImportProperty("ManuallyScheduled")
     manuallyScheduled?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("Note")
     note?: string;
 
-    @ImportProperty("")
+    @ImportProperty("OverRuleGanttPlanning")
     overRuleGanttPlanning?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("IgnoreCalendars")
     ignoreCalendars?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("ContainerName")
     containerName?: string;
 
-    @ImportProperty("")
+    @ImportProperty("ContainerIndex")
     containerIndex?: number;
 
-    @ImportProperty("")
+    @ImportProperty("CheckAppointments")
     checkAppointments?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
 
-    @ImportProperty("")
+    @ImportProperty("CreateJob")
     createJob?: boolean;
 
     toImportRequest(action: CrudType) {
