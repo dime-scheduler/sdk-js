@@ -1,5 +1,5 @@
-
 import CrudType from "./base/action";
+import DeleteProperty from "./base/deleteproperty";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
@@ -7,6 +7,7 @@ import ImportProperty from "./base/importproperty";
 export default class TimeMarker extends ImportModel implements IImportModel {
 
     @ImportProperty("TimeMarker")
+    @DeleteProperty()
     name?: string;
 
     @ImportProperty("HexColor")
@@ -16,8 +17,8 @@ export default class TimeMarker extends ImportModel implements IImportModel {
         switch (action) {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertTimeMarker");
-            default:
-                return {};
+            case CrudType.Delete:
+                return super.createAppendRequest("mboc_deleteTimeMarker");
         }
     }
 

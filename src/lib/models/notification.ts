@@ -1,57 +1,64 @@
 ﻿
-
 import CrudType from "./base/action";
+import DeleteProperty from "./base/deleteproperty";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
 
 export default class Notification extends ImportModel implements IImportModel {
 
-    @ImportProperty("")
+    @ImportProperty("SourceApp")
+    @DeleteProperty()
     sourceApp?: string;
 
-    @ImportProperty("")
+    @ImportProperty("SourceType")
+    @DeleteProperty()
     sourceType?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentId")
+    @DeleteProperty()
     appointmentId?: number | null;
 
-    @ImportProperty("")
     appointmentNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("mboc_id")
+    @DeleteProperty()
     connectorId?: string;
 
-    @ImportProperty("")
+    @ImportProperty("NotificationType")
     type?: number;
 
-    @ImportProperty("")
+    @ImportProperty("NotificationCode")
     code?: string;
 
-    @ImportProperty("")
+    @ImportProperty("NotificationText")
     text?: string;
 
-    @ImportProperty("")
+    @ImportProperty("NotificationDate")
     date?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("JobNo")
+    @DeleteProperty()
     jobNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("TaskNo")
+    @DeleteProperty()
     taskNo?: string;
 
-    @ImportProperty("")
+    @ImportProperty("AppointmentGuid")
+    @DeleteProperty()
     appointmentGuid?: string | null;
 
-    @ImportProperty("")
+    @ImportProperty("SentFromBackOffice")
+    @DeleteProperty()
     sentFromBackOffice?: boolean;
 
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertNotification");
-            default:
-                return {};
+            case CrudType.Delete:
+                return super.createAppendRequest("mboc_deleteNotification");
         }
     }
 }
