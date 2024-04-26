@@ -15,9 +15,9 @@
 </p>
 
 <div align="center">
-  <img src="https://github.com/dime-scheduler/sdk-js/actions/workflows/ci.yml/badge.svg?branch=master" />
   <img src="https://img.shields.io/npm/v/dimescheduler?style=flat-square" />
-  <img src="https://img.shields.io/npm/l/dimescheduler" />
+  <img src="https://img.shields.io/npm/l/dimescheduler?style=flat-square&color=brightgreen" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 </div>
 
 
@@ -25,16 +25,31 @@
 
 Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in various industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
 
+Check out the [📚 docs »](https://docs.dimescheduler.com) for more info.
+
 ## Installation
 
 Use whichever package manager you prefer:
 
 ```bash
+# with npm
 npm install dimescheduler
+
+# with yarn
 yarn add dimescheduler
+
+# with bun
+bun i dimescheduler
 ```
 
 ## Example
+
+The sample below shows how to insert or update a category, which is a visual indicator that is used to render the background colors of appointments on the planning board. All you need to do is:
+- Import the Dime.Scheduler client class
+- Import and instantiate the model classes
+- Instantiate the client class with the API key, and optionally, the environment
+- Invoke the import method to enter this object into Dime.Scheduler
+
 
 ```javascript
 import DimeSchedulerClient from 'dimescheduler';
@@ -45,12 +60,8 @@ category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 category.name = "My category";
 
 const dimeSchedulerClient = new DimeSchedulerClient(apiKey);
-const response = await dimeSchedulerClient.import.processAsync(category);
+const response = await dimeSchedulerClient.import(category);
 ```
-
-## Read more
-
-Check out the [📚 docs »](https://docs.dimescheduler.com) for more info.
 
 ## Contributing
 
@@ -62,9 +73,4 @@ Pull requests are welcome. Please check out the contribution and code of conduct
 
 ![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)
 
-Copyright © Dime Software - All rights reserved.
-
-Unauthorized copying of this file, via any medium is strictly prohibited Proprietary and confidential.
-
-Written by Hendrik Bulens hendrik@dime-software.com, April 2024.
 
