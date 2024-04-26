@@ -17,8 +17,6 @@ class ImportEndPoint extends Endpoint {
         const data = params.map(x => x.toImportRequest(append ? CrudType.Append : CrudType.Delete));
         const body = JSON.stringify(data);
 
-        console.log(body);
-
         const headers = {
             'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',
