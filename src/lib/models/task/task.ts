@@ -410,7 +410,6 @@ export default class Task extends ImportModel implements IImportModel {
     @ImportProperty("SentFromBackOffice")
     sentFromBackOffice?: boolean;
 
-    @ImportProperty("CreateJob")
     createJob?: boolean;
 
     toImportRequest(action: CrudType) {

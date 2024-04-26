@@ -111,10 +111,10 @@ export default class Resource extends ImportModel implements IImportModel {
     doNotShow?: boolean;
 
     @ImportProperty("InServiceFrom")
-    inServiceFrom?: string | null;
+    inServiceFrom?: Date | null;
 
     @ImportProperty("InServiceTill")
-    inServiceTill?: string | null;
+    inServiceTill?: Date | null;
 
     @ImportProperty("ExchangeIntegrationEnabled")
     exchangeIntegrationEnabled?: boolean;
@@ -225,19 +225,19 @@ export default class Resource extends ImportModel implements IImportModel {
     freeDecimal5?: number;
 
     @ImportProperty("FreeDate1")
-    freeDate1?: string | null;
+    freeDate1?: Date | null;
 
     @ImportProperty("FreeDate2")
-    freeDate2?: string | null;
+    freeDate2?: Date | null;
 
     @ImportProperty("FreeDate3")
-    freeDate3?: string | null;
+    freeDate3?: Date | null;
 
     @ImportProperty("FreeDate4")
-    freeDate4?: string | null;
+    freeDate4?: Date | null;
 
     @ImportProperty("FreeDate5")
-    freeDate5?: string | null;
+    freeDate5?: Date | null;
 
     @ImportProperty("FreeBit1")
     freeBit1?: boolean;

@@ -337,12 +337,6 @@ class Job extends ImportModel implements IImportModel {
     OverRuleGanttPlanning?: boolean;
 
     @ImportProperty()
-    CheckAppointments?: boolean = true;
-
-    @ImportProperty()
-    SentFromBackOffice?: boolean = true;
-
-    @ImportProperty()
     ReadOnly?: boolean;
 
     toImportRequest(action: CrudType) {

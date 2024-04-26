@@ -27,8 +27,13 @@ import Pin from './category';
 import Job from './job';
 import FilterGroup from './filtergroup';
 import FilterValue from './filtervalue';
+import ActionUri from './actionuri';
+import Notification from './notification';
+import Connector from './connector';
+import Caption from './caption';
 
 export {
+    ActionUri,
     TimeMarker,
     Category,
     Pin,
@@ -57,5 +62,8 @@ export {
     TaskUri,
     Job,
     FilterGroup,
-    FilterValue
+    FilterValue,
+    Notification,
+    Connector,
+    Caption
 };

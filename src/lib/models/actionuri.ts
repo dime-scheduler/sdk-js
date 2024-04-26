@@ -3,6 +3,7 @@ import CrudType from "./base/action";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
+import UriType from "./constants/uritype";
 
 export default class ActionUri extends ImportModel implements IImportModel {
 
@@ -13,7 +14,7 @@ export default class ActionUri extends ImportModel implements IImportModel {
     sourceType?: string;
 
     @ImportProperty("UrlType")
-    uriType?: number;
+    uriType?: UriType;
 
     @ImportProperty("Url")
     uri?: string;

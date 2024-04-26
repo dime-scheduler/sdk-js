@@ -23,7 +23,7 @@
 
 <h1 align="center"> Dime.Scheduler SDK for JavaScript</h1>
 
-Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in various industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
+Supercharge your business by powering up Microsoft Dynamics 365 Business Central with a centralized resource and project planning solution 📅. Dime.Scheduler, with its powerful features and flexible design, has a proven track record in constious industries and is trusted by dozens of resellers and thousands of people all over the world 🚀.
 
 Check out the [📚 docs »](https://docs.dimescheduler.com) for more info.
 

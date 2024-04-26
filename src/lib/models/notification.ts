@@ -4,6 +4,7 @@ import DeleteProperty from "./base/deleteproperty";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
+import NotificationType from "./constants/notificationtype";
 
 export default class Notification extends ImportModel implements IImportModel {
 
@@ -26,16 +27,16 @@ export default class Notification extends ImportModel implements IImportModel {
     connectorId?: string;
 
     @ImportProperty("NotificationType")
-    type?: number;
+    type?: NotificationType;
 
     @ImportProperty("NotificationCode")
     code?: string;
 
     @ImportProperty("NotificationText")
-    text?: string;
+    text!: string;
 
     @ImportProperty("NotificationDate")
-    date?: string | null;
+    date!: Date;
 
     @ImportProperty("JobNo")
     @DeleteProperty()

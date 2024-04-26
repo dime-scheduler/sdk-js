@@ -7,9 +7,9 @@ export default abstract class ImportModel {
         };
 
         const propertyNames = Object.getOwnPropertyNames(this);
-        for (const propertyName of propertyNames) {
-            const customName = Reflect.getMetadata("importPropertyName", this, propertyName);
-            json.ParameterNames.push(customName ?? propertyName);
+        for (const propertyName of propertyNames.filter(x => Reflect.hasMetadata("importPropertyName", this, x))) {
+            const importProperty = Reflect.getMetadata("importPropertyName", this, propertyName);
+            json.ParameterNames.push(importProperty ? importProperty : propertyName);
             json.ParameterValues.push(this.formatValue(this[propertyName as keyof this] as any));
         }
 
@@ -24,11 +24,11 @@ export default abstract class ImportModel {
         };
 
         const propertyNames = Object.getOwnPropertyNames(this);
-        for (const propertyName of propertyNames) {
+        for (const propertyName of propertyNames.filter(x => Reflect.hasMetadata("importPropertyName", this, x))) {
             const deleteProperty = Reflect.getMetadata("deleteProperty", this, propertyName);
             if (deleteProperty) {
                 const importProperty = Reflect.getMetadata("importPropertyName", this, propertyName);
-                json.ParameterNames.push(importProperty ?? propertyName);
+                json.ParameterNames.push(importProperty ? importProperty : propertyName);
                 json.ParameterValues.push(this.formatValue(this[propertyName as keyof this] as any));
             }
         }
@@ -36,7 +36,7 @@ export default abstract class ImportModel {
         return json;
     }
 
-    private formatValue(val:any): string {
+    private formatValue(val: any): string {
         const stringVal = (val instanceof Date) ? val?.toISOString() : val?.toString();
         return stringVal ?? "";
     }

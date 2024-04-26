@@ -3,30 +3,24 @@ import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
 import DeleteProperty from "./base/deleteproperty";
+import BackOfficeSystemType from "./constants/backofficesystemtype";
 
 export default class Connector extends ImportModel implements IImportModel {
-
-    @ImportProperty("Name")
     name?: string;
-
-    @ImportProperty("Description")
     description?: string;
 
     @ImportProperty("SourceApp")
     @DeleteProperty()
-    sourceApp?: string;
-
-    @ImportProperty("SourceType")
-    sourceType?: string;
+    sourceApp!: string;
 
     @ImportProperty("SendAppointmentToWebService")
-    sendAppointmentToWebService?: boolean;
+    sendAppointmentToWebService?: boolean = true;
 
     @ImportProperty("WebServiceAddress")
-    uri?: string;
+    uri!: string;
 
     @ImportProperty("BackOfficeSystem")
-    backOfficeSystem?: string;
+    backOfficeSystem!: BackOfficeSystemType;
 
     @ImportProperty("Login")
     login?: string;
