@@ -14,7 +14,7 @@ export default class AppointmentLocked extends ImportModel implements IImportMod
     appointmentNo?: string;
 
     @ImportProperty("AppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
@@ -28,9 +28,9 @@ export default class AppointmentLocked extends ImportModel implements IImportMod
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertAppointmentLocked");
-            case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteAppointmentLocked");
+                return super.createAppendRequest("mboc_updateAppointmentLocked");
+            default:
+                return {};
         }
     }
 }

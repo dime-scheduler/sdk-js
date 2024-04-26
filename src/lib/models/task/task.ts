@@ -4,6 +4,7 @@ import DeleteProperty from "../base/deleteproperty";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
+import Importance from "../constants/importance";
 
 export default class Task extends ImportModel implements IImportModel {
 
@@ -114,7 +115,7 @@ export default class Task extends ImportModel implements IImportModel {
     laborWarrantyEndDate?: string | null;
 
     @ImportProperty("Importance")
-    importance?: number;
+    importance?: Importance | number;
 
     @ImportProperty("Status")
     status?: string;

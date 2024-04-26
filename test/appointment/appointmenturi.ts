@@ -1,29 +1,21 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../../dist/lib/models';
-import randomWords from 'random-words';
+import { AppointmentUri } from '../../dist/lib/models';
 
-import { apiKey, resourceNo } from "../testvars";
+import { apiKey } from "../testvars";
 
 describe('Import', function () {
     describe('#appendAppointmentUri()', function () {
-        it('Should successfully append appointment', async () => {
-            const appointment = new Appointment();
-            appointment.sourceApp = "SDKJS";
-            appointment.sourceType = "SDKJS";
-            appointment.subject = "Hello from SDK";
-            appointment.body = "...";
-            appointment.resourceNo = resourceNo;
-            appointment.jobNo = "SDKJS";
-            appointment.taskNo = "SDKJS_001";
-
-            appointment.start = new Date().toISOString();
-            const end = new Date();
-            end.setHours(end.getHours() + 2);
-            appointment.end = end.toISOString();
+        it('Should successfully create appointment uri', async () => {
+            const item = new AppointmentUri();
+            item.sourceApp = "SDKJS";
+            item.sourceType = "SDKJS";
+            item.appointmentGuid = "d5a0ee8c-9284-455d-b4b4-edf3d96d6967";
+            item.uri = "https://docs.dimescheduler.com";
+            item.description = "Docs";
 
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.import(appointment);
+            const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });

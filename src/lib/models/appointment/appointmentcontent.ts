@@ -14,7 +14,7 @@ export default class AppointmentContent extends ImportModel implements IImportMo
     appointmentNo?: string;
 
     @ImportProperty("AppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
@@ -31,9 +31,9 @@ export default class AppointmentContent extends ImportModel implements IImportMo
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertAppointmentContent");
+                return super.createAppendRequest("mboc_updateAppointmentContent");
             case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteAppointmentContent");
+                return {};
         }
     }
 }

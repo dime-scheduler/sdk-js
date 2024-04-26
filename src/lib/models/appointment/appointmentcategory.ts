@@ -15,7 +15,7 @@ export default class AppointmentCategory extends ImportModel implements IImportM
     appointmentNo?: string;
 
     @ImportProperty("AppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
@@ -29,9 +29,9 @@ export default class AppointmentCategory extends ImportModel implements IImportM
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertAppointmentCategory");
-            case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteAppointmentCategory");
+                return super.createAppendRequest("mboc_updateAppointmentCategory");
+            default:
+                return {};
         }
     }
 }

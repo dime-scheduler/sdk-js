@@ -3,6 +3,7 @@ import CrudType from "../base/action";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
+import Importance from "../constants/importance";
 
 export default class AppointmentImportance extends ImportModel implements IImportModel {
 
@@ -15,7 +16,7 @@ export default class AppointmentImportance extends ImportModel implements IImpor
     appointmentNo?: string;
 
     @ImportProperty("AppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
@@ -24,14 +25,14 @@ export default class AppointmentImportance extends ImportModel implements IImpor
     sentFromBackOffice?: boolean;
 
     @ImportProperty("Importance")
-    importance?: number;
+    importance?: Importance | number;
 
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertAppointmentImportance");
-            case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteAppointmentImportance");
+                return super.createAppendRequest("mboc_updateAppointmentImportance");
+            default:
+                return {};
         }
     }
 }

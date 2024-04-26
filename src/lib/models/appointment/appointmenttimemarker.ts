@@ -15,7 +15,7 @@ export default class AppointmentTimeMarker extends ImportModel implements IImpor
     appointmentNo?: string;
 
     @ImportProperty("AppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("AppointmentGuid")
     appointmentGuid?: string | null;
@@ -29,9 +29,9 @@ export default class AppointmentTimeMarker extends ImportModel implements IImpor
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertAppointmentTimeMarker");
-            case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteAppointmentTimeMarker");
+                return super.createAppendRequest("mboc_updateAppointmentTimeMarker");
+            default:
+                return {};
         }
     }
 }

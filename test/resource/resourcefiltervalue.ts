@@ -1,21 +1,21 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../../dist/lib/models';
-import randomWords from 'random-words';
+import { ResourceFilterValue } from '../../dist/lib/models';
 
-import { apiKey } from "../testvars";
+import { apiKey, resourceNo } from "../testvars";
 
-describe('Import', function () {    
+describe('Import', function () {
     describe('#resourcefiltervalue()', function () {
-        it('Should successfully update actual location', async () => {
-            const location = new ResourceGpsTracking();
-            location.resourceNo = "ARNOUD";
-            location.latitude = 38.432649;
-            location.longitude = -0.634456;
+        it('Should successfully update resource filter value', async () => {
+            const item = new ResourceFilterValue();
+            item.resourceNo = resourceNo;
+            item.sourceApp = "SDKJS";
+            item.sourceType = "SDKJS";
+            item.filterGroup = "Department";
+            item.filterValue = "IT";
 
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-
-            const results = await client.import(location);
+            const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });

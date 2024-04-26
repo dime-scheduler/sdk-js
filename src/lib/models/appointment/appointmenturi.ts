@@ -14,7 +14,7 @@ export default class AppointmentUri extends ImportModel implements IImportModel 
     appointmentNo?: string;
 
     @ImportProperty("pAppointmentId")
-    appointmentId?: number | null;
+    appointmentId?: number | null = 0;
 
     @ImportProperty("pAppointmentGuid")
     appointmentGuid?: string | null;

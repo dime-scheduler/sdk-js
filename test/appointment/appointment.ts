@@ -16,6 +16,8 @@ describe('Import', function () {
             appointment.resourceNo = resourceNo;
             appointment.jobNo = "SDKJS";
             appointment.taskNo = "SDKJS_001";
+            appointment.appointmentGuid = "d5a0ee8c-9284-455d-b4b4-edf3d96d6967";
+            appointment.useFixedPlanningQuantity = true;
 
             appointment.start = new Date().toISOString();
             const end = new Date();

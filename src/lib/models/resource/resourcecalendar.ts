@@ -16,10 +16,10 @@ export default class ResourceCalendar extends ImportModel implements IImportMode
     calendarCode?: string;
 
     @ImportProperty("StartDate")
-    startDate?: string;
+    startDate?: Date;
 
     @ImportProperty("EndDate")
-    endDate?: string;
+    endDate?: Date;
 
     toImportRequest(action: CrudType) {
         switch (action) {

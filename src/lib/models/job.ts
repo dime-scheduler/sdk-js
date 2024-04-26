@@ -3,6 +3,7 @@ import CrudType from "./base/action";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
+import Importance from "./constants/importance";
 
 class Job extends ImportModel implements IImportModel {
 
@@ -193,7 +194,7 @@ class Job extends ImportModel implements IImportModel {
     BillRegion?: string;
 
     @ImportProperty()
-    Importance?: number;
+    Importance?: Importance | number;
 
     @ImportProperty()
     CreationDateTime?: Date;
