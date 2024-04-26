@@ -9,10 +9,8 @@ export default abstract class ImportModel {
         const propertyNames = Object.getOwnPropertyNames(this);
         for (const propertyName of propertyNames) {
             const customName = Reflect.getMetadata("importPropertyName", this, propertyName);
-            if (customName) {
-                json.ParameterNames.push(customName);
-                json.ParameterValues.push((this[propertyName as keyof this] as any)?.toString() ?? propertyName);
-            }
+            json.ParameterNames.push(customName ?? propertyName);
+            json.ParameterValues.push(this.formatValue(this[propertyName as keyof this] as any));
         }
 
         return json;
@@ -27,14 +25,19 @@ export default abstract class ImportModel {
 
         const propertyNames = Object.getOwnPropertyNames(this);
         for (const propertyName of propertyNames) {
-            const importProperty = Reflect.getMetadata("importPropertyName", this, propertyName);
             const deleteProperty = Reflect.getMetadata("deleteProperty", this, propertyName);
-            if (importProperty && deleteProperty) {
-                json.ParameterNames.push(importProperty);
-                json.ParameterValues.push((this[propertyName as keyof this] as any)?.toString() ?? propertyName);
+            if (deleteProperty) {
+                const importProperty = Reflect.getMetadata("importPropertyName", this, propertyName);
+                json.ParameterNames.push(importProperty ?? propertyName);
+                json.ParameterValues.push(this.formatValue(this[propertyName as keyof this] as any));
             }
         }
 
         return json;
+    }
+
+    private formatValue(val:any): string {
+        const stringVal = (val instanceof Date) ? val?.toISOString() : val?.toString();
+        return stringVal ?? "";
     }
 }
