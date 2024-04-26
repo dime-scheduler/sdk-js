@@ -35,7 +35,6 @@ const createBall = async (client: DimeSchedulerClient, startDate: string) => {
     await client.import(appointment);
 }
 
-// bun play -s '2022-04-03' -e '2022-04-09' -r 'ARNOUD' -r 'ASSIA' -r 'ELSEMIEK' -r 'HESSEL'
 const client = new DimeSchedulerClient(Bun.env.DS_API_KEY as string, Environment.Test);
 
 const play = async () => {
