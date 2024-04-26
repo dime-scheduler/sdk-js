@@ -1,0 +1,19 @@
+{
+  "name": "pingpong",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "stage": "bun run stage.ts",
+    "play": "bun run play.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "dimescheduler": "^0.1.0"
+  }
+}
