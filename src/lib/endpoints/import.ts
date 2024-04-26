@@ -26,7 +26,6 @@ class ImportEndPoint extends Endpoint {
         };
 
         const url = this.uri + '/import';
-
         const response = await axios.post(url, body, { headers: headers });
         return ImportResponse.fromRawJson(response.data.content);
     }

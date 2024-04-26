@@ -31,6 +31,7 @@ import ActionUri from './actionuri';
 import Notification from './notification';
 import Connector from './connector';
 import Caption from './caption';
+import Container from './container';
 
 export {
     ActionUri,
@@ -65,5 +66,6 @@ export {
     FilterValue,
     Notification,
     Connector,
-    Caption
+    Caption,
+    Container
 };

@@ -32,7 +32,7 @@ export default class TaskLocked extends ImportModel implements IImportModel {
     toImportRequest(action: CrudType) {
         switch (action) {
             case CrudType.Append:
-                return super.createAppendRequest("mboc_upsertTaskLocked");
+                return super.createAppendRequest("mboc_updateTaskLocked");
             default:
                 return {};
         }
