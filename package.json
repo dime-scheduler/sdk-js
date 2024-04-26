@@ -1,17 +1,27 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.0.1-alpha.17",
+  "version": "0.1.0",
   "main": "./dist/index.ts",
   "types": "./dist/index.d.ts",
   "module": "./dist/esm/index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/lib/models/index.d.ts",
+      "default": "./dist/lib/models/index.js"
+    }
+  },
   "files": [
     "dist",
     "LICENSE",
     "README.md"
   ],
-  "repository": "https://github.com/dime-scheduler/sdk-nodejs",
+  "repository": "https://github.com/dime-scheduler/sdk-js",
   "author": "Hendrik Bulens",
   "license": "MIT",
   "keywords": [
@@ -22,14 +32,14 @@
     "power-apps"
   ],
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build": "tsc",
     "clean": "tsc --build --clean",
+    "pub": "yarn clean && yarn build && yarn publish",
     "test": "ts-mocha test/**/*.ts --timeout 10000"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",

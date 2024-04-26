@@ -1,11 +1,13 @@
+import Environment from "../environment";
+
 class EndPoint {
-    authn: any;
+    apiKey: string;
     uri: string;
 
-    constructor(uri: any, authn: any) {
-        this.uri = uri;
-        this.authn = authn;
-    }    
+    constructor(env: Environment, apiKey: string) {
+        this.uri = env;
+        this.apiKey = apiKey;
+    }
 }
 
 export default EndPoint;

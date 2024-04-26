@@ -1,29 +1,33 @@
 import axios from 'axios';
-import IAuthenticator from '../auth/iauthenticator';
 import Endpoint from './endpoint';
+import Environment from '../environment';
+import IImportModel from '../models/base/iimportmodel';
+import CrudType from '../models/base/action';
+import ImportResponse from './importresponse';
+
 
 class ImportEndPoint extends Endpoint {
-    constructor(uri: any, authn: IAuthenticator) {
-        super(uri, authn);
+    constructor(env: Environment, apiKey: string) {
+        super(env, apiKey);
     }
 
-    async processAsync(importable: { toImportRequest: () => any; } | Array<{ toImportRequest: () => any; }>) {
+    async processAsync(importable: IImportModel | Array<IImportModel>, append: boolean = true): Promise<ImportResponse> {
         const params = (importable instanceof Array) ? importable : [importable];
-        return await this.doImportRequest("Execute", params.map(x => x.toImportRequest()));
-    }
 
-    protected async doImportRequest(endpoint: string, data: any) {
-        const authResult = await this.authn.authenticate();
-        const token = authResult.data.access_token;
+        const data = params.map(x => x.toImportRequest(append ? CrudType.Append : CrudType.Delete));
         const body = JSON.stringify(data);
 
+        console.log(body);
+
         const headers = {
-            'Authorization': 'Bearer ' + token,
+            'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         };
 
-        return axios.post(this.uri + '/api/Import/' + endpoint, body, { headers: headers });
+        const url = this.uri + '/import';
+        const response = await axios.post(url, body, { headers: headers });
+        return ImportResponse.fromRawJson(response.data.content);
     }
 }
 

@@ -1,13 +1,9 @@
 'use strict';
 
-import FormsAuthenticator from './lib/auth/forms-authenticator-json';
-import UrlEncodedFormsAuthenticator from './lib/auth/forms-authenticator-urlencoded';
-import * as Import from './lib/import';
 import DimeSchedulerClient from './lib/client';
+import Environment from './lib/environment';
 
 export {
-    DimeSchedulerClient,
-    FormsAuthenticator,
-    UrlEncodedFormsAuthenticator,
-    Import
+    DimeSchedulerClient as default,
+    Environment
 };

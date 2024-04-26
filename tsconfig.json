@@ -5,18 +5,19 @@
     "lib": [
       "dom",
       "esnext"
-    ],    
+    ],
     "declaration": true,
     "sourceMap": true,
     "rootDir": "./src",
-    "outDir": "./dist/esm",
+    "outDir": "./dist",
     "strict": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,    
-    "moduleResolution": "node",    
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src"
