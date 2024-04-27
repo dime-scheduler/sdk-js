@@ -1,12 +1,34 @@
+import Action from "../constants/action";
+import Routes from "../constants/routes";
 import Environment from "../environment";
-import { Task } from "../models";
+import { Task, TaskContainer, TaskFilterValue, TaskLocked, TaskUri } from "../models";
 import Endpoint from "./endpoint";
 
-class TaskEndpoint extends Endpoint<Task> {
+class TaskEndpoint extends Endpoint {
 
     constructor(env: Environment, apiKey: string) {
-        super(env, "task", apiKey);
+        super(env, apiKey);
     }
+
+    create = (item: Task) => super.execute(Routes.Task, Action.Create, item);
+    update = (item: Task) => super.execute(Routes.Task, Action.Update, item);
+    delete = (item: Task) => super.execute(Routes.Task, Action.Delete, item);
+
+    createCalendar = (item: TaskContainer) => super.execute(Routes.TaskContainer, Action.Create, item);
+    updateCalendar = (item: TaskContainer) => super.execute(Routes.TaskContainer, Action.Update, item);
+    deleteCalendar = (item: TaskContainer) => super.execute(Routes.TaskContainer, Action.Delete, item);
+
+    createLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Create, item);
+    updateLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Update, item);
+    deleteLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Delete, item);
+
+    createFilterValue = (item: TaskFilterValue) => super.execute(Routes.TaskFilterValue, Action.Create, item);
+    updateFilterValue = (item: TaskFilterValue) => super.execute(Routes.TaskFilterValue, Action.Update, item);
+    deleteFilterValue = (item: TaskFilterValue) => super.execute(Routes.TaskFilterValue, Action.Delete, item);
+
+    createUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Create, item);
+    updateUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Update, item);
+    deleteUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Delete, item);
 }
 
 export default TaskEndpoint;

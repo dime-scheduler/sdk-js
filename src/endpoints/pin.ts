@@ -1,12 +1,18 @@
+import Action from "../constants/action";
+import Routes from "../constants/routes";
 import Environment from "../environment";
 import { Pin } from "../models";
 import Endpoint from "./endpoint";
 
-class PinEndpoint extends Endpoint<Pin> {
+class PinEndpoint extends Endpoint {
 
     constructor(env: Environment, apiKey: string) {
-        super(env, "pin", apiKey);
+        super(env, apiKey);
     }
+
+    create = (item: Pin) => super.execute(Routes.Pin, Action.Create, item);
+    update = (item: Pin) => super.execute(Routes.Pin, Action.Update, item);
+    delete = (item: Pin) => super.execute(Routes.Pin, Action.Delete, item);
 }
 
 export default PinEndpoint;
