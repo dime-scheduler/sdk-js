@@ -1,14 +1,16 @@
 import axios from 'axios';
-import Endpoint from './endpoint';
-import Environment from '../environment';
-import IImportModel from '../models/base/iimportmodel';
-import CrudType from '../models/base/action';
+import Environment from '../../environment';
+import IImportModel from '../../models/base/iimportmodel';
+import CrudType from '../../models/base/action';
 import ImportResponse from './importresponse';
 
+class ImportEndpoint {
+    apiKey: string;
+    uri: string;
 
-class ImportEndPoint extends Endpoint {
     constructor(env: Environment, apiKey: string) {
-        super(env, apiKey);
+        this.uri = env;
+        this.apiKey = apiKey;
     }
 
     async processAsync(importable: IImportModel | Array<IImportModel>, append: boolean = true): Promise<ImportResponse> {
@@ -29,4 +31,4 @@ class ImportEndPoint extends Endpoint {
     }
 }
 
-export default ImportEndPoint;
+export default ImportEndpoint;

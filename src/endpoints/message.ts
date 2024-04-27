@@ -2,10 +2,11 @@ import axios from 'axios';
 import Endpoint from './endpoint';
 import Environment from '../environment';
 import { Severity } from '../models/constants/severity';
+import Message from '../models/message';
 
-class MessageEndpoint extends Endpoint {
+class MessageEndpoint extends Endpoint<Message> {
     constructor(env: Environment, apiKey: string) {
-        super(env, apiKey);
+        super(env, "message", apiKey);
     }
 
     async processAsync(text: string, severity: Severity, user?: string): Promise<void> {

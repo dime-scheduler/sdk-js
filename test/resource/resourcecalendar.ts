@@ -1,6 +1,6 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { ResourceCalendar } from '../../dist/lib/models';
+import { ResourceCalendar } from '../../dist/models';
 
 import { apiKey, resourceNo } from "../testvars";
 

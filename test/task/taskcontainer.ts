@@ -1,6 +1,6 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { TaskContainer } from '../../dist/lib/models';
+import { TaskContainer } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 

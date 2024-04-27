@@ -12,8 +12,8 @@
       "default": "./dist/index.js"
     },
     "./models": {
-      "types": "./dist/lib/models/index.d.ts",
-      "default": "./dist/lib/models/index.js"
+      "types": "./dist/models/index.d.ts",
+      "default": "./dist/models/index.js"
     }
   },
   "files": [
