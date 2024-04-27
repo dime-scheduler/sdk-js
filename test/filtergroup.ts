@@ -1,48 +1,48 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../dist';
-import { Container } from '../dist/models';
+import { FilterGroup, FilterValue } from '../dist/models';
 
 import { apiKey } from "./testvars";
 
-describe('Container', function () {
-
+describe('FilterGroup', function () {
     const createItem = () => {
-        const item = new Container();
-        item.name = "SDK JS";
-        return item;
+        const filterGroup = new FilterGroup();
+        filterGroup.name = "Department"
+
+        return filterGroup;
     }
 
-    describe('#importContainer()', function () {
-        it('Should successfully create container', async () => {
-            const item = createItem();
+    describe('#importFilterGroup()', function () {
+        it('Should successfully set filter group', async () => {
+            const filterGroup = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.import(item);
 
+            const results = await client.import(filterGroup);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
-    describe('#createContainer()', function () {
+    describe('#createFilterGroup()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.create(item);
+            const results = await client.filterGroups.create(item);
         });
     });
 
-    describe('#updateContainer()', function () {
+    describe('#updateFilterGroup()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.update(item);
+            const results = await client.filterGroups.update(item);
         });
     });
 
-    describe('#deleteContainer()', function () {
+    describe('#deleteFilterGroup()', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.delete(item);
+            const results = await client.filterGroups.delete(item);
         });
     });
 });

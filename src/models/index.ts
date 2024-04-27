@@ -7,7 +7,7 @@ import AppointmentContent from './appointment/appointmentcontent';
 import AppointmentImportance from './appointment/appointmentimportance';
 import AppointmentLocked from './appointment/appointmentlocked';
 import AppointmentPlanningQuantity from './appointment/appointmentplanningquantity';
-import AppointmentTimemarker from './appointment/appointmenttimemarker';
+import AppointmentTimeMarker from './appointment/appointmenttimemarker';
 import AppointmentUri from './appointment/appointmenturi';
 import Assignment from './appointment/assignment';
 import ExchangeAppointment from './exchange/exchangeappointment';
@@ -46,7 +46,7 @@ export {
     AppointmentImportance,
     AppointmentLocked,
     AppointmentPlanningQuantity,
-    AppointmentTimemarker,
+    AppointmentTimeMarker,
     AppointmentUri,
     Assignment,
     ExchangeAppointment,

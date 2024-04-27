@@ -15,6 +15,7 @@ abstract class Endpoint {
         const data = (!Array.isArray(item)) ? [item] : item;
         const body = JSON.stringify(data);
 
+        const url = this.uri + route;
         const headers = {
             'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',
@@ -23,13 +24,13 @@ abstract class Endpoint {
 
         switch (action) {
             case Action.Create:
-                await axios.post(this.uri + route, body, { headers: headers });
+                await axios.post(url, body, { headers: headers });
                 break;
             case Action.Update:
-                await axios.put(this.uri, body, { headers: headers });
+                await axios.put(url, body, { headers: headers });
                 break;
             case Action.Delete:
-                await axios.delete(this.uri, { data: body, headers });
+                await axios.delete(url, { data: body, headers });
                 break;
         }
     }

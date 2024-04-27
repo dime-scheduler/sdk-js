@@ -25,7 +25,7 @@ class DimeSchedulerClient {
     actionUris: ActionUriEndpoint;
     appointments: AppointmentEndpoint;
     captions: CaptionEndpoint;
-    categorys: CategoryEndpoint;
+    categories: CategoryEndpoint;
     connectors: ConnectorEndpoint;
     containers: ContainerEndpoint;
     filterGroups: FilterGroupEndpoint;
@@ -44,7 +44,7 @@ class DimeSchedulerClient {
         this.actionUris = new ActionUriEndpoint(env, apiKey);
         this.appointments = new AppointmentEndpoint(env, apiKey);
         this.captions = new CaptionEndpoint(env, apiKey);
-        this.categorys = new CategoryEndpoint(env, apiKey);
+        this.categories = new CategoryEndpoint(env, apiKey);
         this.connectors = new ConnectorEndpoint(env, apiKey);
         this.containers = new ContainerEndpoint(env, apiKey);
         this.filterGroups = new FilterGroupEndpoint(env, apiKey);

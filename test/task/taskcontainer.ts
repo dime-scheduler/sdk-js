@@ -4,24 +4,55 @@ import { TaskContainer } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
-describe('Import', function () {
-    describe('#taskcontainer()', function () {
+describe('TaskContainer', function () {
+    const createItem = () => {
+        const sourceApp = "SDKJS";
+        const sourceType = "SDKJS";
+        const jobNo = "SDKJS";
+
+        const item = new TaskContainer();
+        item.sourceApp = sourceApp;
+        item.sourceType = sourceType;
+        item.jobNo = jobNo;
+        item.taskNo = "SDKJS_001";
+        item.name = "SDK JS";
+
+        return item;
+    }
+
+    describe('#importTaskContainer()', function () {
         it('Should successfully append task container', async () => {
-            const sourceApp = "SDKJS";
-            const sourceType = "SDKJS";
-            const jobNo = "SDKJS";
 
-            const item = new TaskContainer();
-            item.sourceApp = sourceApp;
-            item.sourceType = sourceType;
-            item.jobNo = jobNo;
-            item.taskNo = "SDKJS_001";
-            item.name = "SDK JS";
-
+            const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             const results = await client.import([item]);
             assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+
+    describe('#createTaskContainer()', function () {
+        it('Should successfully create item', async () => {
+            const item = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const results = await client.tasks.createContainer(item);
+        });
+    });
+
+    describe('#updateTaskContainer()', function () {
+        it('Should successfully update item', async () => {
+            const item = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const results = await client.tasks.updateContainer(item);
+        });
+    });
+
+    describe('#deleteTaskContainer()', function () {
+        it('Should successfully delete item', async () => {
+            const item = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const results = await client.tasks.deleteContainer(item);
         });
     });
 });

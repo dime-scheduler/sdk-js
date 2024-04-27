@@ -1,7 +1,7 @@
 import Action from "../constants/action";
 import Routes from "../constants/routes";
 import Environment from "../environment";
-import { Appointment } from "../models";
+import { Appointment, AppointmentCategory, AppointmentContainer, AppointmentContent, AppointmentImportance, AppointmentLocked, AppointmentPlanningQuantity, AppointmentTimeMarker, AppointmentUri } from "../models";
 import Endpoint from "./endpoint";
 
 class AppointmentEndpoint extends Endpoint {
@@ -13,6 +13,38 @@ class AppointmentEndpoint extends Endpoint {
     create = (item: Appointment) => super.execute(Routes.Appointment, Action.Create, item);
     update = (item: Appointment) => super.execute(Routes.Appointment, Action.Update, item);
     delete = (item: Appointment) => super.execute(Routes.Appointment, Action.Delete, item);
+
+    createCategory = (item: AppointmentCategory) => super.execute(Routes.Appointment, Action.Create, item);
+    updateCategory = (item: AppointmentCategory) => super.execute(Routes.Appointment, Action.Update, item);
+    deleteCategory = (item: AppointmentCategory) => super.execute(Routes.Appointment, Action.Delete, item);
+
+    createContainer = (item: AppointmentContainer) => super.execute(Routes.AppointmentContainer, Action.Create, item);
+    updateContainer = (item: AppointmentContainer) => super.execute(Routes.AppointmentContainer, Action.Update, item);
+    deleteContainer = (item: AppointmentContainer) => super.execute(Routes.AppointmentContainer, Action.Delete, item);
+
+    createContent = (item: AppointmentContent) => super.execute(Routes.AppointmentContent, Action.Create, item);
+    updateContent = (item: AppointmentContent) => super.execute(Routes.AppointmentContent, Action.Update, item);
+    deleteContent = (item: AppointmentContent) => super.execute(Routes.AppointmentContent, Action.Delete, item);
+
+    createImportance = (item: AppointmentImportance) => super.execute(Routes.AppointmentImportance, Action.Create, item);
+    updateImportance = (item: AppointmentImportance) => super.execute(Routes.AppointmentImportance, Action.Update, item);
+    deleteImportance = (item: AppointmentImportance) => super.execute(Routes.AppointmentImportance, Action.Delete, item);
+
+    createLocked = (item: AppointmentLocked) => super.execute(Routes.AppointmentLocked, Action.Create, item);
+    updateLocked = (item: AppointmentLocked) => super.execute(Routes.AppointmentLocked, Action.Update, item);
+    deleteLocked = (item: AppointmentLocked) => super.execute(Routes.AppointmentLocked, Action.Delete, item);
+
+    createPlanningQuantity = (item: AppointmentPlanningQuantity) => super.execute(Routes.AppointmentPlanningQuantity, Action.Create, item);
+    updatePlanningQuantity = (item: AppointmentPlanningQuantity) => super.execute(Routes.AppointmentPlanningQuantity, Action.Update, item);
+    deletePlanningQuantity = (item: AppointmentPlanningQuantity) => super.execute(Routes.AppointmentPlanningQuantity, Action.Delete, item);
+
+    createTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Create, item);
+    updateTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Update, item);
+    deleteTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Delete, item);
+
+    createUri = (item: AppointmentUri) => super.execute(Routes.AppointmentUri, Action.Create, item);
+    updateUri = (item: AppointmentUri) => super.execute(Routes.AppointmentUri, Action.Update, item);
+    deleteUri = (item: AppointmentUri) => super.execute(Routes.AppointmentUri, Action.Delete, item);
 }
 
 export default AppointmentEndpoint;

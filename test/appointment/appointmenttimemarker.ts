@@ -1,13 +1,13 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { AppointmentTimemarker } from '../../dist/models';
+import { AppointmentTimeMarker } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
 describe('Import', function () {
     describe('#appendAppointmentTimeMarker()', function () {
         it('Should successfully set appointment time marker', async () => {
-            const item = new AppointmentTimemarker();
+            const item = new AppointmentTimeMarker();
             item.sourceApp = "SDKJS";
             item.sourceType = "SDKJS";
             item.appointmentGuid = "d5a0ee8c-9284-455d-b4b4-edf3d96d6967";

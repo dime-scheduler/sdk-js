@@ -1,3 +1,4 @@
+
 const Routes = {
     Task: "task",
     TaskContainer: "taskContainer",
@@ -5,9 +6,16 @@ const Routes = {
     TaskFilterValue: "taskFilterValue",
     TaskUri: "taskUri",
     Appointment: "appointment",
+    AppointmentContainer: "appointmentContainer",
+    AppointmentContent: "appointmentContent",
+    AppointmentImportance: "appointmentImportance",
+    AppointmentLocked: "appointmentLocked",
+    AppointmentPlanningQuantity: "appointmentPlanningQuantity",
+    AppointmentTimeMarker: "appointmentTimeMarker",
+    AppointmentUri: "appointmentUri",
     ActionUri: "actionuri",
     Caption: "caption",
-    Category: "category",
+    Category: "categories",
     Connector: "connector",
     Container: "container",
     FilterGroup: "filterGroup",
