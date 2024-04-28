@@ -26,7 +26,6 @@ class TaskEndpoint extends Endpoint {
 
     createUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Create, item);
     updateUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Update, item);
-    deleteUri = (item: TaskUri) => super.execute(Routes.TaskUri, Action.Delete, item);
 }
 
 export default TaskEndpoint;

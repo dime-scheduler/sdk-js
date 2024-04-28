@@ -18,6 +18,7 @@ describe('Category', function () {
         })[0];
 
         category.name = word;
+        category.displayName = word;
 
         return category;
     }

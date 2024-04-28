@@ -15,6 +15,9 @@ describe('Notification', function () {
         item.date = new Date();
         item.sourceApp = "SDKJS";
         item.sourceType = "SDKJS";
+        item.appointmentGuid = null;
+        item.appointmentId = null;
+
         return item;
     }
 
@@ -29,7 +32,7 @@ describe('Notification', function () {
     });
 
     describe('#createNotification()', function () {
-        it('Should successfully create item', async () => {
+        it('Should successfully create notification', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.create(item);
@@ -38,7 +41,7 @@ describe('Notification', function () {
     });
 
     describe('#updateNotification()', function () {
-        it('Should successfully update item', async () => {
+        it('Should successfully update notification', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.update(item);
@@ -47,7 +50,7 @@ describe('Notification', function () {
     });
 
     describe('#deleteNotification()', function () {
-        it('Should successfully delete item', async () => {
+        it('Should successfully delete notification', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.delete(item);

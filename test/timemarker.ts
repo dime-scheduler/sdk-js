@@ -48,12 +48,10 @@ describe('TimeMarker', function () {
     });
 
     describe('#deleteTimeMarker()', function () {
-        it.only('Should successfully delete item', async () => {
+        it('Should successfully delete item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.timeMarkers.delete(item);
-
-            console.log(results);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });

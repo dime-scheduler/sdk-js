@@ -18,7 +18,7 @@ class AppointmentEndpoint extends Endpoint {
     updateContainer = (item: AppointmentContainer) => super.execute(Routes.AppointmentContainer, Action.Update, item);
     deleteContainer = (item: AppointmentContainer) => super.execute(Routes.AppointmentContainer, Action.Delete, item);
 
-    setCategory = (item: AppointmentCategory) => super.execute(Routes.Appointment, Action.Create, item);
+    setCategory = (item: AppointmentCategory) => super.execute(Routes.AppointmentCategory, Action.Create, item);
     setContent = (item: AppointmentContent) => super.execute(Routes.AppointmentContent, Action.Create, item);
     setImportance = (item: AppointmentImportance) => super.execute(Routes.AppointmentImportance, Action.Create, item);
     setLocked = (item: AppointmentLocked) => super.execute(Routes.AppointmentLocked, Action.Create, item);

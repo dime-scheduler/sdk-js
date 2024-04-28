@@ -12,7 +12,6 @@ class ActionUriEndpoint extends Endpoint {
 
     create = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Create, item);
     update = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Update, item);
-    delete = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Delete, item);
 }
 
 export default ActionUriEndpoint;

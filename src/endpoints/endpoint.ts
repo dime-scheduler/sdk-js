@@ -41,7 +41,7 @@ abstract class Endpoint {
                 return ImportResponse.fromRawJson(createResponse.data?.content);
             case Action.Update:
                 const updateResponse = await axios.put(url, body, { headers: headers });
-                return ImportResponse.fromRawJson(updateResponse.data?.content?? "{}");
+                return ImportResponse.fromRawJson(updateResponse.data?.content ?? "{}");
             case Action.Delete:
                 const deleteResponse = await axios.delete(url, { data: body, headers });
                 return ImportResponse.fromRawJson(deleteResponse.data?.content ?? "{}");

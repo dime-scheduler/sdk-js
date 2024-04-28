@@ -121,13 +121,4 @@ describe('Resource', function () {
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
-
-    describe('#deleteResource()', function () {
-        it('Should successfully delete resource', async () => {
-            const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.resources.delete(item);
-            assert.ok(results.success, !results.success ? results.message : "");
-        });
-    });
 });

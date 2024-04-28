@@ -12,7 +12,6 @@ class CaptionEndpoint extends Endpoint {
 
     create = (item: Caption) => super.execute(Routes.Caption, Action.Create, item);
     update = (item: Caption) => super.execute(Routes.Caption, Action.Update, item);
-    delete = (item: Caption) => super.execute(Routes.Caption, Action.Delete, item);
 }
 
 export default CaptionEndpoint;

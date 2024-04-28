@@ -44,13 +44,4 @@ describe('Action URI', function () {
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
-
-    describe('#deleteActionUri()', function () {
-        it('Should successfully delete item', async () => {
-            const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.delete(item);
-            assert.ok(results.success, !results.success ? results.message : "");
-        });
-    });
 });

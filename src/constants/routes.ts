@@ -2,6 +2,7 @@
 const Routes = {
     ActionUri: "actionuri",
     Appointment: "appointment",
+    AppointmentCategory: "appointmentCategory",
     AppointmentContainer: "appointmentContainer",
     AppointmentContent: "appointmentContent",
     AppointmentImportance: "appointmentImportance",

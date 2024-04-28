@@ -12,7 +12,6 @@ class ResourceEndpoint extends Endpoint {
 
     create = (item: Resource) => super.execute(Routes.Resource, Action.Create, item);
     update = (item: Resource) => super.execute(Routes.Resource, Action.Update, item);
-    delete = (item: Resource) => super.execute(Routes.Resource, Action.Delete, item);
 
     createLocation = (item: ResourceGpsTracking) => super.execute(Routes.ResourceGpsTracking, Action.Create, item);
     updateLocation = (item: ResourceGpsTracking) => super.execute(Routes.ResourceGpsTracking, Action.Update, item);

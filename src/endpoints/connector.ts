@@ -1,4 +1,4 @@
-import Action from "../constants/action";
+import axios from "axios";
 import Routes from "../constants/routes";
 import Environment from "../environment";
 import { Connector } from "../models";
@@ -10,9 +10,19 @@ class ConnectorEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
-    create = (item: Connector) => super.execute(Routes.Connector, Action.Create, item);
-    update = (item: Connector) => super.execute(Routes.Connector, Action.Update, item);
-    delete = (item: Connector) => super.execute(Routes.Connector, Action.Delete, item);
+    create = async (item: Connector) => {
+        const body = JSON.stringify(item);
+
+        const url = this.uri + Routes.Connector;
+        const headers = {
+            'X-API-KEY': this.apiKey,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        };
+
+        const createResponse = await axios.post(url, body, { headers: headers });
+        return createResponse.data?.content;
+    }
 }
 
 export default ConnectorEndpoint;

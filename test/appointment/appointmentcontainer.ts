@@ -47,7 +47,6 @@ describe('AppointmentContainer', function () {
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             const importedAppointment = await client.import(appointment);
-            item.appointment = importedAppointment?.appointments![0].toString();
             const results = await client.appointments.createContainer(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -59,7 +58,6 @@ describe('AppointmentContainer', function () {
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             const importedAppointment = await client.import(appointment);
-            item.appointment = importedAppointment?.appointments![0].toString();
             const results = await client.appointments.updateContainer(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -71,7 +69,6 @@ describe('AppointmentContainer', function () {
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
 
             const importedAppointment = await client.import(appointment);
-            item.appointment = importedAppointment?.appointments![0].toString();
             const results = await client.appointments.deleteContainer(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
