@@ -31,7 +31,7 @@ describe('Connector', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.create(item);
+            const results = await client.connectors.create(item);
         });
     });
 
@@ -39,7 +39,7 @@ describe('Connector', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.update(item);
+            const results = await client.connectors.update(item);
         });
     });
 
@@ -47,7 +47,7 @@ describe('Connector', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.actionUris.delete(item);
+            const results = await client.connectors.delete(item);
         });
     });
 });
