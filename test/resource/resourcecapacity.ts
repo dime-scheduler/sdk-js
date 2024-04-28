@@ -29,6 +29,7 @@ describe('ResourceCapacity', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.createCapacity(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -37,14 +38,7 @@ describe('ResourceCapacity', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.updateCapacity(item);
-        });
-    });
-
-    describe('#deleteResourceCapacity()', function () {
-        it('Should successfully delete resource filter value', async () => {
-            const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.resources.deleteCapacity(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

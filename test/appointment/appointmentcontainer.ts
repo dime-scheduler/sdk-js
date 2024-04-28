@@ -1,29 +1,78 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../../dist/models';
-import randomWords from 'random-words';
+import { Appointment, AppointmentContainer } from '../../dist/models';
 
 import { apiKey, resourceNo } from "../testvars";
 
 describe('AppointmentContainer', function () {
-    describe('#appendAppointmentContainer()', function () {
+
+    const createItem = () => {
+        const item = new AppointmentContainer();
+        item.container = "SDK JS";
+        item.appointment = "d5a0ee8c-9284-455d-b4b4-edf3d96d6965";
+
+        const appointment = new Appointment();
+        appointment.sourceApp = "SDKJS";
+        appointment.sourceType = "SDKJS";
+        appointment.subject = "Hello from SDK";
+        appointment.body = "...";
+        appointment.resourceNo = resourceNo;
+        appointment.jobNo = "SDKJS";
+        appointment.taskNo = "SDKJS_001";
+        appointment.appointmentGuid = "d5a0ee8c-9284-455d-b4b4-edf3d96d6965";
+        appointment.useFixedPlanningQuantity = true;
+
+        appointment.start = new Date().toISOString();
+        const end = new Date();
+        end.setHours(end.getHours() + 2);
+        appointment.end = end.toISOString();
+
+        return { item, appointment };
+    }
+
+    describe('#importAppendAppointmentContainer()', function () {
         it('Should successfully append appointment', async () => {
-            const appointment = new Appointment();
-            appointment.sourceApp = "SDKJS";
-            appointment.sourceType = "SDKJS";
-            appointment.subject = "Hello from SDK";
-            appointment.body = "...";
-            appointment.resourceNo = resourceNo;
-            appointment.jobNo = "SDKJS";
-            appointment.taskNo = "SDKJS_001";
-
-            appointment.start = new Date().toISOString();
-            const end = new Date();
-            end.setHours(end.getHours() + 2);
-            appointment.end = end.toISOString();
-
+            const { item, appointment } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.import(appointment);
+
+            const importedAppointment = await client.import(appointment);
+            const results = await client.import(item);
+            assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#createAppointmentContainer()', function () {
+        it('Should successfully create item', async () => {
+            const { item, appointment } = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            const importedAppointment = await client.import(appointment);
+            item.appointment = importedAppointment?.appointments![0].toString();
+            const results = await client.appointments.createContainer(item);
+            assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#updateAppointmentContainer()', function () {
+        it('Should successfully update item', async () => {
+            const { item, appointment } = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            const importedAppointment = await client.import(appointment);
+            item.appointment = importedAppointment?.appointments![0].toString();
+            const results = await client.appointments.updateContainer(item);
+            assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#deleteAppointmentContainer()', function () {
+        it('Should successfully delete item', async () => {
+            const { item, appointment } = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            const importedAppointment = await client.import(appointment);
+            item.appointment = importedAppointment?.appointments![0].toString();
+            const results = await client.appointments.deleteContainer(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });

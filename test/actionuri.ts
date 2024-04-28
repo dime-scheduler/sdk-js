@@ -32,6 +32,7 @@ describe('Action URI', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.actionUris.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -40,6 +41,7 @@ describe('Action URI', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.actionUris.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -48,6 +50,7 @@ describe('Action URI', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.actionUris.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

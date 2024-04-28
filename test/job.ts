@@ -31,6 +31,7 @@ describe('Job', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.jobs.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -39,6 +40,7 @@ describe('Job', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.jobs.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -47,6 +49,7 @@ describe('Job', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.jobs.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

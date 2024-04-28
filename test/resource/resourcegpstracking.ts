@@ -29,6 +29,7 @@ describe('ResourceGpsTracking', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.createLocation(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -37,14 +38,7 @@ describe('ResourceGpsTracking', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.updateLocation(item);
-        });
-    });
-
-    describe('#deleteResourceResourceGpsTracking()', function () {
-        it('Should successfully delete resource location', async () => {
-            const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.resources.deleteLocation(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

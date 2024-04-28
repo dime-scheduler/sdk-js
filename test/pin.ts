@@ -5,7 +5,7 @@ import randomWords from 'random-words';
 
 import { apiKey } from "./testvars";
 
-describe('Import', function () {
+describe('Pin', function () {
 
     const createItem = () => {
         const pin = new Pin();
@@ -36,6 +36,7 @@ describe('Import', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.pins.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -44,6 +45,7 @@ describe('Import', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.pins.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -52,6 +54,7 @@ describe('Import', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.pins.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

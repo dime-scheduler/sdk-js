@@ -40,6 +40,7 @@ describe('ResourceFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.createFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -48,6 +49,7 @@ describe('ResourceFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.updateFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -56,6 +58,7 @@ describe('ResourceFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.deleteFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

@@ -41,6 +41,7 @@ describe('TaskFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.createFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -49,6 +50,7 @@ describe('TaskFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.updateFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -57,6 +59,7 @@ describe('TaskFilterValue', function () {
             const { item, filterGroup, filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.deleteFilterValue(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

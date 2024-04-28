@@ -33,6 +33,7 @@ describe('Notification', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -41,6 +42,7 @@ describe('Notification', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -49,6 +51,7 @@ describe('Notification', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.notifications.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

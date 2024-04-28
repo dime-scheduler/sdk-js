@@ -16,7 +16,6 @@ class ResourceEndpoint extends Endpoint {
 
     createLocation = (item: ResourceGpsTracking) => super.execute(Routes.ResourceGpsTracking, Action.Create, item);
     updateLocation = (item: ResourceGpsTracking) => super.execute(Routes.ResourceGpsTracking, Action.Update, item);
-    deleteLocation = (item: ResourceGpsTracking) => super.execute(Routes.ResourceGpsTracking, Action.Delete, item);
 
     createCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Create, item);
     updateCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Update, item);
@@ -24,7 +23,6 @@ class ResourceEndpoint extends Endpoint {
 
     createCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Create, item);
     updateCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Update, item);
-    deleteCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Delete, item);
 
     createFilterValue = (item: ResourceFilterValue) => super.execute(Routes.ResourceFilterValue, Action.Create, item);
     updateFilterValue = (item: ResourceFilterValue) => super.execute(Routes.ResourceFilterValue, Action.Update, item);

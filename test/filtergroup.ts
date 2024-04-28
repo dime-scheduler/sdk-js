@@ -27,6 +27,7 @@ describe('FilterGroup', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterGroups.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -35,6 +36,7 @@ describe('FilterGroup', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterGroups.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -43,6 +45,7 @@ describe('FilterGroup', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterGroups.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

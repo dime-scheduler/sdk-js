@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Environment from "../environment";
 import Action from '../constants/action';
+import { ImportResponse } from './import';
 
 abstract class Endpoint {
     apiKey: string;
@@ -11,7 +12,19 @@ abstract class Endpoint {
         this.apiKey = apiKey;
     }
 
-    protected async execute<T>(route: string, action: Action, item: T | T[]): Promise<void> {
+    protected async get<T>(route: string): Promise<T[]> {
+        const url = this.uri + route;
+        const headers = {
+            'X-API-KEY': this.apiKey,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        };
+
+        const response = await axios.get<T[]>(url, { headers: headers });
+        return response.data;
+    }
+
+    protected async execute<T>(route: string, action: Action, item: T | T[]): Promise<ImportResponse> {
         const data = (!Array.isArray(item)) ? [item] : item;
         const body = JSON.stringify(data);
 
@@ -24,14 +37,14 @@ abstract class Endpoint {
 
         switch (action) {
             case Action.Create:
-                await axios.post(url, body, { headers: headers });
-                break;
+                const createResponse = await axios.post(url, body, { headers: headers });
+                return ImportResponse.fromRawJson(createResponse.data?.content);
             case Action.Update:
-                await axios.put(url, body, { headers: headers });
-                break;
+                const updateResponse = await axios.put(url, body, { headers: headers });
+                return ImportResponse.fromRawJson(updateResponse.data?.content?? "{}");
             case Action.Delete:
-                await axios.delete(url, { data: body, headers });
-                break;
+                const deleteResponse = await axios.delete(url, { data: body, headers });
+                return ImportResponse.fromRawJson(deleteResponse.data?.content ?? "{}");
         }
     }
 }

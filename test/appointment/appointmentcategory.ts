@@ -29,6 +29,7 @@ describe('AppointmentCategory', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.appointments.setCategory(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

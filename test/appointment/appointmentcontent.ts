@@ -30,6 +30,7 @@ describe('AppointmentContent', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.appointments.setContent(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

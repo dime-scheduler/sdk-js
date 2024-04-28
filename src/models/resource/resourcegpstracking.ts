@@ -30,7 +30,7 @@ export default class ResourceGpsTracking extends ImportModel implements IImportM
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertResourceGpsTracking");
             case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteResourceGpsTracking");
+                return {};
         }
     }
 }

@@ -109,6 +109,7 @@ describe('Resource', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -117,6 +118,7 @@ describe('Resource', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -125,6 +127,7 @@ describe('Resource', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.resources.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

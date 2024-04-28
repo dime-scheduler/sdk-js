@@ -30,6 +30,7 @@ describe('AppointmentLocked', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.appointments.setLocked(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

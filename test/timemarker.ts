@@ -11,14 +11,8 @@ describe('TimeMarker', function () {
 
         const timeMarker = new TimeMarker();
         timeMarker.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-
-        const word = randomWords({
-            exactly: 1, wordsPerString: 2, formatter: (word, index) => {
-                return index === 0 ? word.slice(0, 1).toUpperCase().concat(word.slice(1)) : word;
-            }
-        })[0];
-
-        timeMarker.name = word;
+        timeMarker.name = "SDK JS";
+        
         return timeMarker;
     }
 
@@ -38,6 +32,8 @@ describe('TimeMarker', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.timeMarkers.create(item);
+
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -46,14 +42,29 @@ describe('TimeMarker', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.timeMarkers.update(item);
+
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
     describe('#deleteTimeMarker()', function () {
-        it('Should successfully delete item', async () => {
+        it.only('Should successfully delete item', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.timeMarkers.delete(item);
+
+            console.log(results);
+            assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#getTimeMarkers()', function () {
+        it('Should successfully get items', async () => {
+            const item = createItem();
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const results = await client.timeMarkers.getAll();
+
+            assert(results.length > 0);
         });
     });
 });

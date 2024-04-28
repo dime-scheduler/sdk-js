@@ -39,6 +39,7 @@ describe('Category', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.categories.create(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -47,6 +48,7 @@ describe('Category', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.categories.update(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -55,6 +57,7 @@ describe('Category', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.categories.delete(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });

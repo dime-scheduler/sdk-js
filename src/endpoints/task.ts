@@ -18,9 +18,7 @@ class TaskEndpoint extends Endpoint {
     updateContainer = (item: TaskContainer) => super.execute(Routes.TaskContainer, Action.Update, item);
     deleteContainer = (item: TaskContainer) => super.execute(Routes.TaskContainer, Action.Delete, item);
 
-    createLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Create, item);
-    updateLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Update, item);
-    deleteLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Delete, item);
+    setLocked = (item: TaskLocked) => super.execute(Routes.TaskLocked, Action.Create, item);
 
     createFilterValue = (item: TaskFilterValue) => super.execute(Routes.TaskFilterValue, Action.Create, item);
     updateFilterValue = (item: TaskFilterValue) => super.execute(Routes.TaskFilterValue, Action.Update, item);

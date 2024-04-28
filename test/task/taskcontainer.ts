@@ -37,6 +37,7 @@ describe('TaskContainer', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.createContainer(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -45,6 +46,7 @@ describe('TaskContainer', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.updateContainer(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 
@@ -53,6 +55,7 @@ describe('TaskContainer', function () {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.tasks.deleteContainer(item);
+            assert.ok(results.success, !results.success ? results.message : "");
         });
     });
 });
