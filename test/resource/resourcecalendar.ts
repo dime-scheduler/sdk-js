@@ -4,7 +4,7 @@ import { ResourceCalendar } from '../../dist/models';
 
 import { apiKey, resourceNo } from "../testvars";
 
-describe('Import', function () {
+describe('ResourceCalendar', function () {
     describe('#resourcecalendar()', function () {
         it('Should successfully update resource calendar', async () => {
             const item = new ResourceCalendar();

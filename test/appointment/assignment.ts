@@ -5,7 +5,7 @@ import randomWords from 'random-words';
 
 import { apiKey, resourceNo } from "../testvars";
 
-describe('Import', function () {
+describe('Assignment', function () {
     describe('#appendAppointmentAssignment()', function () {
         it('Should successfully append assignment', async () => {
             const appointment = new Appointment();

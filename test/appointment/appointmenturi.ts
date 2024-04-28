@@ -4,7 +4,7 @@ import { AppointmentUri } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
-describe('Import', function () {
+describe('AppointmentUri', function () {
     describe('#appendAppointmentUri()', function () {
         it('Should successfully create appointment uri', async () => {
             const item = new AppointmentUri();

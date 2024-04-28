@@ -5,8 +5,8 @@ import randomWords from 'random-words';
 
 import { apiKey, resourceNo } from "../testvars";
 
-describe('Import', function () {
-    describe('#appendAppointment()', function () {
+describe('Appointment', function () {
+    describe('#importAppendAppointment()', function () {
         it('Should successfully append appointment', async () => {
             const appointment = new Appointment();
             appointment.sourceApp = "SDKJS";

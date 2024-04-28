@@ -4,7 +4,7 @@ import { TaskUri } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
-describe('Import', function () {
+describe('TaskUri', function () {
     describe('#taskuri()', function () {
         it('Should successfully set task uri', async () => {
             const sourceApp = "SDKJS";

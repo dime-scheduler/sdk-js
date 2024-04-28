@@ -4,7 +4,7 @@ import { Job, Task, } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
-describe('Import', function () {
+describe('Task', function () {
 
     const createItem = () => {
         const sourceApp = "SDKJS";

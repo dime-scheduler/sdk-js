@@ -25,7 +25,7 @@ const Routes = {
     Notification: "notification",
     Pin: "pin",
     Resource: "resource",
-    ResourceGpsTracking: "resourcelocation",
+    ResourceGpsTracking: "resourceGpsTracking",
     ResourceCalendar: "resourcecalendar",
     ResourceCapacity: "resourceCapacity",
     ResourceFilterValue: "resourceFilterValue",

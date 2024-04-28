@@ -4,7 +4,7 @@ import { TaskLocked } from '../../dist/models';
 
 import { apiKey } from "../testvars";
 
-describe('Import', function () {
+describe('TaskLocked', function () {
     describe('#tasklocked()', function () {
         it('Should successfully lock task', async () => {
             const sourceApp = "SDKJS";
