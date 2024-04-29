@@ -29,7 +29,7 @@ describe('AppointmentTimeMarker', function () {
         it('Should successfully set appointment time marker', async () => {
             const item = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
-            const results = await client.appointments.setTimeMarker(item);
+            const results = await client.appointments.createTimeMarker(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });

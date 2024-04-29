@@ -10,6 +10,7 @@ class FilterValueEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<FilterValue>(Routes.FilterValue);
     create = (item: FilterValue) => super.execute(Routes.FilterValue, Action.Create, item);
     update = (item: FilterValue) => super.execute(Routes.FilterValue, Action.Update, item);
     delete = (item: FilterValue) => super.execute(Routes.FilterValue, Action.Delete, item);

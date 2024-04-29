@@ -10,6 +10,7 @@ class FilterGroupEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<FilterGroup>(Routes.FilterGroup);
     create = (item: FilterGroup) => super.execute(Routes.FilterGroup, Action.Create, item);
     update = (item: FilterGroup) => super.execute(Routes.FilterGroup, Action.Update, item);
     delete = (item: FilterGroup) => super.execute(Routes.FilterGroup, Action.Delete, item);

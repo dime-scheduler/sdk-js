@@ -10,6 +10,7 @@ class CategoryEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<Category>(Routes.Category);
     create = (item: Category) => super.execute(Routes.Category, Action.Create, item);
     update = (item: Category) => super.execute(Routes.Category, Action.Update, item);
     delete = (item: Category) => super.execute(Routes.Category, Action.Delete, item);

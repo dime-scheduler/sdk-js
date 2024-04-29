@@ -121,4 +121,13 @@ describe('Resource', function () {
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
+
+    describe('#getAll()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            await client.resources.create(createItem());
+            const items = await client.resources.getAll();
+            assert.ok(items.length > 0);
+        });
+    });
 });

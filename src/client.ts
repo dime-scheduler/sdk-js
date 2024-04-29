@@ -1,5 +1,7 @@
 import ActionUriEndpoint from './endpoints/actionuri';
 import AppointmentEndpoint from './endpoints/appointment';
+import AssignmentEndpoint from './endpoints/assignment';
+import CalendarEndpoint from './endpoints/calendar';
 import CaptionEndpoint from './endpoints/caption';
 import CategoryEndpoint from './endpoints/category';
 import ConnectorEndpoint from './endpoints/connector';
@@ -12,6 +14,7 @@ import MessageEndpoint from './endpoints/message';
 import NotificationEndpoint from './endpoints/notification';
 import PinEndpoint from './endpoints/pin';
 import ResourceEndpoint from './endpoints/resource';
+import ResourceTypeEndpoint from './endpoints/resourcetype';
 import TaskEndpoint from './endpoints/task';
 import TimeMarkerEndpoint from './endpoints/timemarker';
 import UserEndpoint from './endpoints/user';
@@ -37,12 +40,16 @@ class DimeSchedulerClient {
     tasks: TaskEndpoint;
     timeMarkers: TimeMarkerEndpoint;
     users: UserEndpoint;
+    assignments: AssignmentEndpoint;
+    resourceTypes: ResourceTypeEndpoint;
+    calendars: CalendarEndpoint;
 
     constructor(apiKey: string, env: Environment = Environment.Production) {
         this.importEndpoint = new ImportEndpoint(env, apiKey);
         this.messages = new MessageEndpoint(env, apiKey);
         this.actionUris = new ActionUriEndpoint(env, apiKey);
         this.appointments = new AppointmentEndpoint(env, apiKey);
+        this.assignments = new AssignmentEndpoint(env, apiKey);
         this.captions = new CaptionEndpoint(env, apiKey);
         this.categories = new CategoryEndpoint(env, apiKey);
         this.connectors = new ConnectorEndpoint(env, apiKey);
@@ -56,6 +63,8 @@ class DimeSchedulerClient {
         this.tasks = new TaskEndpoint(env, apiKey);
         this.timeMarkers = new TimeMarkerEndpoint(env, apiKey);
         this.users = new UserEndpoint(env, apiKey);
+        this.resourceTypes = new ResourceTypeEndpoint(env, apiKey);
+        this.calendars = new CalendarEndpoint(env, apiKey);
     }
 
     import(importable: IImportModel | Array<IImportModel>, append: boolean = true): Promise<ImportResponse> {

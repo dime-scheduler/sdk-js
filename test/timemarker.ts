@@ -12,7 +12,7 @@ describe('TimeMarker', function () {
         const timeMarker = new TimeMarker();
         timeMarker.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
         timeMarker.name = "SDK JS";
-        
+
         return timeMarker;
     }
 
@@ -63,6 +63,15 @@ describe('TimeMarker', function () {
             const results = await client.timeMarkers.getAll();
 
             assert(results.length > 0);
+        });
+    });
+
+    describe('#getAll()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            await client.timeMarkers.create(createItem());
+            const items = await client.timeMarkers.getAll();
+            assert.ok(items.length > 0);
         });
     });
 });

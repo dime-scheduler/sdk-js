@@ -48,4 +48,13 @@ describe('Container', function () {
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
+
+    describe('#getAll()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            await client.containers.create(createItem());
+            const items = await client.containers.getAll();
+            assert.ok(items.length > 0);
+        });
+    });
 });

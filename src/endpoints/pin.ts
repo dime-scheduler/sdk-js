@@ -10,6 +10,7 @@ class PinEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<Pin>(Routes.Pin);
     create = (item: Pin) => super.execute(Routes.Pin, Action.Create, item);
     update = (item: Pin) => super.execute(Routes.Pin, Action.Update, item);
     delete = (item: Pin) => super.execute(Routes.Pin, Action.Delete, item);

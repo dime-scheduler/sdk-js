@@ -10,6 +10,7 @@ class ContainerEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<Container>(Routes.Container);
     create = (item: Container) => super.execute(Routes.Container, Action.Create, item);
     update = (item: Container) => super.execute(Routes.Container, Action.Update, item);
     delete = (item: Container) => super.execute(Routes.Container, Action.Delete, item);

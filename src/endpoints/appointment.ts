@@ -23,7 +23,10 @@ class AppointmentEndpoint extends Endpoint {
     setImportance = (item: AppointmentImportance) => super.execute(Routes.AppointmentImportance, Action.Create, item);
     setLocked = (item: AppointmentLocked) => super.execute(Routes.AppointmentLocked, Action.Create, item);
     setPlanningQuantity = (item: AppointmentPlanningQuantity) => super.execute(Routes.AppointmentPlanningQuantity, Action.Create, item);
-    setTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Create, item);
+
+    createTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Create, item);
+    updateTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Update, item);
+    deleteTimeMarker = (item: AppointmentTimeMarker) => super.execute(Routes.AppointmentTimeMarker, Action.Delete, item);
 
     createUri = (item: AppointmentUri) => super.execute(Routes.AppointmentUri, Action.Create, item);
     updateUri = (item: AppointmentUri) => super.execute(Routes.AppointmentUri, Action.Update, item);

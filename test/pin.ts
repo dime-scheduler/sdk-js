@@ -57,4 +57,13 @@ describe('Pin', function () {
             assert.ok(results.success, !results.success ? results.message : "");
         });
     });
+
+    describe('#getAll()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            await client.pins.create(createItem());
+            const items = await client.pins.getAll();
+            assert.ok(items.length > 0);
+        });
+    });
 });

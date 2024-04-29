@@ -7,7 +7,6 @@ import { apiKey } from "./testvars";
 describe('FilterValue', function () {
 
     const createItem = () => {
-
         const filterGroup = new FilterGroup();
         filterGroup.name = "Department";
 
@@ -31,7 +30,7 @@ describe('FilterValue', function () {
 
     describe('#createFilterValue()', function () {
         it('Should successfully create item', async () => {
-            const { filterValue, filterGroup } = createItem();
+            const { filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterValues.create(filterValue);
             assert.ok(results.success, !results.success ? results.message : "");
@@ -40,7 +39,7 @@ describe('FilterValue', function () {
 
     describe('#updateFilterValue()', function () {
         it('Should successfully update item', async () => {
-            const { filterValue, filterGroup } = createItem();
+            const { filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterValues.update(filterValue);
             assert.ok(results.success, !results.success ? results.message : "");
@@ -49,10 +48,20 @@ describe('FilterValue', function () {
 
     describe('#deleteFilterValue()', function () {
         it('Should successfully delete item', async () => {
-            const { filterValue, filterGroup } = createItem();
+            const { filterValue } = createItem();
             const client = new DimeSchedulerClient(apiKey, Environment.Test);
             const results = await client.filterValues.delete(filterValue);
             assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#getAll()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+
+            await client.filterValues.create(createItem().filterValue);
+            const items = await client.filterValues.getAll();
+            assert.ok(items.length > 0);
         });
     });
 });

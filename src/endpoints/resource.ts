@@ -10,6 +10,7 @@ class ResourceEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<Resource>(Routes.Resource);
     create = (item: Resource) => super.execute(Routes.Resource, Action.Create, item);
     update = (item: Resource) => super.execute(Routes.Resource, Action.Update, item);
 

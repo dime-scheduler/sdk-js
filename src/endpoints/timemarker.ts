@@ -10,7 +10,7 @@ class TimeMarkerEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
-    getAll = () => super.get(Routes.TimeMarker);
+    getAll = () => super.get<TimeMarker>(Routes.TimeMarker);
     create = (item: TimeMarker) => super.execute(Routes.TimeMarker, Action.Create, item);
     update = (item: TimeMarker) => super.execute(Routes.TimeMarker, Action.Update, item);
     delete = (item: TimeMarker) => super.execute(Routes.TimeMarker, Action.Delete, item);

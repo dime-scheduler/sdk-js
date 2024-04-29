@@ -23,7 +23,7 @@ import TaskFilterValue from './task/taskfiltervalue';
 import TaskLocked from './task/tasklocked';
 import TaskUri from './task/taskuri';
 import Category from './category';
-import Pin from './category';
+import Pin from './pin';
 import Job from './job';
 import FilterGroup from './filtergroup';
 import FilterValue from './filtervalue';
@@ -32,6 +32,8 @@ import Notification from './notification';
 import Connector from './connector';
 import Caption from './caption';
 import Container from './container';
+import Calendar from './calendar';
+import ResourceType from './resourcetype';
 
 export {
     ActionUri,
@@ -39,6 +41,7 @@ export {
     Category,
     Pin,
     User,
+    Calendar,
     Appointment,
     AppointmentCategory,
     AppointmentContainer,
@@ -56,6 +59,7 @@ export {
     ResourceFilterValue,
     ResourceGpsTracking,
     ResourceUri,
+    ResourceType,
     Task,
     TaskContainer,
     TaskFilterValue,
