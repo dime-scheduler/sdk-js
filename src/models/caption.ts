@@ -25,7 +25,7 @@ export default class Caption extends ImportModel implements IImportModel {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertCaption");
             case CrudType.Delete:
-                return super.createAppendRequest("mboc_deleteCaption");
+                return {}
         }
     }
 }

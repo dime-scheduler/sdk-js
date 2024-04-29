@@ -1,11 +1,11 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../dist';
-import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../../dist/lib/models';
+import { Category, TimeMarker, Appointment, Pin, Job, Task, ResourceGpsTracking, FilterGroup, FilterValue } from '../../dist/models';
 import randomWords from 'random-words';
 
 import { apiKey, resourceNo } from "../testvars";
 
-describe('Import', function () {
+describe('Assignment', function () {
     describe('#appendAppointmentAssignment()', function () {
         it('Should successfully append assignment', async () => {
             const appointment = new Appointment();

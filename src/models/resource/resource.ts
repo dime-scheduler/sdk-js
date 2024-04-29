@@ -1,4 +1,5 @@
 ﻿import CrudType from "../base/action";
+import DeleteProperty from "../base/deleteproperty";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
@@ -6,12 +7,15 @@ import ImportProperty from "../base/importproperty";
 export default class Resource extends ImportModel implements IImportModel {
 
     @ImportProperty("ResourceNo")
+    @DeleteProperty()
     resourceNo?: string;
 
     @ImportProperty("SourceApp")
+    @DeleteProperty()
     sourceApp?: string;
 
     @ImportProperty("SourceType")
+    @DeleteProperty()
     sourceType?: string;
 
     @ImportProperty("ResourceType")
@@ -259,7 +263,7 @@ export default class Resource extends ImportModel implements IImportModel {
             case CrudType.Append:
                 return super.createAppendRequest("mboc_upsertResource");
             case CrudType.Delete:
-                return super.createDeleteRequest("mboc_deleteResource");
+                return {};
         }
     }
 }

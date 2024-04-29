@@ -37,7 +37,11 @@ export default abstract class ImportModel {
     }
 
     private formatValue(val: any): string {
-        const stringVal = (val instanceof Date) ? val?.toISOString() : val?.toString();
-        return stringVal ?? "";
+        if (val instanceof Date)
+            return val?.toISOString();
+        else if (typeof (val) == "string")
+            return val?.toString() ?? "";
+
+        return val?.toString() ?? null;
     }
 }

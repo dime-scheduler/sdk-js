@@ -1,5 +1,6 @@
 ﻿
 import CrudType from "../base/action";
+import DeleteProperty from "../base/deleteproperty";
 import IImportModel from "../base/iimportmodel";
 import ImportModel from "../base/importmodel";
 import ImportProperty from "../base/importproperty";
@@ -7,9 +8,11 @@ import ImportProperty from "../base/importproperty";
 export default class AppointmentCategory extends ImportModel implements IImportModel {
 
     @ImportProperty("SourceApp")
+    @DeleteProperty()
     sourceApp?: string;
 
     @ImportProperty("SourceType")
+    @DeleteProperty()
     sourceType?: string;
 
     appointmentNo?: string;

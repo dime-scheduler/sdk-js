@@ -1,7 +1,7 @@
 'use strict';
 
-import DimeSchedulerClient from './lib/client';
-import Environment from './lib/environment';
+import DimeSchedulerClient from './client';
+import Environment from './environment';
 
 export {
     DimeSchedulerClient as default,

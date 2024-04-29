@@ -1,10 +1,11 @@
 class ImportResponse {
 
     static fromRawJson(jsonString: string): ImportResponse {
-        const json = JSON.parse(jsonString);
+        const json = JSON.parse(jsonString);      
         return new ImportResponse({
-            success: json.Success,
-            message: json.Description ?? json.Message
+            success: json?.Success ?? json.Error == null,
+            message: json.Description ?? json.Message ?? json.Error,
+            appointments: (json.Appointments ?? []).map((x: any) => x.Id)
         })
     }
 
@@ -14,6 +15,6 @@ class ImportResponse {
 
     success!: boolean;
     message?: string;
+    appointments?: Array<number>
 }
-
 export default ImportResponse;
