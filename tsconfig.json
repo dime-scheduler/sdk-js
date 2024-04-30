@@ -27,4 +27,8 @@
     "dist",
     "test"
   ],
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  }
 }

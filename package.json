@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.3.4",
+  "version": "0.3.6",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "module": "./dist/esm/index.js",
@@ -32,7 +32,7 @@
     "power-apps"
   ],
   "scripts": {
-    "build": "tsc --p tsconfig.json",
+    "build": "tsc --p tsconfig.json && tsc-alias",
     "clean": "rimraf dist",
     "pub": "yarn clean && yarn build && yarn publish",
     "test": "tsc --p ./test/tsconfig.json && ts-mocha test/**/*.ts --timeout 10000"
@@ -50,6 +50,7 @@
     "rimraf": "^5.0.5",
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",
+    "tsc-alias": "1.8.8",
     "typescript": "^5.4.5"
   }
 }
