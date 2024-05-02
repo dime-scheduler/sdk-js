@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.3.6",
+  "version": "0.3.8",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/index.js",
@@ -14,7 +14,7 @@
     },
     "./models": {
       "types": "./dist/models/types/index.d.ts",
-      "require": "./dist/models/cjs/index.js",
+      "require": "./dist/cjs/models/index.js",
       "import": "./dist/models/index.js",
       "default": "./dist/models/index.js"
     }
