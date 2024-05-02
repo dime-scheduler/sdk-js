@@ -1,16 +1,16 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
     "lib": [
       "dom",
       "esnext"
     ],
-    "declaration": false,
-    "sourceMap": true,
-    "rootDir": "./",
+    
+    // "rootDir": "./src",
+    "strict": true,
     "noEmit": true,
-    "strict": false,
+    "target": "ESNext",
+    "module": "ESNext",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",

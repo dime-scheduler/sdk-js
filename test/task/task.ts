@@ -1,6 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../../dist';
-import { Job, Task, } from '../../dist/models';
+import DimeSchedulerClient, { Environment } from '../../src';
+import { Job, Task, } from '../../src/models';
 
 import { apiKey } from "../testvars";
 

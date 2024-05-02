@@ -5,7 +5,6 @@
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/index.js",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",

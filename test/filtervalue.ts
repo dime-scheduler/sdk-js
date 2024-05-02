@@ -1,6 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
-import { FilterGroup, FilterValue } from '../dist/models';
+import DimeSchedulerClient, { Environment } from '../src';
+import { FilterGroup, FilterValue } from '../src/models';
 
 import { apiKey } from "./testvars";
 

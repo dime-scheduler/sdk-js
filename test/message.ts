@@ -1,7 +1,7 @@
-import DimeSchedulerClient, { Environment } from '../dist';
+import DimeSchedulerClient, { Environment } from '../src';
 
 import { apiKey } from "./testvars";
-import { Severity } from '../dist/models/constants/severity';
+import { Severity } from '../src/models/constants/severity';
 
 describe('Message', function () {
     describe('#sendMessage()', function () {
