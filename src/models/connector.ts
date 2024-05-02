@@ -25,7 +25,7 @@ export default class Connector extends ImportModel implements IImportModel {
     @ImportProperty("Login")
     login?: string;
 
-    @ImportProperty("BackOfficeSystem")
+    @ImportProperty("Password")
     password?: string;
 
     toImportRequest(action: CrudType) {

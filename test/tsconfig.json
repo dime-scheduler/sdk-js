@@ -1,20 +1,12 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    
-    // "rootDir": "./src",
-    "strict": true,
     "noEmit": true,
     "target": "ESNext",
     "module": "ESNext",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true

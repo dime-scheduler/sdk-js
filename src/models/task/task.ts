@@ -25,7 +25,7 @@ export default class Task extends ImportModel implements IImportModel {
     taskNo?: string;
 
     @ImportProperty("TaskType")
-    taskType?: number;
+    taskType?: number = 0;
 
     @ImportProperty("ShortDescription")
     shortDescription?: string;
@@ -115,7 +115,7 @@ export default class Task extends ImportModel implements IImportModel {
     laborWarrantyEndDate?: string | null;
 
     @ImportProperty("Importance")
-    importance?: Importance | number;
+    importance?: Importance | number = 1;
 
     @ImportProperty("Status")
     status?: string;
@@ -166,7 +166,7 @@ export default class Task extends ImportModel implements IImportModel {
     body?: string;
 
     @ImportProperty("InfiniteTask")
-    infiniteTask?: boolean;
+    infiniteTask?: boolean = false;
 
     @ImportProperty("TaskOpenAsOf")
     taskOpenAsOf?: string | null;
@@ -277,19 +277,19 @@ export default class Task extends ImportModel implements IImportModel {
     freeDate5?: string | null;
 
     @ImportProperty("FreeBit1")
-    freeBit1?: boolean;
+    freeBit1?: boolean = false;
 
     @ImportProperty("FreeBit2")
-    freeBit2?: boolean;
+    freeBit2?: boolean = false;
 
     @ImportProperty("FreeBit3")
-    freeBit3?: boolean;
+    freeBit3?: boolean = false;
 
     @ImportProperty("FreeBit4")
-    freeBit4?: boolean;
+    freeBit4?: boolean = false;
 
     @ImportProperty("FreeBit5")
-    freeBit5?: boolean;
+    freeBit5?: boolean = false;
 
     @ImportProperty("url1")
     url1?: string;
@@ -313,19 +313,19 @@ export default class Task extends ImportModel implements IImportModel {
     certificateNo?: string;
 
     @ImportProperty("RequiredTotalDurationInSeconds")
-    requiredTotalDurationInSeconds?: number;
+    requiredTotalDurationInSeconds?: number = 0;
 
     @ImportProperty("DoNotCountAppointmentResource")
-    doNotCountAppointmentResource?: boolean;
+    doNotCountAppointmentResource?: boolean = false;
 
     @ImportProperty("IsComplete")
-    isComplete?: boolean;
+    isComplete?: boolean = false;
 
     @ImportProperty("PlanningUOM")
     planningUOM?: string;
 
     @ImportProperty("PlanningUOMConversion")
-    planningUOMConversion?: number;
+    planningUOMConversion?: number = 0;
 
     @ImportProperty("PlanningQty")
     planningQty?: number;
@@ -334,7 +334,7 @@ export default class Task extends ImportModel implements IImportModel {
     useFixPlanningQty?: boolean;
 
     @ImportProperty("RoundToUOM")
-    roundToUOM?: boolean;
+    roundToUOM?: boolean = false;
 
     @ImportProperty("AppointmentTemplate")
     appointmentTemplate?: string;
@@ -343,16 +343,16 @@ export default class Task extends ImportModel implements IImportModel {
     bulkPlanningQty?: number;
 
     @ImportProperty("StartDate")
-    startDate?: string | null;
+    startDate?: Date | null;
 
     @ImportProperty("EndDate")
-    endDate?: string | null;
+    endDate?: Date | null;
 
     @ImportProperty("PercentDone")
     percentDone?: number;
 
     @ImportProperty("SchedulingMode")
-    schedulingMode?: number;
+    schedulingMode?: number = 0;
 
     @ImportProperty("BaseLineStartDate")
     baseLineStartDate?: string | null;
@@ -369,12 +369,6 @@ export default class Task extends ImportModel implements IImportModel {
     @ImportProperty("Index")
     index?: number;
 
-    @ImportProperty("ConstraintType")
-    constraintType?: number;
-
-    @ImportProperty("ConstraintDatetime")
-    constraintDatetime?: string | null;
-
     @ImportProperty("ParentTaskNo")
     parentTaskNo?: string;
 
@@ -388,28 +382,22 @@ export default class Task extends ImportModel implements IImportModel {
     predecessorLag?: number;
 
     @ImportProperty("ManuallyScheduled")
-    manuallyScheduled?: boolean;
+    manuallyScheduled?: boolean = false;
 
     @ImportProperty("Note")
     note?: string;
 
     @ImportProperty("OverRuleGanttPlanning")
-    overRuleGanttPlanning?: boolean;
+    overRuleGanttPlanning?: boolean = false;
 
     @ImportProperty("IgnoreCalendars")
-    ignoreCalendars?: boolean;
+    ignoreCalendars?: boolean = false;
 
     @ImportProperty("ContainerName")
     containerName?: string;
 
     @ImportProperty("ContainerIndex")
     containerIndex?: number;
-
-    @ImportProperty("CheckAppointments")
-    checkAppointments?: boolean;
-
-    @ImportProperty("SentFromBackOffice")
-    sentFromBackOffice?: boolean;
 
     createJob?: boolean;
 
