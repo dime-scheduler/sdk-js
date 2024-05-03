@@ -1,11 +1,10 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/index.js",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
@@ -50,7 +49,6 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.7",
     "mocha": "^10.4.0",
-    "random-words": "^2.0.1",
     "rimraf": "^5.0.5",
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "dimescheduler": "0.4.3",
+    "dimescheduler": "0.4.4",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   },
