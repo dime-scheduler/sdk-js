@@ -7,338 +7,338 @@ import Importance from "./constants/importance";
 
 class Job extends ImportModel implements IImportModel {
 
-    @ImportProperty()
-    SourceApp?: string;
+    @ImportProperty("SourceApp")
+    sourceApp?: string;
 
-    @ImportProperty()
-    SourceType?: string;
+    @ImportProperty("SourceType")
+    sourceType?: string;
 
-    @ImportProperty()
-    JobNo?: string;
+    @ImportProperty("JobNo")
+    jobNo?: string;
 
-    @ImportProperty()
-    ShortDescription?: string;
+    @ImportProperty("ShortDescription")
+    shortDescription?: string;
 
-    @ImportProperty()
-    Description?: string;
+    @ImportProperty("Description")
+    description?: string;
 
-    @ImportProperty()
-    Type?: string;
+    @ImportProperty("Type")
+    type?: string;
 
-    @ImportProperty()
-    Name?: string;
+    @ImportProperty("Name")
+    name?: string;
 
-    @ImportProperty()
-    Category?: string;
+    @ImportProperty("Category")
+    category?: string;
 
-    @ImportProperty()
-    TimeMarker?: string;
+    @ImportProperty("TimeMarker")
+    timeMarker?: string;
 
-    @ImportProperty()
-    Pin?: string;
+    @ImportProperty("Pin")
+    pin?: string;
 
-    @ImportProperty()
-    CustomerNo?: string;
+    @ImportProperty("CustomerNo")
+    customerNo?: string;
 
-    @ImportProperty()
-    CustomerName?: string;
+    @ImportProperty("CustomerName")
+    customerName?: string;
 
-    @ImportProperty()
-    CustomerAddress?: string;
+    @ImportProperty("CustomerAddress")
+    customerAddress?: string;
 
-    @ImportProperty()
-    CustomerAddressGeoLong?: number;
+    @ImportProperty("CustomerAddressGeoLong")
+    customerAddressGeoLong?: number;
 
-    @ImportProperty()
-    CustomerAddressGeoLat?: number;
+    @ImportProperty("CustomerAddressGeoLat")
+    customerAddressGeoLat?: number;
 
-    @ImportProperty()
-    CustomerPhone?: string;
+    @ImportProperty("CustomerPhone")
+    customerPhone?: string;
 
-    @ImportProperty()
-    CustomerEmail?: string;
+    @ImportProperty("CustomerEmail")
+    customerEmail?: string;
 
-    @ImportProperty()
-    ContactNo?: string;
+    @ImportProperty("ContactNo")
+    contactNo?: string;
 
-    @ImportProperty()
-    ContactName?: string;
+    @ImportProperty("ContactName")
+    contactName?: string;
 
-    @ImportProperty()
-    ContactAddress?: string;
+    @ImportProperty("ContactAddress")
+    contactAddress?: string;
 
-    @ImportProperty()
-    ContactAddressGeoLong?: number;
+    @ImportProperty("ContactAddressGeoLong")
+    contactAddressGeoLong?: number;
 
-    @ImportProperty()
-    ContactAddressGeoLat?: number
+    @ImportProperty("ContactAddressGeoLat")
+    contactAddressGeoLat?: number
 
-    @ImportProperty()
-    ContactPhone?: string;
+    @ImportProperty("ContactPhone")
+    contactPhone?: string;
 
-    @ImportProperty()
-    ContactEmail?: string;
+    @ImportProperty("ContactEmail")
+    contactEmail?: string;
 
-    @ImportProperty()
-    SiteNo?: string;
+    @ImportProperty("SiteNo")
+    siteNo?: string;
 
-    @ImportProperty()
-    SiteName?: string;
+    @ImportProperty("SiteName")
+    siteName?: string;
 
-    @ImportProperty()
-    SiteAddress?: string;
+    @ImportProperty("SiteAddress")
+    siteAddress?: string;
 
-    @ImportProperty()
-    SiteAddressGeoLong?: number;
+    @ImportProperty("SiteAddressGeoLong")
+    siteAddressGeoLong?: number;
 
-    @ImportProperty()
-    SiteAddressGeoLat?: number;
+    @ImportProperty("SiteAddressGeoLat")
+    siteAddressGeoLat?: number;
 
-    @ImportProperty()
-    SitePhone?: string;
+    @ImportProperty("SitePhone")
+    sitePhone?: string;
 
-    @ImportProperty()
-    SiteEmail?: string;
+    @ImportProperty("SiteEmail")
+    siteEmail?: string;
 
-    @ImportProperty()
-    SiteRegion?: string;
+    @ImportProperty("SiteRegion")
+    siteRegion?: string;
 
-    @ImportProperty()
-    SiteStreet?: string;
+    @ImportProperty("SiteStreet")
+    siteStreet?: string;
 
-    @ImportProperty()
-    SiteStreetNo?: string;
+    @ImportProperty("SiteStreetNo")
+    siteStreetNo?: string;
 
-    @ImportProperty()
-    SitePostcode?: string;
+    @ImportProperty("SitePostcode")
+    sitePostcode?: string;
 
-    @ImportProperty()
-    SiteCity?: string;
+    @ImportProperty("SiteCity")
+    siteCity?: string;
 
-    @ImportProperty()
-    SiteCounty?: string;
+    @ImportProperty("SiteCounty")
+    siteCounty?: string;
 
-    @ImportProperty()
-    SiteState?: string;
+    @ImportProperty("SiteState")
+    siteState?: string;
 
-    @ImportProperty()
-    SiteCountry?: string;
+    @ImportProperty("SiteCountry")
+    siteCountry?: string;
 
-    @ImportProperty()
-    SiteFromNo?: string;
+    @ImportProperty("SiteFromNo")
+    siteFromNo?: string;
 
-    @ImportProperty()
-    SiteFromName?: string;
+    @ImportProperty("SiteFromName")
+    siteFromName?: string;
 
-    @ImportProperty()
-    SiteFromAddress?: string;
+    @ImportProperty("SiteFromAddress")
+    siteFromAddress?: string;
 
-    @ImportProperty()
-    SiteFromAddressGeoLong?: number;
+    @ImportProperty("SiteFromAddressGeoLong")
+    siteFromAddressGeoLong?: number;
 
-    @ImportProperty()
-    SiteFromAddressGeoLat?: number;
+    @ImportProperty("SiteFromAddressGeoLat")
+    siteFromAddressGeoLat?: number;
 
-    @ImportProperty()
-    SiteFromPhone?: string;
+    @ImportProperty("SiteFromPhone")
+    siteFromPhone?: string;
 
-    @ImportProperty()
-    SiteFromEmail?: string;
+    @ImportProperty("SiteFromEmail")
+    siteFromEmail?: string;
 
-    @ImportProperty()
-    SiteFromRegion?: string;
+    @ImportProperty("SiteFromRegion")
+    siteFromRegion?: string;
 
-    @ImportProperty()
-    SiteFromStreet?: string;
+    @ImportProperty("SiteFromStreet")
+    siteFromStreet?: string;
 
-    @ImportProperty()
-    SiteFromStreetNo?: string;
+    @ImportProperty("SiteFromStreetNo")
+    siteFromStreetNo?: string;
 
-    @ImportProperty()
-    SiteFromPostcode?: string;
+    @ImportProperty("SiteFromPostcode")
+    siteFromPostcode?: string;
 
-    @ImportProperty()
-    SiteFromCity?: string;
+    @ImportProperty("SiteFromCity")
+    siteFromCity?: string;
 
-    @ImportProperty()
-    SiteFromCounty?: string;
+    @ImportProperty("SiteFromCounty")
+    siteFromCounty?: string;
 
-    @ImportProperty()
-    SiteFromState?: string;
+    @ImportProperty("SiteFromState")
+    siteFromState?: string;
 
-    @ImportProperty()
-    SiteFromCountry?: string;
+    @ImportProperty("SiteFromCountry")
+    siteFromCountry?: string;
 
-    @ImportProperty()
-    BillNo?: string;
+    @ImportProperty("BillNo")
+    billNo?: string;
 
-    @ImportProperty()
-    BillName?: string;
+    @ImportProperty("BillName")
+    billName?: string;
 
-    @ImportProperty()
-    BillAddress?: string;
+    @ImportProperty("BillAddress")
+    billAddress?: string;
 
-    @ImportProperty()
-    BillAddressGeoLong?: number;
+    @ImportProperty("BillAddressGeoLong")
+    billAddressGeoLong?: number;
 
-    @ImportProperty()
-    BillAddressGeoLat?: number;
+    @ImportProperty("BillAddressGeoLat")
+    billAddressGeoLat?: number;
 
-    @ImportProperty()
-    BillPhone?: string;
+    @ImportProperty("BillPhone")
+    billPhone?: string;
 
-    @ImportProperty()
-    BillEmail?: string;
+    @ImportProperty("BillEmail")
+    billEmail?: string;
 
-    @ImportProperty()
-    BillRegion?: string;
+    @ImportProperty("BillRegion")
+    billRegion?: string;
 
-    @ImportProperty()
-    Importance?: Importance | number;
+    @ImportProperty("Importance")
+    importance?: Importance | number;
 
-    @ImportProperty()
-    CreationDateTime?: Date;
+    @ImportProperty("CreationDateTime")
+    creationDateTime?: Date;
 
-    @ImportProperty()
-    CustomerReference?: string;
+    @ImportProperty("CustomerReference")
+    customerReference?: string;
 
-    @ImportProperty()
-    Language?: string;
+    @ImportProperty("Language")
+    language?: string;
 
-    @ImportProperty()
-    Responsible?: string;
+    @ImportProperty("Responsible")
+    responsible?: string;
 
-    @ImportProperty()
-    Creator?: string;
+    @ImportProperty("Creator")
+    creator?: string;
 
-    @ImportProperty()
-    FreeText1?: string;
+    @ImportProperty("FreeText1")
+    freeText1?: string;
 
-    @ImportProperty()
-    FreeText2?: string;
+    @ImportProperty("FreeText2")
+    freeText2?: string;
 
-    @ImportProperty()
-    FreeText3?: string;
+    @ImportProperty("FreeText3")
+    freeText3?: string;
 
-    @ImportProperty()
-    FreeText4?: string;
+    @ImportProperty("FreeText4")
+    freeText4?: string;
 
-    @ImportProperty()
-    FreeText5?: string;
+    @ImportProperty("FreeText5")
+    freeText5?: string;
 
-    @ImportProperty()
-    FreeText6?: string;
+    @ImportProperty("FreeText6")
+    freeText6?: string;
 
-    @ImportProperty()
-    FreeText7?: string;
+    @ImportProperty("FreeText7")
+    freeText7?: string;
 
-    @ImportProperty()
-    FreeText8?: string;
+    @ImportProperty("FreeText8")
+    freeText8?: string;
 
-    @ImportProperty()
-    FreeText9?: string;
+    @ImportProperty("FreeText9")
+    freeText9?: string;
 
-    @ImportProperty()
-    FreeText10?: string;
+    @ImportProperty("FreeText10")
+    freeText10?: string;
 
-    @ImportProperty()
-    FreeText11?: string;
+    @ImportProperty("FreeText11")
+    freeText11?: string;
 
-    @ImportProperty()
-    FreeText12?: string;
+    @ImportProperty("FreeText12")
+    freeText12?: string;
 
-    @ImportProperty()
-    FreeText13?: string;
+    @ImportProperty("FreeText13")
+    freeText13?: string;
 
-    @ImportProperty()
-    FreeText14?: string;
+    @ImportProperty("FreeText14")
+    freeText14?: string;
 
-    @ImportProperty()
-    FreeText15?: string;
+    @ImportProperty("FreeText15")
+    freeText15?: string;
 
-    @ImportProperty()
-    FreeText16?: string;
+    @ImportProperty("FreeText16")
+    freeText16?: string;
 
-    @ImportProperty()
-    FreeText17?: string;
+    @ImportProperty("FreeText17")
+    freeText17?: string;
 
-    @ImportProperty()
-    FreeText18?: string;
+    @ImportProperty("FreeText18")
+    freeText18?: string;
 
-    @ImportProperty()
-    FreeText19?: string;
+    @ImportProperty("FreeText19")
+    freeText19?: string;
 
-    @ImportProperty()
-    FreeText20?: string;
+    @ImportProperty("FreeText20")
+    freeText20?: string;
 
-    @ImportProperty()
-    FreeDecimal1?: number;
+    @ImportProperty("FreeDecimal1")
+    freeDecimal1?: number;
 
-    @ImportProperty()
-    FreeDecimal2?: number;
+    @ImportProperty("FreeDecimal2")
+    freeDecimal2?: number;
 
-    @ImportProperty()
-    FreeDecimal3?: number;
+    @ImportProperty("FreeDecimal3")
+    freeDecimal3?: number;
 
-    @ImportProperty()
-    FreeDecimal4?: number;
+    @ImportProperty("FreeDecimal4")
+    freeDecimal4?: number;
 
-    @ImportProperty()
-    FreeDecimal5?: number;
+    @ImportProperty("FreeDecimal5")
+    freeDecimal5?: number;
 
-    @ImportProperty()
-    FreeDate1?: Date;
+    @ImportProperty("FreeDate1")
+    freeDate1?: string | null;
 
-    @ImportProperty()
-    FreeDate2?: Date;
+    @ImportProperty("FreeDate2")
+    freeDate2?: string | null;
 
-    @ImportProperty()
-    FreeDate3?: Date;
+    @ImportProperty("FreeDate3")
+    freeDate3?: string | null;
 
-    @ImportProperty()
-    FreeDate4?: Date;
+    @ImportProperty("FreeDate4")
+    freeDate4?: string | null;
 
-    @ImportProperty()
-    FreeDate5?: Date;
+    @ImportProperty("FreeDate5")
+    freeDate5?: string | null;
 
-    @ImportProperty()
-    FreeBit1?: boolean;
+    @ImportProperty("FreeBit1")
+    freeBit1?: boolean = false;
 
-    @ImportProperty()
-    FreeBit2?: boolean;
+    @ImportProperty("FreeBit2")
+    freeBit2?: boolean = false;
 
-    @ImportProperty()
-    FreeBit3?: boolean;
+    @ImportProperty("FreeBit3")
+    freeBit3?: boolean = false;
 
-    @ImportProperty()
-    FreeBit4?: boolean;
+    @ImportProperty("FreeBit4")
+    freeBit4?: boolean = false;
 
-    @ImportProperty()
-    FreeBit5?: boolean;
+    @ImportProperty("FreeBit5")
+    freeBit5?: boolean = false;
 
-    @ImportProperty()
-    EnableManualSelection?: boolean;
+    @ImportProperty("EnableManualSelection")
+    enableManualSelection?: boolean;
 
-    @ImportProperty()
-    AvailableInGantt?: boolean;
+    @ImportProperty("AvailableInGantt")
+    availableInGantt?: boolean;
 
-    @ImportProperty()
-    StartDate?: Date;
+    @ImportProperty("StartDate")
+    startDate?: Date;
 
-    @ImportProperty()
-    EndDate?: Date;
+    @ImportProperty("EndDate")
+    endDate?: Date;
 
-    @ImportProperty()
-    AllowDependencies?: boolean = true;
+    @ImportProperty("AllowDependencies")
+    allowDependencies?: boolean = true;
 
-    @ImportProperty()
-    Note?: string;
+    @ImportProperty("Note")
+    note?: string;
 
-    @ImportProperty()
-    OverRuleGanttPlanning?: boolean;
+    @ImportProperty("OverRuleGanttPlanning")
+    overRuleGanttPlanning?: boolean;
 
-    @ImportProperty()
-    ReadOnly?: boolean;
+    @ImportProperty("ReadOnly")
+    readOnly?: boolean;
 
     toImportRequest(action: CrudType) {
         switch (action) {

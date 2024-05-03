@@ -26,10 +26,10 @@ const createBallColor = async (client: DimeSchedulerClient) => {
 // Need to create a job and a task for appointments to arrive on the planning board
 const createJobTask = async (client: DimeSchedulerClient) => {
     const job = new Job();
-    job.SourceApp = "PINGPONG";
-    job.SourceType = "PINGPONG";
-    job.JobNo = "PINGPONG";
-    job.ShortDescription = "PING PONG SAMPLE";
+    job.sourceApp = "PINGPONG";
+    job.sourceType = "PINGPONG";
+    job.jobNo = "PINGPONG";
+    job.shortDescription = "PING PONG SAMPLE";
     await client.import(job);
 
     const task = new Task();

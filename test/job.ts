@@ -8,10 +8,10 @@ describe('Job', function () {
 
     const createItem = () => {
         const item = new Job();
-        item.SourceApp = "SDKJS";
-        item.SourceType = "SDKJS";
-        item.JobNo = "SDKJS_001";
-        item.ShortDescription = "Item from the JS SDK!";
+        item.sourceApp = "SDKJS";
+        item.sourceType = "SDKJS";
+        item.jobNo = "SDKJS_001";
+        item.shortDescription = "Item from the JS SDK!";
 
         return item;
     }

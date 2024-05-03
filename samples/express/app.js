@@ -20,10 +20,10 @@ app.get('/task', async (req, res, next) => {
         const client = new dimescheduler.default(process.env.DS_API_KEY, dimescheduler.Environment.Test);
 
         const job = new models.Job();
-        job.SourceApp = "EXPRESS";
-        job.SourceType = "EXPRESS";
-        job.JobNo = "EXPRESS";
-        job.ShortDescription = "EXPRESS";
+        job.sourceApp = "EXPRESS";
+        job.sourceType = "EXPRESS";
+        job.jobNo = "EXPRESS";
+        job.shortDescription = "EXPRESS";
 
         const task = new models.Task();
         task.sourceApp = "EXPRESS";

@@ -8,7 +8,7 @@ export default class ResourceGpsTracking extends ImportModel implements IImportM
     @ImportProperty("ResourceNo")
     resourceNo?: string;
 
-    @ImportProperty()
+    @ImportProperty("GpsTrackingResourceNo")
     gpsTrackingResourceNo?: string;
 
     @ImportProperty("Latitude")
