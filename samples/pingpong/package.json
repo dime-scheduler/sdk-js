@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "commander": "^12.0.0",
-    "dimescheduler": "^0.4.2"
+    "dimescheduler": "^0.4.3"
   }
 }
