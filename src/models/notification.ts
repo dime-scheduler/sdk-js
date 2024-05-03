@@ -4,7 +4,7 @@ import DeleteProperty from "./base/deleteproperty";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
-import NotificationType from "./constants/notificationtype";
+import { NotificationType } from ".";
 
 export default class Notification extends ImportModel implements IImportModel {
 

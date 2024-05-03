@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/index.js",

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Endpoint from './endpoint';
 import Environment from '../environment';
-import { Severity } from '../models/constants/severity';
+import { Severity } from '../models';
 
 class MessageEndpoint extends Endpoint {
     constructor(env: Environment, apiKey: string) {

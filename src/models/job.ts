@@ -3,7 +3,7 @@ import CrudType from "./base/action";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
-import Importance from "./constants/importance";
+import { Importance } from ".";
 
 class Job extends ImportModel implements IImportModel {
 

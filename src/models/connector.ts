@@ -3,7 +3,7 @@ import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
 import DeleteProperty from "./base/deleteproperty";
-import BackOfficeSystemType from "./constants/backofficesystemtype";
+import { BackOfficeSystemType } from ".";
 
 export default class Connector extends ImportModel implements IImportModel {
     name?: string;

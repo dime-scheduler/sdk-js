@@ -1,4 +1,4 @@
-﻿export enum Severity {
+﻿enum Severity {
     Verbose,
     Debug,
     Info,
@@ -6,3 +6,5 @@
     Error,
     Fatal
 }
+
+export default Severity;

@@ -3,7 +3,7 @@ import DimeSchedulerClient, { Environment } from '../../src';
 import { AppointmentImportance } from '../../src/models';
 
 import { apiKey } from "../testvars";
-import Importance from '../../src/models/constants/importance';
+import { Importance } from "../../src/models";
 
 describe('AppointmentImportance', function () {
 
