@@ -1,7 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
-import { Category, TimeMarker, Pin } from '../dist/models';
-import randomWords from 'random-words';
+import DimeSchedulerClient, { Environment } from '../src';
+import { TimeMarker } from '../src/models';
 
 import { apiKey } from "./testvars";
 

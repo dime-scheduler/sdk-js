@@ -1,7 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
-import { Category } from '../dist/models';
-import { generate } from "random-words";
+import DimeSchedulerClient, { Environment } from '../src';
+import { Category } from '../src/models';
 
 import { apiKey } from "./testvars";
 
@@ -11,12 +10,8 @@ describe('Category', function () {
         const category = new Category();
         category.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 
-        const word = generate({
-            exactly: 1, wordsPerString: 2, formatter: (word, index) => {
-                return index === 0 ? word.slice(0, 1).toUpperCase().concat(word.slice(1)) : word;
-            }
-        })[0];
-
+        var words = ['Category 1', 'Category 2', 'Category 3'];
+        var word = words[Math.floor(Math.random() * words.length)];
         category.name = word;
         category.displayName = word;
 

@@ -13,7 +13,7 @@
   <a href="https://docs.dimescheduler.com/history">Changelog</a> |
   <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
-
+F
 <div align="center">
   <img src="https://img.shields.io/npm/v/dimescheduler?style=flat-square" />
   <img src="https://img.shields.io/npm/l/dimescheduler?style=flat-square&color=brightgreen" />

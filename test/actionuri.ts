@@ -1,7 +1,7 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
-import { ActionUri } from '../dist/models';
-import UriType from '../dist/models/constants/uritype';
+import DimeSchedulerClient, { Environment } from '../src';
+import { ActionUri } from '../src/models';
+import UriType from '../src/models/constants/uritype';
 
 import { apiKey } from "./testvars";
 

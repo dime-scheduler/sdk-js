@@ -63,7 +63,7 @@ export default class Appointment extends ImportModel implements IImportModel {
     @ImportProperty("Locked")
     locked?: boolean | null;
 
-    @ImportProperty("ReplcaceResource")
+    @ImportProperty("ReplaceResource")
     replaceResource?: boolean | null;
 
     @ImportProperty("BackofficeID")

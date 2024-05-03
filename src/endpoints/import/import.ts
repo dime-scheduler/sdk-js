@@ -18,7 +18,6 @@ class ImportEndpoint {
 
         const data = params.map(x => x.toImportRequest(append ? CrudType.Append : CrudType.Delete));
         const body = JSON.stringify(data);
-
         const headers = {
             'X-API-KEY': this.apiKey,
             'Content-Type': 'application/json',

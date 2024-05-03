@@ -1,6 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../../dist';
-import { Job, Task, } from '../../dist/models';
+import DimeSchedulerClient, { Environment } from '../../src';
+import { Job, Task, } from '../../src/models';
 
 import { apiKey } from "../testvars";
 
@@ -12,11 +12,11 @@ describe('Task', function () {
         const jobNo = "SDKJS";
 
         const job = new Job();
-        job.SourceApp = sourceApp;
-        job.SourceType = sourceType;
-        job.JobNo = jobNo;
-        job.ShortDescription = "Item from the JS SDK!";
-        job.Description = "Item from the JS SDK!";
+        job.sourceApp = sourceApp;
+        job.sourceType = sourceType;
+        job.jobNo = jobNo;
+        job.shortDescription = "Item from the JS SDK!";
+        job.description = "Item from the JS SDK!";
 
         const task = new Task();
         task.sourceApp = sourceApp;

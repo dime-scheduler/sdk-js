@@ -1,9 +1,9 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../../dist';
-import { AppointmentImportance } from '../../dist/models';
+import DimeSchedulerClient, { Environment } from '../../src';
+import { AppointmentImportance } from '../../src/models';
 
 import { apiKey } from "../testvars";
-import Importance from '../../dist/models/constants/importance';
+import Importance from '../../src/models/constants/importance';
 
 describe('AppointmentImportance', function () {
 

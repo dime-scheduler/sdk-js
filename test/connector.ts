@@ -1,7 +1,7 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
-import { Connector } from '../dist/models';
-import BackOfficeSystemType from '../dist/models/constants/backofficesystemtype';
+import DimeSchedulerClient, { Environment } from '../src';
+import { Connector } from '../src/models';
+import BackOfficeSystemType from '../src/models/constants/backofficesystemtype';
 
 import { apiKey } from "./testvars";
 

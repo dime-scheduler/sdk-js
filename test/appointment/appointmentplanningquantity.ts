@@ -1,6 +1,6 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../../dist';
-import { AppointmentPlanningQuantity } from '../../dist/models';
+import DimeSchedulerClient, { Environment } from '../../src';
+import { AppointmentPlanningQuantity } from '../../src/models';
 
 import { apiKey } from "../testvars";
 

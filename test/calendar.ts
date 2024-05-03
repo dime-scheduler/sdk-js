@@ -1,5 +1,5 @@
 import assert from 'assert';
-import DimeSchedulerClient, { Environment } from '../dist';
+import DimeSchedulerClient, { Environment } from '../src';
 
 import { apiKey } from "./testvars";
 

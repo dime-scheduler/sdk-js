@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "stage": "bun run stage.ts",
-    "play": "bun run play.ts"
+    "play": "bun run play.ts",
+    "build": "bun build stage.ts && bun build play.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -14,6 +15,6 @@
   },
   "dependencies": {
     "commander": "^12.0.0",
-    "dimescheduler": "^0.3.6"
+    "dimescheduler": "^0.4.4"
   }
 }

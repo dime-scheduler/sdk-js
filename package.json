@@ -1,18 +1,21 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.3.6",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/esm/index.js",
-  "type": "module",
+  "version": "0.4.4",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/types/index.d.ts",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
     "./models": {
-      "types": "./dist/models/index.d.ts",
+      "types": "./dist/types/models/index.d.ts",
+      "require": "./dist/cjs/models/index.js",
+      "import": "./dist/models/index.js",
       "default": "./dist/models/index.js"
     }
   },
@@ -32,10 +35,10 @@
     "power-apps"
   ],
   "scripts": {
-    "build": "tsc --p tsconfig.json && tsc-alias",
+    "build": "tsc --p tsconfig.cjs.json && tsc --p tsconfig.esm.json && tsc --p tsconfig.types.json && tsc-alias",
     "clean": "rimraf dist",
     "pub": "yarn clean && yarn build && yarn publish",
-    "test": "tsc --p ./test/tsconfig.json && ts-mocha test/**/*.ts --timeout 10000"
+    "test": "tsc --p ./test/tsconfig.json && ts-mocha -p test/tsconfig.json test/**/*.ts --timeout 10000"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -46,7 +49,6 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.7",
     "mocha": "^10.4.0",
-    "random-words": "^2.0.1",
     "rimraf": "^5.0.5",
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",
