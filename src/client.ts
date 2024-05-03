@@ -20,7 +20,7 @@ import TimeMarkerEndpoint from './endpoints/timemarker';
 import UserEndpoint from './endpoints/user';
 import Environment from './environment';
 import IImportModel from './models/base/iimportmodel';
-import { Severity } from './models/constants/severity';
+import { Severity } from './models';
 
 class DimeSchedulerClient {
     private importEndpoint: ImportEndpoint;

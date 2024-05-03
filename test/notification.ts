@@ -1,7 +1,6 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
-import { Notification } from '../src/models';
-import NotificationType from '../src/models/constants/notificationtype';
+import { Notification, NotificationType } from '../src/models';
 
 import { apiKey } from "./testvars";
 

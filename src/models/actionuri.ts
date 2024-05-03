@@ -3,7 +3,7 @@ import CrudType from "./base/action";
 import IImportModel from "./base/iimportmodel";
 import ImportModel from "./base/importmodel";
 import ImportProperty from "./base/importproperty";
-import UriType from "./constants/uritype";
+import { UriType } from ".";
 
 export default class ActionUri extends ImportModel implements IImportModel {
 

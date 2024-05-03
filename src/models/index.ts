@@ -35,6 +35,15 @@ import Container from './container';
 import Calendar from './calendar';
 import ResourceType from './resourcetype';
 
+// Constants
+import BackOfficeSystemType from './constants/backofficesystemtype';
+import Importance from './constants/importance';
+import NotificationType from './constants/notificationtype';
+import SchedulingMode from './constants/schedulingmode';
+import Severity from './constants/severity';
+import TaskType from './constants/tasktype';
+import UriType from './constants/uritype';
+
 export {
     ActionUri,
     TimeMarker,
@@ -71,5 +80,12 @@ export {
     Notification,
     Connector,
     Caption,
-    Container
+    Container,
+    BackOfficeSystemType,
+    Importance,
+    NotificationType,
+    SchedulingMode,
+    Severity,
+    TaskType,
+    UriType
 };
