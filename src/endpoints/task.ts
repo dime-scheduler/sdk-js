@@ -2,7 +2,6 @@ import Action from "../constants/action";
 import Routes from "../constants/routes";
 import Environment from "../environment";
 import { Task, TaskContainer, TaskFilterValue, TaskLocked, TaskUri } from "../models";
-import Page from "../models/page";
 import Endpoint from "./endpoint";
 
 class TaskEndpoint extends Endpoint {
@@ -11,7 +10,7 @@ class TaskEndpoint extends Endpoint {
         super(env, apiKey);
     }
 
-    getAll = (page: number, limit: number, sort?: string, group?: string, filter?: string) => super.getPage<Page<Task>>(Routes.Task, { page, limit, sort, group, filter });
+    getAll = () => super.get<Task>(Routes.Task);
     create = (item: Task) => super.execute(Routes.Task, Action.Create, item);
     update = (item: Task) => super.execute(Routes.Task, Action.Update, item);
     delete = (item: Task) => super.execute(Routes.Task, Action.Delete, item);

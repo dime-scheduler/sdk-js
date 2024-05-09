@@ -2,6 +2,7 @@ import Action from "../constants/action";
 import Routes from "../constants/routes";
 import Environment from "../environment";
 import { Resource, ResourceGpsTracking, ResourceCalendar, ResourceCapacity, ResourceFilterValue, ResourceUri } from "../models";
+import Page from "../models/page";
 import Endpoint from "./endpoint";
 
 class ResourceEndpoint extends Endpoint {
@@ -21,7 +22,7 @@ class ResourceEndpoint extends Endpoint {
     updateCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Update, item);
     deleteCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Delete, item);
 
-    getCapacity = (page: number, limit: number, sort?: string, group?: string, filter?: string) => super.get<ResourceCapacity>(Routes.ResourceCapacity, { page, limit, sort, group, filter });
+    getCapacity = (page: number, limit: number, sort?: string, group?: string, filter?: string) => super.get<Page<ResourceCapacity>>(Routes.ResourceCapacity, { page, limit, sort, group, filter });
     createCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Create, item);
     updateCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Update, item);
 

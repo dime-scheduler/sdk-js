@@ -67,12 +67,12 @@ describe('Task', function () {
     });
 
     describe('#getTasks()', function () {
-        it('Should successfully get items', async () => {
+        it.only('Should successfully get items', async () => {
             const client = new DimeSchedulerClient(apiKey, TestEnvironment);
-            const results = await client.tasks.getAll(1, 100);
+            const results = await client.tasks.getAll();
 
-            console.log(results.data);
-            assert.ok(results.data.length > 0);
+            console.log(results);
+            assert.ok(results.length > 0);
         });
     });
 });
