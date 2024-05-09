@@ -2,7 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { Appointment, AppointmentUri } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
+import {  TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('AppointmentUri', function () {
 
@@ -39,7 +40,7 @@ describe('AppointmentUri', function () {
 
             const { item, appointment } = createItem();
 
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const importedAppointment = await client.import(appointment);
 
             item.appointmentId = importedAppointment?.appointments![0];
@@ -52,21 +53,21 @@ describe('AppointmentUri', function () {
     describe('#createAppointmentUri()', function () {
         it('Should successfully create item', async () => {
             const { item } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
         });
     });
 
     describe('#updateAppointmentUri()', function () {
         it('Should successfully update item', async () => {
             const { item } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
         });
     });
 
     describe('#deleteAppointmentUri()', function () {
         it('Should successfully delete item', async () => {
             const { item } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
         });
     });
 });

@@ -8,7 +8,7 @@ class ImportEndpoint {
     apiKey: string;
     uri: string;
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string | string, apiKey: string) {
         this.uri = env;
         this.apiKey = apiKey;
     }

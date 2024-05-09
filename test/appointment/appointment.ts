@@ -2,7 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { Appointment } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
+import { TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Appointment', function () {
 
@@ -29,7 +30,7 @@ describe('Appointment', function () {
     describe('#importAppendAppointment()', function () {
         it('Should successfully append appointment', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -38,7 +39,7 @@ describe('Appointment', function () {
     describe('#createAppointment()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.appointments.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -47,7 +48,7 @@ describe('Appointment', function () {
     describe('#updateAppointment()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.appointments.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -56,9 +57,23 @@ describe('Appointment', function () {
     describe('#deleteAppointment()', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.appointments.delete(item);
             assert.ok(results.success, !results.success ? results.message : "");
+        });
+    });
+
+    describe('#getAppointments()', function () {
+        it('Should successfully get items', async () => {
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
+
+            const start = new Date();
+
+            const oneDay = (1000 * 60 * 60 * 24);
+            const end = new Date(start.getTime() + oneDay * 14);
+
+            const results = await client.appointments.getAll(start, end, [8558, 8559, 8560]);
+            assert.ok(results.length > 0);
         });
     });
 });

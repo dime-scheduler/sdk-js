@@ -148,3 +148,11 @@ category.name = "My category";
 
 const response = await dimeSchedulerClient.import(category, false);
 ```
+
+## Running tests
+
+Create an `.env` in the root of the project and complete the following list:
+
+```bash
+API_KEY=
+```

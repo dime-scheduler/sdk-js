@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { Resource } from '../../src/models';
+import { TestEnvironment } from '../testvars';
 
-import { apiKey } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 
 describe('Resource', function () {
@@ -98,7 +99,7 @@ describe('Resource', function () {
         it('Should successfully create or update resource', async () => {
 
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -107,7 +108,7 @@ describe('Resource', function () {
     describe('#createResource()', function () {
         it('Should successfully create resource', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -116,7 +117,7 @@ describe('Resource', function () {
     describe('#updateResource()', function () {
         it('Should successfully update resource', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -124,7 +125,7 @@ describe('Resource', function () {
 
     describe('#getAll()', function () {
         it('Should successfully get items', async () => {
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             await client.resources.create(createItem());
             const items = await client.resources.getAll();
             assert.ok(items.length > 0);

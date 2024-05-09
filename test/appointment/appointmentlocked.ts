@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { AppointmentLocked } from '../../src/models';
+import { TestEnvironment } from '../testvars';
 
-import { apiKey } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('AppointmentLocked', function () {
     
@@ -19,7 +20,7 @@ describe('AppointmentLocked', function () {
     describe('#appendAppointmentLocked()', function () {
         it('Should successfully set appointment locked', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -28,7 +29,7 @@ describe('AppointmentLocked', function () {
     describe('#setAppointmentLocked()', function () {
         it('Should successfully set appointment lock', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.appointments.setLocked(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

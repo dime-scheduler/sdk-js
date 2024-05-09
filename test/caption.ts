@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { Caption } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Caption', function () {
     const createItem = () => {
@@ -19,7 +20,7 @@ describe('Caption', function () {
     describe('#importCaption()', function () {
         it('Should successfully create caption', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -28,7 +29,7 @@ describe('Caption', function () {
     describe('#createConnector()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.captions.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -37,7 +38,7 @@ describe('Caption', function () {
     describe('#updateConnector()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.captions.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

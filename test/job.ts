@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { Job } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Job', function () {
 
@@ -20,7 +21,7 @@ describe('Job', function () {
         it('Should successfully append job', async () => {
 
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -29,7 +30,7 @@ describe('Job', function () {
     describe('#createJob()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.jobs.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -38,7 +39,7 @@ describe('Job', function () {
     describe('#updateJob()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.jobs.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -47,7 +48,7 @@ describe('Job', function () {
     describe('#deleteJob()', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.jobs.delete(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { Category, TimeMarker, Pin } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Pin', function () {
 
@@ -21,7 +22,7 @@ describe('Pin', function () {
     describe('#importPin()', function () {
         it('Should successfully append pin', async () => {
             const pin = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(pin);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -30,7 +31,7 @@ describe('Pin', function () {
     describe('#createPin()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.pins.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -39,7 +40,7 @@ describe('Pin', function () {
     describe('#updatePin()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.pins.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -48,7 +49,7 @@ describe('Pin', function () {
     describe('#deletePin()', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.pins.delete(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -56,7 +57,7 @@ describe('Pin', function () {
 
     describe('#getAll()', function () {
         it('Should successfully get items', async () => {
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             await client.pins.create(createItem());
             const items = await client.pins.getAll();
             assert.ok(items.length > 0);

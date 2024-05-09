@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { FilterGroup, FilterValue, TaskFilterValue } from '../../src/models';
+import { TestEnvironment } from '../testvars';
 
-import { apiKey } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('TaskFilterValue', function () {
 
@@ -30,7 +31,7 @@ describe('TaskFilterValue', function () {
             
             const { item, filterGroup, filterValue } = createItem();
 
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import([filterGroup, filterValue, item]);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -39,7 +40,7 @@ describe('TaskFilterValue', function () {
     describe('#createTaskFilterValue()', function () {
         it('Should successfully create task filter value', async () => {
             const { item, filterGroup, filterValue } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.tasks.createFilterValue(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -48,7 +49,7 @@ describe('TaskFilterValue', function () {
     describe('#updateTaskFilterValue()', function () {
         it('Should successfully update task filter value', async () => {
             const { item, filterGroup, filterValue } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.tasks.updateFilterValue(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -57,7 +58,7 @@ describe('TaskFilterValue', function () {
     describe('#deleteTaskFilterValue()', function () {
         it('Should successfully delete task filter value', async () => {
             const { item, filterGroup, filterValue } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.tasks.deleteFilterValue(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

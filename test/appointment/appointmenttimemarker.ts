@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { AppointmentTimeMarker } from '../../src/models';
+import { TestEnvironment } from '../testvars';
 
-import { apiKey } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('AppointmentTimeMarker', function () {
 
@@ -19,7 +20,7 @@ describe('AppointmentTimeMarker', function () {
     describe('#appendAppointmentTimeMarker()', function () {
         it('Should successfully set appointment time marker', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -28,7 +29,7 @@ describe('AppointmentTimeMarker', function () {
     describe('#setAppointmentTimeMarker()', function () {
         it('Should successfully set appointment time marker', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.appointments.createTimeMarker(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

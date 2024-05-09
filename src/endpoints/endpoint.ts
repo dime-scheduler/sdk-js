@@ -2,17 +2,18 @@ import axios from 'axios';
 import Environment from "../environment";
 import Action from '../constants/action';
 import { ImportResponse } from './import';
+import Page from '../models/page';
 
 abstract class Endpoint {
     apiKey: string;
     uri: string;
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         this.uri = env + "/";
         this.apiKey = apiKey;
     }
 
-    protected async get<T>(route: string): Promise<T[]> {
+    protected async getPage<T>(route: string, params?: object): Promise<Page<T>> {
         const url = this.uri + route;
         const headers = {
             'X-API-KEY': this.apiKey,
@@ -20,7 +21,19 @@ abstract class Endpoint {
             'Accept': 'application/json'
         };
 
-        const response = await axios.get<T[]>(url, { headers: headers });
+        const response = await axios.get<Page<T>>(url, { headers: headers, params: params, paramsSerializer: { indexes: null } });
+        return response.data;
+    }
+
+    protected async get<T>(route: string, params?: object): Promise<T[]> {
+        const url = this.uri + route;
+        const headers = {
+            'X-API-KEY': this.apiKey,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        };
+
+        const response = await axios.get<T[]>(url, { headers: headers, params: params, paramsSerializer: { indexes: null } });
         return response.data;
     }
 

@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { Connector, BackOfficeSystemType } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Connector', function () {
 
@@ -20,7 +21,7 @@ describe('Connector', function () {
     describe('#importConnector()', function () {
         it('Should successfully create connector', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -29,7 +30,7 @@ describe('Connector', function () {
     describe('#createConnector()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.connectors.create(item);
         });
     });

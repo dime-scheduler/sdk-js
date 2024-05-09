@@ -6,10 +6,11 @@ import Endpoint from "./endpoint";
 
 class ActionUriEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
 
+    getAll = () => super.get<ActionUri>(Routes.ActionUri);
     create = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Create, item);
     update = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Update, item);
     delete = (item: ActionUri) => super.execute(Routes.ActionUri, Action.Delete, item);

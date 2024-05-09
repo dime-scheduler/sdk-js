@@ -58,7 +58,7 @@ const createPlayer = async (client: DimeSchedulerClient, date: Date, resourceNo:
     await client.import(appointment);
 }
 
-const client = new DimeSchedulerClient(Bun.env.DS_API_KEY as string, Environment.Test);
+const client = new DimeSchedulerClient(Bun.env.DS_API_KEY as string, TestEnvironment);
 await createJobTask(client);
 await createBallColor(client);
 

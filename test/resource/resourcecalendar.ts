@@ -2,8 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { ResourceCalendar } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
-
+import {  TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 describe('ResourceCalendar', function () {
     const createItem = () => {
         const item = new ResourceCalendar();
@@ -19,7 +19,7 @@ describe('ResourceCalendar', function () {
     describe('#importResourcecalendar()', function () {
         it('Should successfully update resource calendar', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -28,7 +28,7 @@ describe('ResourceCalendar', function () {
     describe('#createResourceCalendar()', function () {
         it('Should successfully create resource filter value', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.createCalendar(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -37,7 +37,7 @@ describe('ResourceCalendar', function () {
     describe('#updateResourceCalendar()', function () {
         it('Should successfully update resource filter value', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.updateCalendar(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -46,7 +46,7 @@ describe('ResourceCalendar', function () {
     describe('#deleteResourceCalendar()', function () {
         it('Should successfully update resource filter value', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.deleteCalendar(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

@@ -2,7 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { Appointment, AppointmentContainer } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
+import {  TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('AppointmentContainer', function () {
 
@@ -33,7 +34,7 @@ describe('AppointmentContainer', function () {
     describe('#importAppendAppointmentContainer()', function () {
         it('Should successfully append appointment', async () => {
             const { item, appointment } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
 
             const importedAppointment = await client.import(appointment);
             const results = await client.import(item);
@@ -44,7 +45,7 @@ describe('AppointmentContainer', function () {
     describe('#createAppointmentContainer()', function () {
         it('Should successfully create item', async () => {
             const { item, appointment } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
 
             const importedAppointment = await client.import(appointment);
             const results = await client.appointments.createContainer(item);
@@ -55,7 +56,7 @@ describe('AppointmentContainer', function () {
     describe('#updateAppointmentContainer()', function () {
         it('Should successfully update item', async () => {
             const { item, appointment } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
 
             const importedAppointment = await client.import(appointment);
             const results = await client.appointments.updateContainer(item);
@@ -66,7 +67,7 @@ describe('AppointmentContainer', function () {
     describe('#deleteAppointmentContainer()', function () {
         it('Should successfully delete item', async () => {
             const { item, appointment } = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
 
             const importedAppointment = await client.import(appointment);
             const results = await client.appointments.deleteContainer(item);

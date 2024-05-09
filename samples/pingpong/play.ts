@@ -35,7 +35,7 @@ const createBall = async (client: DimeSchedulerClient, startDate: string) => {
     await client.import(appointment);
 }
 
-const client = new DimeSchedulerClient(Bun.env.DS_API_KEY as string, Environment.Test);
+const client = new DimeSchedulerClient(Bun.env.DS_API_KEY as string, Environment.Sandbox);
 
 const play = async () => {
     let start = new Date(options.start);

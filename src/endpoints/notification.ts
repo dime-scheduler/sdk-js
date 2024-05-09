@@ -6,7 +6,7 @@ import Routes from "../constants/routes";
 
 class NotificationEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
 

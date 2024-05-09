@@ -17,7 +17,7 @@ app.get('/task', async (req, res, next) => {
     // const jobBody = req.body;
 
     try {
-        const client = new dimescheduler.default(process.env.DS_API_KEY, dimescheduler.Environment.Test);
+        const client = new dimescheduler.default(process.env.DS_API_KEY, dimescheduler.Environment.Sandbox);
 
         const job = new models.Job();
         job.sourceApp = "EXPRESS";

@@ -6,7 +6,7 @@ import Endpoint from "./endpoint";
 
 class CategoryEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
 

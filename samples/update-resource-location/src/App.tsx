@@ -46,7 +46,7 @@ function App() {
     location.latitude = latitude;
     location.longitude = longitude;
 
-    const client = new DimeSchedulerClient(import.meta.env.VITE_DS_API_KEY, Environment.Test);
+    const client = new DimeSchedulerClient(import.meta.env.VITE_DS_API_KEY, Environment.Sandbox);
     await client.import(location);
   }
 

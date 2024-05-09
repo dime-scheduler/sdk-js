@@ -1,3 +1,4 @@
+import { start } from "repl";
 import Action from "../constants/action";
 import Routes from "../constants/routes";
 import Environment from "../environment";
@@ -6,9 +7,11 @@ import Endpoint from "./endpoint";
 
 class AppointmentEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
+
+    getAll = (startDate: Date, endDate: Date, resources: number[]) => super.get<Appointment>(Routes.Appointment, { startDate, endDate, resources });
 
     create = (item: Appointment) => super.execute(Routes.Appointment, Action.Create, item);
     update = (item: Appointment) => super.execute(Routes.Appointment, Action.Update, item);

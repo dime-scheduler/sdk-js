@@ -5,7 +5,7 @@ import Endpoint from "./endpoint";
 
 class ResourceTypeEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
 

@@ -44,7 +44,7 @@ class DimeSchedulerClient {
     resourceTypes: ResourceTypeEndpoint;
     calendars: CalendarEndpoint;
 
-    constructor(apiKey: string, env: Environment = Environment.Production) {
+    constructor(apiKey: string, env: Environment | string = Environment.Production) {
         this.importEndpoint = new ImportEndpoint(env, apiKey);
         this.messages = new MessageEndpoint(env, apiKey);
         this.actionUris = new ActionUriEndpoint(env, apiKey);

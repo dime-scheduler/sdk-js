@@ -6,7 +6,7 @@ import Endpoint from "./endpoint";
 
 class ResourceEndpoint extends Endpoint {
 
-    constructor(env: Environment, apiKey: string) {
+    constructor(env: Environment | string, apiKey: string) {
         super(env, apiKey);
     }
 
@@ -21,6 +21,7 @@ class ResourceEndpoint extends Endpoint {
     updateCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Update, item);
     deleteCalendar = (item: ResourceCalendar) => super.execute(Routes.ResourceCalendar, Action.Delete, item);
 
+    getCapacity = (page: number, limit: number, sort?: string, group?: string, filter?: string) => super.get<ResourceCapacity>(Routes.ResourceCapacity, { page, limit, sort, group, filter });
     createCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Create, item);
     updateCapacity = (item: ResourceCapacity) => super.execute(Routes.ResourceCapacity, Action.Update, item);
 

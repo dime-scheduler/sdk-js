@@ -2,7 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { Appointment } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
+import { TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Assignment', function () {
     describe('#appendAppointmentAssignment()', function () {
@@ -21,7 +22,7 @@ describe('Assignment', function () {
             end.setHours(end.getHours() + 2);
             appointment.end = end.toISOString();
 
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(appointment);
             assert.ok(results.success, !results.success ? results.message : "");
         });

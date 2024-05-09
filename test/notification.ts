@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { Notification, NotificationType } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('Notification', function () {
 
@@ -24,7 +25,7 @@ describe('Notification', function () {
         it('Should successfully create notification', async () => {
             const item = createItem();
 
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -33,7 +34,7 @@ describe('Notification', function () {
     describe('#createNotification()', function () {
         it('Should successfully create notification', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.notifications.create(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -42,7 +43,7 @@ describe('Notification', function () {
     describe('#updateNotification()', function () {
         it('Should successfully update notification', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.notifications.update(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -51,7 +52,7 @@ describe('Notification', function () {
     describe('#deleteNotification()', function () {
         it('Should successfully delete notification', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.notifications.delete(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

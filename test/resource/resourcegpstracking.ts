@@ -2,8 +2,8 @@ import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../../src';
 import { ResourceGpsTracking } from '../../src/models';
 
-import { apiKey, resourceNo } from "../testvars";
-
+import {  TestEnvironment, resourceNo } from "../testvars";
+const apiKey = process.env.API_KEY as string
 describe('ResourceGpsTracking', function () {
 
     const createItem = () => {
@@ -18,7 +18,7 @@ describe('ResourceGpsTracking', function () {
     describe('#importResourcegpstracking()', function () {
         it('Should successfully update actual location', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.import(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -27,7 +27,7 @@ describe('ResourceGpsTracking', function () {
     describe('#createResourceResourceGpsTracking()', function () {
         it('Should successfully create resource location', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.createLocation(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -36,7 +36,7 @@ describe('ResourceGpsTracking', function () {
     describe('#updateResourceResourceGpsTracking()', function () {
         it('Should successfully update resource location', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.resources.updateLocation(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });

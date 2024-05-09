@@ -1,8 +1,9 @@
 import assert from 'assert';
 import DimeSchedulerClient, { Environment } from '../src';
 import { TimeMarker } from '../src/models';
+import { TestEnvironment } from './testvars';
 
-import { apiKey } from "./testvars";
+const apiKey = process.env.API_KEY as string
 
 describe('TimeMarker', function () {
 
@@ -18,7 +19,7 @@ describe('TimeMarker', function () {
     describe('#importTimeMarker()', function () {
         it('Should successfully append time marker', async () => {
             const timeMarker = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
 
             const results = await client.import(timeMarker);
             assert.ok(results.success, !results.success ? results.message : "");
@@ -29,7 +30,7 @@ describe('TimeMarker', function () {
     describe('#createTimeMarker()', function () {
         it('Should successfully create item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.timeMarkers.create(item);
 
             assert.ok(results.success, !results.success ? results.message : "");
@@ -39,7 +40,7 @@ describe('TimeMarker', function () {
     describe('#updateTimeMarker()', function () {
         it('Should successfully update item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.timeMarkers.update(item);
 
             assert.ok(results.success, !results.success ? results.message : "");
@@ -49,7 +50,7 @@ describe('TimeMarker', function () {
     describe('#deleteTimeMarker()', function () {
         it('Should successfully delete item', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.timeMarkers.delete(item);
             assert.ok(results.success, !results.success ? results.message : "");
         });
@@ -58,7 +59,7 @@ describe('TimeMarker', function () {
     describe('#getTimeMarkers()', function () {
         it('Should successfully get items', async () => {
             const item = createItem();
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             const results = await client.timeMarkers.getAll();
 
             assert(results.length > 0);
@@ -67,7 +68,7 @@ describe('TimeMarker', function () {
 
     describe('#getAll()', function () {
         it('Should successfully get items', async () => {
-            const client = new DimeSchedulerClient(apiKey, Environment.Test);
+            const client = new DimeSchedulerClient(apiKey, TestEnvironment);
             await client.timeMarkers.create(createItem());
             const items = await client.timeMarkers.getAll();
             assert.ok(items.length > 0);

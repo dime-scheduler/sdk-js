@@ -1,7 +1,7 @@
 {
   "name": "dimescheduler",
   "description": "The Dime.Scheduler SDK",
-  "version": "0.5.0",
+  "version": "0.6.0-alpha.1",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/index.js",
@@ -38,7 +38,7 @@
     "build": "tsc --p tsconfig.cjs.json && tsc --p tsconfig.esm.json && tsc --p tsconfig.types.json && tsc-alias",
     "clean": "rimraf dist",
     "pub": "yarn clean && yarn build && yarn publish",
-    "test": "tsc --p ./test/tsconfig.json && ts-mocha -p test/tsconfig.json test/**/*.ts --timeout 10000"
+    "test": "tsc --p ./test/tsconfig.json && ts-mocha -p test/tsconfig.json test/**/*.ts --timeout 10000 -r dotenv/config"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -48,6 +48,7 @@
     "@tsconfig/recommended": "^1.0.6",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.7",
+    "dotenv": "^16.4.5",
     "mocha": "^10.4.0",
     "rimraf": "^5.0.5",
     "ts-mocha": "^10.0.0",
